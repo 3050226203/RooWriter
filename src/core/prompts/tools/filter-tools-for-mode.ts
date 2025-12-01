@@ -159,13 +159,40 @@ export function filterNativeToolsForMode(
 	}
 
 	// Filter native tools based on allowed tool names
-	return nativeTools.filter((tool) => {
+	const filteredTools = nativeTools.filter((tool) => {
 		// Handle both ChatCompletionTool and ChatCompletionCustomTool
 		if ("function" in tool && tool.function) {
 			return allowedToolNames.has(tool.function.name)
 		}
 		return false
 	})
+
+	// [RooWriter] CRITICAL OPTIMIZATION: Force removal of heavy/irrelevant tools in writing modes
+	// regardless of their group or always-available status.
+	const isWritingMode = ["writer", "editor", "researcher", "publisher"].includes(modeSlug)
+	if (isWritingMode) {
+		return filteredTools.filter((tool) => {
+			// Safety check for function property
+			if (!("function" in tool) || !tool.function) {
+				return false
+			}
+			const name = tool.function.name
+			// Remove code-centric and heavy tools
+			if (
+				name === "execute_command" ||
+				name === "apply_diff" ||
+				name === "apply_patch" ||
+				name === "codebase_search" ||
+				name === "list_code_definition_names" ||
+				name === "run_slash_command" // Writers don't need slash commands typically
+			) {
+				return false
+			}
+			return true
+		})
+	}
+
+	return filteredTools
 }
 
 /**
