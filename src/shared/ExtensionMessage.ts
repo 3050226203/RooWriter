@@ -37,20 +37,8 @@ export interface MarketplaceInstalledMetadata {
 	global: Record<string, { type: string }>
 }
 
-// Indexing status types
-export interface IndexingStatus {
-	systemStatus: string
-	message?: string
-	processedItems: number
-	totalItems: number
-	currentItemUnit?: string
-	workspacePath?: string
-}
-
-export interface IndexingStatusUpdateMessage {
-	type: "indexingStatusUpdate"
-	values: IndexingStatus
-}
+// Indexing status types - Deprecated but kept for type compatibility if needed, or remove?
+// Removing as requested for cleanup
 
 export interface LanguageModelChatSelector {
 	vendor?: string
@@ -113,15 +101,10 @@ export interface ExtensionMessage {
 		| "condenseTaskContextResponse"
 		| "singleRouterModelFetchResponse"
 		| "rooCreditBalance"
-		| "indexingStatusUpdate"
-		| "indexCleared"
-		| "codebaseIndexConfig"
 		| "marketplaceInstallResult"
 		| "marketplaceRemoveResult"
 		| "marketplaceData"
 		| "shareTaskSuccess"
-		| "codeIndexSettingsSaved"
-		| "codeIndexSecretStatus"
 		| "showDeleteMessageDialog"
 		| "showEditMessageDialog"
 		| "commands"
@@ -278,8 +261,6 @@ export type ExtensionState = Pick<
 	| "enhancementApiConfigId"
 	| "condensingApiConfigId"
 	| "customCondensingPrompt"
-	| "codebaseIndexConfig"
-	| "codebaseIndexModels"
 	| "profileThresholds"
 	| "includeDiagnosticMessages"
 	| "maxDiagnosticMessages"
@@ -366,7 +347,6 @@ export interface ClineSayTool {
 		| "editedExistingFile"
 		| "appliedDiff"
 		| "newFileCreated"
-		| "codebaseSearch"
 		| "readFile"
 		| "fetchInstructions"
 		| "listFilesTopLevel"

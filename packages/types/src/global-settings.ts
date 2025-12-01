@@ -263,7 +263,7 @@ export const isSecretStateKey = (key: string): key is Keys<SecretState> =>
 export type GlobalState = Omit<RooCodeSettings, Keys<SecretState>>
 
 export const GLOBAL_STATE_KEYS = [...GLOBAL_SETTINGS_KEYS, ...PROVIDER_SETTINGS_KEYS].filter(
-	(key: Keys<RooCodeSettings>) => !isSecretStateKey(key),
+	(key) => !isSecretStateKey(key as string),
 ) as Keys<GlobalState>[]
 
 export const isGlobalStateKey = (key: string): key is Keys<GlobalState> =>
