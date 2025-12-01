@@ -2386,6 +2386,9 @@ export class ClineProvider
 
 	async updateTaskHistory(item: HistoryItem): Promise<HistoryItem[]> {
 		const history = (this.getGlobalState("taskHistory") as HistoryItem[] | undefined) || []
+		console.log(
+			`[updateTaskHistory] Updating history for task ${item.id}. Current history length: ${history.length}`,
+		)
 		const existingItemIndex = history.findIndex((h) => h.id === item.id)
 
 		if (existingItemIndex !== -1) {
@@ -2401,6 +2404,7 @@ export class ClineProvider
 		}
 
 		await this.updateGlobalState("taskHistory", history)
+		console.log(`[updateTaskHistory] History updated. New length: ${history.length}`)
 		this.recentTasksCache = undefined
 
 		return history
@@ -2641,15 +2645,24 @@ export class ClineProvider
 		}
 
 		const history = this.getGlobalState("taskHistory") ?? []
+
+		// [Debug] Log history retrieval for troubleshooting
+		console.log(`[getRecentTasks] Total history items: ${history.length}`)
+		console.log(`[getRecentTasks] Current CWD: ${this.cwd}`)
+
 		const workspaceTasks: HistoryItem[] = []
 
 		for (const item of history) {
 			if (!item.ts || !item.task || item.workspace !== this.cwd) {
+				// [Debug] Log filtered item
+				// console.log(`[getRecentTasks] Filtered item: ${item.id} (ws: ${item.workspace})`)
 				continue
 			}
 
 			workspaceTasks.push(item)
 		}
+
+		console.log(`[getRecentTasks] Workspace tasks: ${workspaceTasks.length}`)
 
 		if (workspaceTasks.length === 0) {
 			this.recentTasksCache = []
