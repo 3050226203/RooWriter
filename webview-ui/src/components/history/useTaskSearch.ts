@@ -24,14 +24,27 @@ export const useTaskSearch = () => {
 	}, [searchQuery, sortOption, lastNonRelevantSort])
 
 	const presentableTasks = useMemo(() => {
+		console.log("[useTaskSearch] taskHistory length:", taskHistory.length)
+		console.log("[useTaskSearch] raw cwd:", cwd)
+
 		let tasks = taskHistory.filter((item) => item.ts && item.task)
+		console.log("[useTaskSearch] tasks with ts/task:", tasks.length)
+
 		if (!showAllWorkspaces) {
 			// Normalize paths for comparison to handle case sensitivity (Windows) and separators
 			const normalizedCwd = cwd?.toLowerCase().replace(/[\\/]+/g, "/")
+			console.log("[useTaskSearch] normalizedCwd:", normalizedCwd)
+
 			tasks = tasks.filter((item) => {
 				const normalizedItemWorkspace = item.workspace?.toLowerCase().replace(/[\\/]+/g, "/")
-				return normalizedItemWorkspace === normalizedCwd
+				const match = normalizedItemWorkspace === normalizedCwd
+				if (!match && tasks.length < 5) {
+					// Log first few mismatches
+					console.log(`[useTaskSearch] Mismatch: item=${normalizedItemWorkspace}, cwd=${normalizedCwd}`)
+				}
+				return match
 			})
+			console.log("[useTaskSearch] tasks after workspace filter:", tasks.length)
 		}
 		return tasks
 	}, [taskHistory, showAllWorkspaces, cwd])
