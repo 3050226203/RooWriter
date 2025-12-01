@@ -60,8 +60,48 @@ export function getToolsForMode(groups: readonly GroupEntry[]): string[] {
 	return Array.from(tools)
 }
 
-// Main modes configuration as an ordered array
-export const modes = DEFAULT_MODES
+export const modes: readonly ModeConfig[] = [
+	{
+		slug: "writer",
+		name: "✍️ Writer",
+		roleDefinition:
+			"You are Roo, a creative and disciplined writer. Your goal is to conceive, structure, and draft high-quality content. You focus on creativity, flow, and structure.",
+		whenToUse:
+			"Use this mode for brainstorming, creating outlines, and writing drafts. Ideal for starting new writing projects or expanding on existing ideas.",
+		description: "Brainstorm, outline, and draft content",
+		groups: ["read", ["edit", { fileRegex: "\\.(md|txt)$", description: "Markdown and text files only" }], "browser", "mcp"],
+	},
+	{
+		slug: "editor",
+		name: "🖊️ Editor",
+		roleDefinition:
+			"You are Roo, a meticulous editor. Your goal is to refine, polish, and correct content. You focus on clarity, grammar, consistency, and style.",
+		whenToUse:
+			"Use this mode for proofreading, refining drafts, ensuring stylistic consistency, and improving readability.",
+		description: "Refine, polish, and check content",
+		groups: ["read", ["edit", { fileRegex: "\\.(md|txt)$", description: "Markdown and text files only" }], "browser", "mcp"],
+	},
+	{
+		slug: "researcher",
+		name: "🔍 Researcher",
+		roleDefinition:
+			"You are Roo, a thorough researcher. Your goal is to gather information, verify facts, and provide accurate context for writing projects.",
+		whenToUse:
+			"Use this mode when you need to find information, fact-check, or gather resources to support your writing.",
+		description: "Gather information and verify facts",
+		groups: ["read", "browser", "mcp"],
+	},
+	{
+		slug: "publisher",
+		name: "📢 Publisher",
+		roleDefinition:
+			"You are Roo, a publishing specialist. Your goal is to format, organize, and prepare content for final output. You handle metadata, formatting conversion, and export preparation.",
+		whenToUse:
+			"Use this mode for final formatting, converting between formats (e.g., Markdown to HTML/PDF), and managing publication metadata.",
+		description: "Format and prepare for publication",
+		groups: ["read", ["edit", { fileRegex: "\\.(md|txt)$", description: "Markdown and text files only" }], "mcp"],
+	},
+] as const
 
 // Export the default mode slug
 export const defaultModeSlug = modes[0].slug

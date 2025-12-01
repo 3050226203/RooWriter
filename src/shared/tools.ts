@@ -277,13 +277,14 @@ export const TOOL_GROUPS: Record<ToolGroup, ToolGroupConfig> = {
 			"fetch_instructions",
 			"search_files",
 			"list_files",
-			"list_code_definition_names",
-			"codebase_search",
+			// "list_code_definition_names", // Removed for RooWriter to reduce token usage
+			// "codebase_search", // Removed for RooWriter to reduce token usage
 		],
 	},
 	edit: {
-		tools: ["apply_diff", "write_to_file", "insert_content", "generate_image"],
-		customTools: ["search_and_replace", "apply_patch"],
+		// Removed "apply_diff" for RooWriter as it is code-centric
+		tools: ["write_to_file", "insert_content", "generate_image"],
+		customTools: ["search_and_replace"], // Removed "apply_patch"
 	},
 	browser: {
 		tools: ["browser_action"],
