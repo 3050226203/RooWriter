@@ -123,6 +123,17 @@ export class CodeIndexManager {
 		// Load configuration once to get current state and restart requirements
 		const { requiresRestart } = await this._configManager.loadConfiguration()
 
+		// [RooWriter] Force disable Code Indexing by default
+		// This prevents the heavy local vector index from starting automatically
+		const forceDisabled = true
+		if (forceDisabled) {
+			if (this._orchestrator) {
+				this._orchestrator.stopWatcher()
+			}
+			this._stateManager.setSystemState("Standby", "Code indexing is disabled in RooWriter")
+			return { requiresRestart: false }
+		}
+
 		// 2. Check if feature is enabled
 		if (!this.isFeatureEnabled) {
 			if (this._orchestrator) {

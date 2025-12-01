@@ -77,8 +77,8 @@
 			},
 			{
 				"command": "roo-cline.promptsButtonClicked",
-				"title": "%command.prompts.title%",
-				"icon": "$(organization)"
+				"title": "%command.templates.title%",
+				"icon": "$(repo)"
 			},
 			{
 				"command": "roo-cline.mcpButtonClicked",
@@ -115,6 +115,7 @@
 				"title": "%command.openInNewTab.title%",
 				"category": "%configuration.title%"
 			},
+			/*
 			{
 				"command": "roo-cline.explainCode",
 				"title": "%command.explainCode.title%",
@@ -130,6 +131,7 @@
 				"title": "%command.improveCode.title%",
 				"category": "%configuration.title%"
 			},
+			*/
 			{
 				"command": "roo-cline.addToContext",
 				"title": "%command.addToContext.title%",

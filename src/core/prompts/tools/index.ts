@@ -118,6 +118,18 @@ export function getToolDescriptionsForMode(
 	// Add always available tools
 	ALWAYS_AVAILABLE_TOOLS.forEach((tool) => tools.add(tool))
 
+	// [RooWriter] CRITICAL OPTIMIZATION: Force removal of heavy tools in writing modes
+	// This ensures they are not just hidden from the group config but PHYSICALLY REMOVED
+	// from the system prompt, saving massive amounts of tokens.
+	const isWritingMode = ["writer", "editor", "researcher", "publisher"].includes(mode)
+	if (isWritingMode) {
+		tools.delete("execute_command")
+		tools.delete("apply_diff")
+		tools.delete("apply_patch") // Custom tool in edit group
+		tools.delete("codebase_search")
+		tools.delete("list_code_definition_names")
+	}
+
 	// Conditionally exclude codebase_search if feature is disabled or not configured
 	if (
 		!codeIndexManager ||
