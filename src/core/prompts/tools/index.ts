@@ -128,6 +128,7 @@ export function getToolDescriptionsForMode(
 		tools.delete("apply_patch") // Custom tool in edit group
 		tools.delete("codebase_search")
 		tools.delete("list_code_definition_names")
+		tools.delete("run_slash_command") // Writers don't need slash commands typically
 	}
 
 	// Conditionally exclude codebase_search if feature is disabled or not configured
