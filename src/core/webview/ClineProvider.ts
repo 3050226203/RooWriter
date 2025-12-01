@@ -2652,8 +2652,18 @@ export class ClineProvider
 
 		const workspaceTasks: HistoryItem[] = []
 
+		// Normalize current cwd for comparison
+		const normalizedCwd = this.cwd.toLowerCase().replace(/[\\/]+/g, "/")
+
 		for (const item of history) {
-			if (!item.ts || !item.task || item.workspace !== this.cwd) {
+			if (!item.ts || !item.task) {
+				continue
+			}
+
+			// Normalize item workspace
+			const normalizedItemWorkspace = item.workspace?.toLowerCase().replace(/[\\/]+/g, "/")
+
+			if (normalizedItemWorkspace !== normalizedCwd) {
 				// [Debug] Log filtered item
 				// console.log(`[getRecentTasks] Filtered item: ${item.id} (ws: ${item.workspace})`)
 				continue

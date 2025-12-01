@@ -26,7 +26,12 @@ export const useTaskSearch = () => {
 	const presentableTasks = useMemo(() => {
 		let tasks = taskHistory.filter((item) => item.ts && item.task)
 		if (!showAllWorkspaces) {
-			tasks = tasks.filter((item) => item.workspace === cwd)
+			// Normalize paths for comparison to handle case sensitivity (Windows) and separators
+			const normalizedCwd = cwd?.toLowerCase().replace(/[\\/]+/g, "/")
+			tasks = tasks.filter((item) => {
+				const normalizedItemWorkspace = item.workspace?.toLowerCase().replace(/[\\/]+/g, "/")
+				return normalizedItemWorkspace === normalizedCwd
+			})
 		}
 		return tasks
 	}, [taskHistory, showAllWorkspaces, cwd])
