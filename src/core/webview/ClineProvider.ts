@@ -93,7 +93,7 @@ import { getSystemPromptFilePath } from "../prompts/sections/custom-system-promp
 
 import { webviewMessageHandler } from "./webviewMessageHandler"
 import type { ClineMessage, TodoItem } from "@roo-code/types"
-import { readApiMessages, saveApiMessages, saveTaskMessages } from "../task-persistence"
+import { readApiMessages, saveApiMessages, saveTaskMessages, taskMetadata } from "../task-persistence"
 import { readTaskMessages } from "../task-persistence/taskMessages"
 import { getNonce } from "./getNonce"
 import { getUri } from "./getUri"
