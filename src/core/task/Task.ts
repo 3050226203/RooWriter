@@ -9,7 +9,7 @@ export class Task {
 		private readonly logger: Logger,
 	) {}
 
-	protected buildCleanConversationHistory(
+	private buildCleanConversationHistory(
 		messages: ApiMessage[],
 	): Array<
 		Anthropic.Messages.MessageParam | { type: "reasoning"; encrypted_content: string; id?: string; summary?: any[] }
