@@ -1,6 +1,6 @@
 {
 	"name": "@roo-code/telemetry",
-	"description": "Roo Code telemetry service and clients.",
+	"description": "RooWriter telemetry service and clients.",
 	"version": "0.0.0",
 	"type": "module",
 	"exports": "./src/index.ts",
@@ -23,3 +23,4 @@
 		"vitest": "^3.2.3"
 	}
 }
+

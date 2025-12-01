@@ -283,7 +283,11 @@ export async function getEnvironmentDetails(cline: Task, includeFileDetails: boo
 		details += `\n# Browser Session Status\nActive - A browser session is currently open and ready for browser_action commands${viewportInfo}\n`
 	}
 
-	if (includeFileDetails) {
+	// [RooWriter] OPTIMIZATION: Skip file listing for ALL modes since this is a writing-focused plugin
+	// This saves tokens and reduces noise for the model.
+	const shouldShowFiles = false // Force disable for all modes
+
+	if (includeFileDetails && shouldShowFiles) {
 		details += `\n\n# Current Workspace Directory (${cline.cwd.toPosix()}) Files\n`
 		const isDesktop = arePathsEqual(cline.cwd, path.join(os.homedir(), "Desktop"))
 

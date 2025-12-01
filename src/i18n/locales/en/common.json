@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Roo Code",
+		"name": "RooWriter",
 		"description": "A whole dev team of AI agents in your editor."
 	},
 	"number_format": {
@@ -118,7 +118,7 @@
 			"completionError": "Cerebras completion error: {{error}}"
 		},
 		"roo": {
-			"authenticationRequired": "Roo provider requires cloud authentication. Please sign in to Roo Code Cloud."
+			"authenticationRequired": "Roo provider requires cloud authentication. Please sign in to RooWriter Cloud."
 		},
 		"api": {
 			"invalidKeyInvalidChars": "API key contains invalid characters."
@@ -183,7 +183,7 @@
 	},
 	"customModes": {
 		"errors": {
-			"yamlParseError": "Invalid YAML in .roomodes file at line {{line}}. Please check for:\nâ€¢ Proper indentation (use spaces, not tabs)\nâ€¢ Matching quotes and brackets\nâ€¢ Valid YAML syntax",
+			"yamlParseError": "Invalid YAML in .roomodes file at line {{line}}. Please check for:\nâ€?Proper indentation (use spaces, not tabs)\nâ€?Matching quotes and brackets\nâ€?Valid YAML syntax",
 			"schemaValidationError": "Invalid custom modes format in .roomodes:\n{{issues}}",
 			"invalidFormat": "Invalid custom modes format. Please ensure your settings follow the correct YAML format.",
 			"updateFailed": "Failed to update custom mode: {{error}}",
@@ -205,8 +205,8 @@
 	},
 	"mdm": {
 		"errors": {
-			"cloud_auth_required": "Your organization requires Roo Code Cloud authentication. Please sign in to continue.",
-			"organization_mismatch": "You must be authenticated with your organization's Roo Code Cloud account.",
+			"cloud_auth_required": "Your organization requires RooWriter Cloud authentication. Please sign in to continue.",
+			"organization_mismatch": "You must be authenticated with your organization's RooWriter Cloud account.",
 			"verification_failed": "Unable to verify organization authentication."
 		},
 		"info": {
@@ -231,3 +231,4 @@
 		"url": "https://docs.roocode.com"
 	}
 }
+

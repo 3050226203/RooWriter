@@ -1,6 +1,5 @@
 import { DiffStrategy } from "../../../shared/tools"
 import { McpHub } from "../../../services/mcp/McpHub"
-import { CodeIndexManager } from "../../../services/code-index/manager"
 import type { ModeConfig, ToolName } from "@roo-code/types"
 import { getAvailableToolsInGroup } from "../tools/filter-tools-for-mode"
 import type { SystemPromptSettings } from "../types"
@@ -13,19 +12,11 @@ export function getCapabilitiesSection(
 	experiments: Record<string, boolean> | undefined,
 	mcpHub?: McpHub,
 	diffStrategy?: DiffStrategy,
-	codeIndexManager?: CodeIndexManager,
 	settings?: SystemPromptSettings,
 ): string {
 	const isWritingMode = ["writer", "editor", "researcher", "publisher"].includes(mode)
-	
-	const availableBrowserTools = getAvailableToolsInGroup(
-		"browser",
-		mode,
-		customModes,
-		experiments,
-		codeIndexManager,
-		settings,
-	)
+
+	const availableBrowserTools = getAvailableToolsInGroup("browser", mode, customModes, experiments, settings)
 
 	const hasBrowserAction = supportsComputerUse && availableBrowserTools.includes("browser_action")
 

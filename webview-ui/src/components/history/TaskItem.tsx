@@ -1,4 +1,4 @@
-import { memo } from "react"
+import { memo, useState, useEffect } from "react"
 import type { HistoryItem } from "@roo-code/types"
 
 import { vscode } from "@/utils/vscode"
@@ -32,7 +32,27 @@ const TaskItem = ({
 	onDelete,
 	className,
 }: TaskItemProps) => {
+	const [isEditingSnapshot, setIsEditingSnapshot] = useState(false)
+	const [snapshotLabel, setSnapshotLabel] = useState(item.snapshot || "")
+
+	useEffect(() => {
+		setSnapshotLabel(item.snapshot || "")
+	}, [item.snapshot])
+
+	const handleSnapshotSave = (e?: React.MouseEvent | React.KeyboardEvent) => {
+		e?.stopPropagation()
+		vscode.postMessage({ type: "updateTask", historyItem: { ...item, snapshot: snapshotLabel } })
+		setIsEditingSnapshot(false)
+	}
+
+	const handleSnapshotCancel = (e?: React.MouseEvent) => {
+		e?.stopPropagation()
+		setSnapshotLabel(item.snapshot || "")
+		setIsEditingSnapshot(false)
+	}
+
 	const handleClick = () => {
+		if (isEditingSnapshot) return
 		if (isSelectionMode && onToggleSelection) {
 			onToggleSelection(item.id, !isSelected)
 		} else {
@@ -82,11 +102,48 @@ const TaskItem = ({
 						{item.highlight ? undefined : item.task}
 					</div>
 
+					{/* Snapshot Label */}
+					{item.snapshot && !isEditingSnapshot && (
+						<div className="inline-flex items-center px-2 py-0.5 mt-1 rounded text-xs font-medium bg-vscode-badge-background text-vscode-badge-foreground">
+							{item.snapshot}
+						</div>
+					)}
+
+					{/* Edit Input */}
+					{isEditingSnapshot && (
+						<div className="flex items-center gap-1 mt-1 mb-1" onClick={(e) => e.stopPropagation()}>
+							<input
+								type="text"
+								value={snapshotLabel}
+								onChange={(e) => setSnapshotLabel(e.target.value)}
+								className="text-xs border rounded px-1 py-0.5 bg-vscode-input-background text-vscode-input-foreground border-vscode-input-border focus:outline-none focus:border-vscode-focusBorder"
+								placeholder="Snapshot Name"
+								autoFocus
+								onKeyDown={(e) => {
+									if (e.key === "Enter") handleSnapshotSave(e)
+									if (e.key === "Escape") handleSnapshotCancel()
+								}}
+								onClick={(e) => e.stopPropagation()}
+							/>
+							<div
+								onClick={handleSnapshotSave}
+								className="cursor-pointer text-xs text-vscode-charts-green hover:opacity-80 px-1">
+								✓
+							</div>
+							<div
+								onClick={handleSnapshotCancel}
+								className="cursor-pointer text-xs text-vscode-charts-red hover:opacity-80 px-1">
+								✕
+							</div>
+						</div>
+					)}
+
 					<TaskItemFooter
 						item={item}
 						variant={variant}
 						isSelectionMode={isSelectionMode}
 						onDelete={onDelete}
+						onSnapshotClick={() => setIsEditingSnapshot(true)}
 					/>
 
 					{showWorkspace && item.workspace && (

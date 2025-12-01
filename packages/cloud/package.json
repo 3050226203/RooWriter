@@ -1,6 +1,6 @@
 {
 	"name": "@roo-code/cloud",
-	"description": "Roo Code Cloud services.",
+	"description": "RooWriter Cloud services.",
 	"version": "0.0.0",
 	"type": "module",
 	"exports": "./src/index.ts",
@@ -27,3 +27,4 @@
 		"vitest": "^3.2.4"
 	}
 }
+

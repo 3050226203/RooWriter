@@ -1,5 +1,4 @@
 import { DiffStrategy } from "../../../shared/tools"
-import { CodeIndexManager } from "../../../services/code-index/manager"
 import type { SystemPromptSettings } from "../types"
 import { getEffectiveProtocol, isNativeProtocol } from "@roo-code/types"
 import type { ModeConfig, ToolName } from "@roo-code/types"
@@ -12,26 +11,11 @@ export function getRulesSection(
 	customModes: ModeConfig[] | undefined,
 	experiments: Record<string, boolean> | undefined,
 	diffStrategy?: DiffStrategy,
-	codeIndexManager?: CodeIndexManager,
 	settings?: SystemPromptSettings,
 ): string {
 	// Get available tools from relevant groups
-	const availableEditTools = getAvailableToolsInGroup(
-		"edit",
-		mode,
-		customModes,
-		experiments,
-		codeIndexManager,
-		settings,
-	)
-	const availableBrowserTools = getAvailableToolsInGroup(
-		"browser",
-		mode,
-		customModes,
-		experiments,
-		codeIndexManager,
-		settings,
-	)
+	const availableEditTools = getAvailableToolsInGroup("edit", mode, customModes, experiments, settings)
+	const availableBrowserTools = getAvailableToolsInGroup("browser", mode, customModes, experiments, settings)
 
 	const hasWriteToFile = availableEditTools.includes("write_to_file" as ToolName)
 	const hasBrowserAction = supportsComputerUse && availableBrowserTools.includes("browser_action" as ToolName)
@@ -39,7 +23,10 @@ export function getRulesSection(
 	const effectiveProtocol = getEffectiveProtocol(settings?.toolProtocol)
 
 	// RooWriter: Custom rules for writing-focused modes
-	const isWritingMode = ["writer", "editor", "researcher", "publisher"].includes(mode)
+	// In RooWriter, we assume ALL modes are writing-focused unless explicitly excluded (though currently we only have writing modes)
+	// This ensures custom modes also get the correct writing constraints and RAG capabilities.
+	const isWritingMode = true // Forced to true for RooWriter vision
+
 
 	const baseRules = `====
 
@@ -65,7 +52,7 @@ RULES
 - **MARKDOWN STANDARDS**: Always use standard Markdown formatting. Use headers (#, ##, ###) for structure. Use lists for readability.
 - **CITATIONS**: When Researching, always cite your sources. If using the browser to find information, note the URL.
 - **NO CODE EXECUTION**: You do not have access to terminal commands for running code or tests. Focus on text manipulation and file management.
-- **KNOWLEDGE RETRIEVAL**: If you need background information or context that might be in the knowledge base, use the 'query_knowledge_base' MCP tool (if available).
+- **KNOWLEDGE RETRIEVAL**: When the user asks about background knowledge, setting consistency, or cross-document relationships, you MUST prioritize using the 'query_knowledge_base' MCP tool (if available) to retrieve accurate information before answering.
 ${
 	hasWriteToFile
 		? `- When writing to files, ensure the content is complete. Do not use placeholders like "[...rest of content]" unless you are appending to a very large file.`

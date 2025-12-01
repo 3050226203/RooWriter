@@ -5,7 +5,6 @@ import applyPatch from "./apply_patch"
 import askFollowupQuestion from "./ask_followup_question"
 import attemptCompletion from "./attempt_completion"
 import browserAction from "./browser_action"
-import codebaseSearch from "./codebase_search"
 import executeCommand from "./execute_command"
 import fetchInstructions from "./fetch_instructions"
 import generateImage from "./generate_image"
@@ -38,7 +37,6 @@ export function getNativeTools(partialReadsEnabled: boolean = true): OpenAI.Chat
 		askFollowupQuestion,
 		attemptCompletion,
 		browserAction,
-		codebaseSearch,
 		executeCommand,
 		fetchInstructions,
 		generateImage,

@@ -11,7 +11,6 @@ import { formatLanguage } from "../../shared/language"
 import { isEmpty } from "../../utils/object"
 
 import { McpHub } from "../../services/mcp/McpHub"
-import { CodeIndexManager } from "../../services/code-index/manager"
 
 import { PromptVariables, loadSystemPromptFile } from "./sections/custom-system-prompt"
 
@@ -80,8 +79,6 @@ async function generatePrompt(
 	const hasMcpServers = mcpHub && mcpHub.getServers().length > 0
 	const shouldIncludeMcp = hasMcpGroup && hasMcpServers
 
-	const codeIndexManager = CodeIndexManager.getInstance(context, cwd)
-
 	// Determine the effective protocol (defaults to 'xml')
 	const effectiveProtocol = getEffectiveProtocol(settings?.toolProtocol)
 
@@ -104,7 +101,6 @@ async function generatePrompt(
 				mode,
 				cwd,
 				supportsComputerUse,
-				codeIndexManager,
 				effectiveDiffStrategy,
 				browserViewportSize,
 				shouldIncludeMcp ? mcpHub : undefined,
@@ -122,19 +118,19 @@ ${markdownFormattingSection()}
 
 ${getSharedToolUseSection(effectiveProtocol)}${toolsCatalog}
 
-${getToolUseGuidelinesSection(codeIndexManager, effectiveProtocol)}
+${getToolUseGuidelinesSection(effectiveProtocol)}
 
 ${mcpServersSection}
 
-${getCapabilitiesSection(cwd, supportsComputerUse, mode, customModeConfigs, experiments, shouldIncludeMcp ? mcpHub : undefined, effectiveDiffStrategy, codeIndexManager, settings)}
+${getCapabilitiesSection(cwd, supportsComputerUse, mode, customModeConfigs, experiments, shouldIncludeMcp ? mcpHub : undefined, effectiveDiffStrategy, settings)}
 
 ${modesSection}
 
-${getRulesSection(cwd, supportsComputerUse, mode, customModeConfigs, experiments, effectiveDiffStrategy, codeIndexManager, settings)}
+${getRulesSection(cwd, supportsComputerUse, mode, customModeConfigs, experiments, effectiveDiffStrategy, settings)}
 
-${getSystemInfoSection(cwd)}
+${getSystemInfoSection(cwd, mode)}
 
-${getObjectiveSection(codeIndexManager, experiments)}
+${getObjectiveSection(experiments)}
 
 ${await addCustomInstructions(baseInstructions, globalCustomInstructions || "", cwd, mode, {
 	language: language ?? formatLanguage(vscode.env.language),

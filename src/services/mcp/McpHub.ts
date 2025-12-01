@@ -650,7 +650,7 @@ export class McpHub {
 		try {
 			const client = new Client(
 				{
-					name: "Roo Code",
+					name: "RooWriter",
 					version: this.providerRef.deref()?.context.extension?.packageJSON?.version ?? "1.0.0",
 				},
 				{
@@ -1911,3 +1911,4 @@ export class McpHub {
 		this.disposables.forEach((d) => d.dispose())
 	}
 }
+

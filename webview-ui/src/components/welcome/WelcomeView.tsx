@@ -61,7 +61,7 @@ const WelcomeView = () => {
 
 	return (
 		<Tab>
-			<TabContent className="flex flex-col gap-4 p-6">
+			<TabContent className="flex flex-col gap-4 p-6 pt-8">
 				<RooHero />
 				<h2 className="mt-0 mb-4 text-xl">{t("welcome:greeting")}</h2>
 
@@ -70,112 +70,75 @@ const WelcomeView = () => {
 						<Trans i18nKey="welcome:introduction" />
 					</p>
 					<p className="mb-0 leading-relaxed">
-						<Trans i18nKey="welcome:chooseProvider" />
+						{/* <Trans i18nKey="welcome:chooseProvider" /> */}
 					</p>
 				</div>
 
 				<div className="mb-4">
-					<p className="text-sm font-medium mt-4 mb-3">{t("welcome:startRouter")}</p>
+					{/* Removed LLM Router Recommendation */}
+					{/* <p className="text-sm font-medium mt-4 mb-3">{t("welcome:startRouter")}</p> */}
 
 					<div>
 						{/* Define the providers */}
 						{(() => {
 							// Provider card configuration
-							const baseProviders = [
-								{
-									slug: "requesty",
-									name: "Requesty",
-									description: t("welcome:routers.requesty.description"),
-									incentive: t("welcome:routers.requesty.incentive"),
-									authUrl: getRequestyAuthUrl(uriScheme),
-								},
-								{
-									slug: "openrouter",
-									name: "OpenRouter",
-									description: t("welcome:routers.openrouter.description"),
-									authUrl: getOpenRouterAuthUrl(uriScheme),
-								},
+							const baseProviders: {
+								slug: string
+								name: string
+								description: string
+								incentive?: string
+								authUrl?: string
+							}[] = [
+								// Removed default router providers
 							]
 
 							// Conditionally add Roo provider based on feature flag
-							const providers = showRooProvider
-								? [
-										...baseProviders,
-										{
-											slug: "roo",
-											name: "Roo Code Cloud",
-											description: t("welcome:routers.roo.description"),
-											incentive: t("welcome:routers.roo.incentive"),
-											authUrl: "#", // Placeholder since onClick handler will prevent default
-										},
-									]
-								: baseProviders
+							if (showRooProvider) {
+								baseProviders.push({
+									slug: "roo",
+									name: "RooWriter Cloud",
+									description: t("welcome:routers.roo.description"),
+									incentive: t("welcome:routers.roo.incentive"),
+								})
+							}
 
-							// Shuffle providers based on machine ID (will be consistent for the same machine)
-							const orderedProviders = [...providers]
-							knuthShuffle(orderedProviders, (machineId as any) || Date.now())
-
-							// Render the provider cards
-							return orderedProviders.map((provider, index) => (
-								<a
-									key={index}
-									href={provider.authUrl}
-									className="relative flex-1 border border-vscode-panel-border hover:bg-secondary rounded-md py-3 px-4 mb-2 flex flex-row gap-3 cursor-pointer transition-all no-underline text-inherit"
-									target="_blank"
-									rel="noopener noreferrer"
-									onClick={(e) => {
-										// Track telemetry for featured provider click
-										telemetryClient.capture(TelemetryEventName.FEATURED_PROVIDER_CLICKED, {
-											provider: provider.slug,
-										})
-
-										// Special handling for Roo provider
-										if (provider.slug === "roo") {
-											e.preventDefault()
-
-											// Set the Roo provider configuration
-											const rooConfig: ProviderSettings = {
-												apiProvider: "roo",
-											}
-
-											// Save the Roo provider configuration
-											vscode.postMessage({
-												type: "upsertApiConfiguration",
-												text: currentApiConfigName,
-												apiConfiguration: rooConfig,
-											})
-
-											// Then trigger cloud sign-in
-											vscode.postMessage({ type: "rooCloudSignIn" })
-										}
-										// For other providers, let the default link behavior work
-									}}>
-									{provider.incentive && (
-										<div className="absolute top-0 right-0 text-[10px] text-vscode-badge-foreground bg-vscode-badge-background px-2 py-0.5 rounded-bl rounded-tr-md">
-											{provider.incentive}
-										</div>
-									)}
-									<div className="w-8 h-8 flex-shrink-0">
-										<img
-											src={`${imagesBaseUri}/${provider.slug}.png`}
-											alt={provider.name}
-											className="w-full h-full object-contain"
-										/>
-									</div>
-									<div>
-										<div className="text-sm font-medium text-vscode-foreground">
-											{provider.name}
-										</div>
-										<div className="text-xs text-vscode-descriptionForeground">
-											{provider.description}
-										</div>
-									</div>
-								</a>
-							))
+							return baseProviders.length > 0 ? (
+								<div className="flex flex-col gap-3">
+									{baseProviders.map((provider) => (
+										<button
+											key={provider.slug}
+											onClick={() => {
+												if (provider.slug === "roo") {
+													// Set provider to roo-code-cloud
+													setApiConfigurationFieldForApiOptions("apiProvider", "roo")
+													// Optionally trigger any auth flow here if needed, though Roo provider usually handles it internally or via a different flow
+												} else if (provider.authUrl) {
+													window.open(provider.authUrl)
+												}
+											}}
+											className="flex flex-col gap-1 p-3 border border-vscode-widget-border rounded hover:bg-vscode-list-hoverBackground text-left group">
+											<div className="flex items-center justify-between w-full">
+												<span className="font-medium">{provider.name}</span>
+												{provider.incentive && (
+													<span className="text-xs bg-vscode-badge-background text-vscode-badge-foreground px-1.5 py-0.5 rounded">
+														{provider.incentive}
+													</span>
+												)}
+											</div>
+											<span className="text-xs text-vscode-descriptionForeground">
+												{provider.description}
+											</span>
+										</button>
+									))}
+								</div>
+							) : null
 						})()}
 					</div>
+				</div>
 
-					<p className="text-sm font-medium mt-6 mb-3">{t("welcome:startCustom")}</p>
+				<div className="mt-2">
+					{/* Updated text to be more direct since we removed the "Or..." phrasing */}
+					<p className="text-sm font-medium mb-3">{t("welcome:chooseProvider")}</p>
 					<ApiOptions
 						fromWelcomeView
 						apiConfiguration={apiConfiguration || {}}
@@ -202,7 +165,6 @@ const WelcomeView = () => {
 					<Button onClick={handleSubmit} variant="primary">
 						{t("welcome:start")}
 					</Button>
-					{errorMessage && <div className="text-vscode-errorForeground">{errorMessage}</div>}
 				</div>
 			</div>
 		</Tab>
@@ -210,3 +172,4 @@ const WelcomeView = () => {
 }
 
 export default WelcomeView
+

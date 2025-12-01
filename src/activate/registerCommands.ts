@@ -12,7 +12,6 @@ import { focusPanel } from "../utils/focusPanel"
 
 import { registerHumanRelayCallback, unregisterHumanRelayCallback, handleHumanRelayResponse } from "./humanRelay"
 import { handleNewTask } from "./handleTask"
-import { CodeIndexManager } from "../services/code-index/manager"
 import { importSettingsWithFeedback } from "../core/config/importExport"
 import { MdmService } from "../services/mdm/MdmService"
 import { t } from "../i18n"
@@ -23,7 +22,7 @@ import { t } from "../i18n"
 export function getVisibleProviderOrLog(outputChannel: vscode.OutputChannel): ClineProvider | undefined {
 	const visibleProvider = ClineProvider.getVisibleInstance()
 	if (!visibleProvider) {
-		outputChannel.appendLine("Cannot find any visible Roo Code instances.")
+		outputChannel.appendLine("Cannot find any visible RooWriter instances.")
 		return undefined
 	}
 	return visibleProvider
@@ -258,7 +257,6 @@ export const openClineInNewTab = async ({ context, outputChannel }: Omit<Registe
 	// don't need to use that event).
 	// https://github.com/microsoft/vscode-extension-samples/blob/main/webview-sample/src/extension.ts
 	const contextProxy = await ContextProxy.getInstance(context)
-	const codeIndexManager = CodeIndexManager.getInstance(context)
 
 	// Get the existing MDM service instance to ensure consistent policy enforcement
 	let mdmService: MdmService | undefined
@@ -282,7 +280,7 @@ export const openClineInNewTab = async ({ context, outputChannel }: Omit<Registe
 
 	const targetCol = hasVisibleEditors ? Math.max(lastCol + 1, 1) : vscode.ViewColumn.Two
 
-	const newPanel = vscode.window.createWebviewPanel(ClineProvider.tabPanelId, "Roo Code", targetCol, {
+	const newPanel = vscode.window.createWebviewPanel(ClineProvider.tabPanelId, "RooWriter", targetCol, {
 		enableScripts: true,
 		retainContextWhenHidden: true,
 		localResourceRoots: [context.extensionUri],
@@ -327,3 +325,4 @@ export const openClineInNewTab = async ({ context, outputChannel }: Omit<Registe
 
 	return tabProvider
 }
+

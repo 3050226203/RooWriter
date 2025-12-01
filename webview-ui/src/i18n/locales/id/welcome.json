@@ -1,6 +1,6 @@
 {
-	"greeting": "Selamat datang di Roo Code!",
-	"introduction": "Dengan berbagai Mode bawaan dan dapat diperluas, Roo Code memungkinkan Anda merencanakan, merancang, coding, debug, dan meningkatkan produktivitas seperti yang belum pernah terjadi sebelumnya.",
+	"greeting": "Selamat datang di RooWriter!",
+	"introduction": "Dengan berbagai Mode bawaan dan dapat diperluas, RooWriter memungkinkan Anda merencanakan, merancang, coding, debug, dan meningkatkan produktivitas seperti yang belum pernah terjadi sebelumnya.",
 	"notice": "Untuk memulai, ekstensi ini memerlukan provider API.",
 	"start": "Ayo mulai!",
 	"routers": {
@@ -18,7 +18,7 @@
 	},
 	"chooseProvider": "Untuk memulai, kamu memerlukan penyedia LLM:",
 	"providerSignup": {
-		"rooCloudProvider": "Penyedia Roo Code Cloud",
+		"rooCloudProvider": "Penyedia RooWriter Cloud",
 		"rooCloudDescription": "Cara termudah untuk menggunakan Roo. Campuran model gratis dan berbayar yang dikurasi dengan biaya rendah",
 		"learnMore": "pelajari lebih lanjut",
 		"useAnotherProvider": "Gunakan penyedia lain",
@@ -26,7 +26,7 @@
 		"getStarted": "Mulai"
 	},
 	"waitingForCloud": {
-		"heading": "Membawamu ke Roo Code Cloud...",
+		"heading": "Membawamu ke RooWriter Cloud...",
 		"description": "Selesaikan pendaftaran di browser dan kamu akan secara otomatis kembali ke sini.",
 		"noPrompt": "Jika kamu tidak diminta untuk membuka URL, <clickHere>klik di sini</clickHere>.",
 		"havingTrouble": "Jika kamu telah menyelesaikan pendaftaran tetapi mengalami masalah, <clickHere>klik di sini</clickHere>.",
@@ -36,8 +36,9 @@
 	"startRouter": "Kami merekomendasikan menggunakan Router LLM:",
 	"startCustom": "Atau Anda dapat menggunakan API key Anda sendiri:",
 	"telemetry": {
-		"helpImprove": "Bantu Tingkatkan Roo Code",
-		"helpImproveMessage": "Roo Code mengumpulkan data kesalahan dan penggunaan untuk membantu kami memperbaiki bug dan meningkatkan ekstensi. Telemetri ini tidak mengumpulkan kode, prompt, atau informasi pribadi. Anda dapat menonaktifkan ini di <settingsLink>pengaturan</settingsLink>."
+		"helpImprove": "Bantu Tingkatkan RooWriter",
+		"helpImproveMessage": "RooWriter mengumpulkan data kesalahan dan penggunaan untuk membantu kami memperbaiki bug dan meningkatkan ekstensi. Telemetri ini tidak mengumpulkan kode, prompt, atau informasi pribadi. Anda dapat menonaktifkan ini di <settingsLink>pengaturan</settingsLink>."
 	},
 	"importSettings": "Impor Pengaturan"
 }
+

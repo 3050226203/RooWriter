@@ -1,17 +1,7 @@
 import { ToolProtocol, TOOL_PROTOCOL } from "@roo-code/types"
-import { CodeIndexManager } from "../../../services/code-index/manager"
 import { isNativeProtocol } from "@roo-code/types"
 
-export function getToolUseGuidelinesSection(
-	codeIndexManager?: CodeIndexManager,
-	protocol: ToolProtocol = TOOL_PROTOCOL.XML,
-): string {
-	const isCodebaseSearchAvailable =
-		codeIndexManager &&
-		codeIndexManager.isFeatureEnabled &&
-		codeIndexManager.isFeatureConfigured &&
-		codeIndexManager.isInitialized
-
+export function getToolUseGuidelinesSection(protocol: ToolProtocol = TOOL_PROTOCOL.XML): string {
 	// Build guidelines array with automatic numbering
 	let itemNumber = 1
 	const guidelinesList: string[] = []

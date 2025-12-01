@@ -1,7 +1,6 @@
 import { z } from "zod"
 
 import { modelInfoSchema, reasoningEffortSettingSchema, verbosityLevelsSchema, serviceTierSchema } from "./model.js"
-import { codebaseIndexProviderSchema } from "./codebase-index.js"
 import {
 	anthropicModels,
 	basetenModels,
@@ -87,7 +86,7 @@ export const isInternalProvider = (key: string): key is InternalProvider =>
 /**
  * CustomProvider
  *
- * Custom providers are completely configurable within Roo Code settings.
+ * Custom providers are completely configurable within RooWriter settings.
  */
 
 export const customProviders = ["openai"] as const
@@ -516,7 +515,6 @@ export const providerSettingsSchema = z.object({
 	...qwenCodeSchema.shape,
 	...rooSchema.shape,
 	...vercelAiGatewaySchema.shape,
-	...codebaseIndexProviderSchema.shape,
 })
 
 export type ProviderSettings = z.infer<typeof providerSettingsSchema>
@@ -706,7 +704,7 @@ export const MODELS_BY_PROVIDER: Record<
 		models: Object.keys(openAiNativeModels),
 	},
 	"qwen-code": { id: "qwen-code", label: "Qwen Code", models: Object.keys(qwenCodeModels) },
-	roo: { id: "roo", label: "Roo Code Cloud", models: [] },
+	roo: { id: "roo", label: "RooWriter Cloud", models: [] },
 	sambanova: {
 		id: "sambanova",
 		label: "SambaNova",
@@ -741,3 +739,4 @@ export const MODELS_BY_PROVIDER: Record<
 	lmstudio: { id: "lmstudio", label: "LM Studio", models: [] },
 	ollama: { id: "ollama", label: "Ollama", models: [] },
 }
+

@@ -1,23 +1,23 @@
 {
 	"extension": {
-		"name": "Roo Code",
-		"description": "您編輯器中的完整 AI 開發團隊。"
+		"name": "RooWriter",
+		"description": "您編輯器中的完整 AI 開發團隊�?
 	},
 	"number_format": {
 		"thousand_suffix": "k",
 		"million_suffix": "m",
 		"billion_suffix": "b"
 	},
-	"welcome": "歡迎，{{name}}！您有 {{count}} 條通知。",
+	"welcome": "歡迎，{{name}}！您�?{{count}} 條通知�?,
 	"items": {
 		"zero": "沒有項目",
-		"one": "1 個項目",
-		"other": "{{count}}個項目"
+		"one": "1 個項�?,
+		"other": "{{count}}個項�?
 	},
 	"confirmation": {
-		"reset_state": "您確定要重設擴充套件中的所有狀態和金鑰儲存嗎？此操作無法復原。",
-		"delete_config_profile": "您確定要刪除此設定檔案嗎？",
-		"delete_custom_mode_with_rules": "您確定要刪除此 {scope} 模式嗎？\n\n這也將刪除位於以下位置的關聯規則資料夾：\n{rulesFolderPath}"
+		"reset_state": "您確定要重設擴充套件中的所有狀態和金鑰儲存嗎？此操作無法復原�?,
+		"delete_config_profile": "您確定要刪除此設定檔案嗎�?,
+		"delete_custom_mode_with_rules": "您確定要刪除�?{scope} 模式嗎？\n\n這也將刪除位於以下位置的關聯規則資料夾：\n{rulesFolderPath}"
 	},
 	"errors": {
 		"invalid_data_uri": "資料 URI 格式無效",
@@ -25,18 +25,18 @@
 		"error_saving_image": "儲存圖片時發生錯誤：{{errorMessage}}",
 		"error_opening_image": "開啟圖片時發生錯誤：{{error}}",
 		"could_not_open_file": "無法開啟檔案：{{errorMessage}}",
-		"could_not_open_file_generic": "無法開啟檔案！",
-		"checkpoint_timeout": "嘗試恢復檢查點時超時。",
-		"checkpoint_failed": "恢復檢查點失敗。",
-		"git_not_installed": "存檔點功能需要 Git。請安裝 Git 以啟用存檔點。",
-		"checkpoint_no_first": "沒有第一個存檔點可供比較。",
-		"checkpoint_no_previous": "沒有上一個存檔點可供比較。",
-		"checkpoint_no_changes": "未發現任何變更。",
-		"checkpoint_diff_with_next": "與下一個存檔點比較的變更",
-		"checkpoint_diff_since_first": "自第一個存檔點以來的變更",
-		"checkpoint_diff_to_current": "對目前工作區的變更",
-		"nested_git_repos_warning": "存檔點已停用，因為在 {{path}} 偵測到巢狀的 git 儲存庫。要使用存檔點，請移除或重新配置此巢狀的 git 儲存庫。",
-		"no_workspace": "請先開啟專案資料夾",
+		"could_not_open_file_generic": "無法開啟檔案�?,
+		"checkpoint_timeout": "嘗試恢復檢查點時超時�?,
+		"checkpoint_failed": "恢復檢查點失敗�?,
+		"git_not_installed": "存檔點功能需�?Git。請安裝 Git 以啟用存檔點�?,
+		"checkpoint_no_first": "沒有第一個存檔點可供比較�?,
+		"checkpoint_no_previous": "沒有上一個存檔點可供比較�?,
+		"checkpoint_no_changes": "未發現任何變更�?,
+		"checkpoint_diff_with_next": "與下一個存檔點比較的變�?,
+		"checkpoint_diff_since_first": "自第一個存檔點以來的變�?,
+		"checkpoint_diff_to_current": "對目前工作區的變�?,
+		"nested_git_repos_warning": "存檔點已停用，因為在 {{path}} 偵測到巢狀�?git 儲存庫。要使用存檔點，請移除或重新配置此巢狀�?git 儲存庫�?,
+		"no_workspace": "請先開啟專案資料�?,
 		"update_support_prompt": "更新支援訊息失敗",
 		"reset_support_prompt": "重設支援訊息失敗",
 		"enhance_prompt": "增強訊息失敗",
@@ -48,111 +48,111 @@
 		"load_api_config": "載入 API 設定失敗",
 		"delete_api_config": "刪除 API 設定失敗",
 		"list_api_config": "取得 API 設定列表失敗",
-		"update_server_timeout": "更新伺服器超時設定失敗",
-		"hmr_not_running": "本機開發伺服器沒有執行，HMR 將不起作用。請在啟動擴充套件前執行'npm run dev'以啟用 HMR。",
-		"retrieve_current_mode": "從狀態中檢索目前模式失敗。",
+		"update_server_timeout": "更新伺服器超時設定失�?,
+		"hmr_not_running": "本機開發伺服器沒有執行，HMR 將不起作用。請在啟動擴充套件前執行'npm run dev'以啟�?HMR�?,
+		"retrieve_current_mode": "從狀態中檢索目前模式失敗�?,
 		"failed_delete_repo": "刪除關聯的影子倉庫或分支失敗：{{error}}",
 		"failed_remove_directory": "刪除工作目錄失敗：{{error}}",
 		"custom_storage_path_unusable": "自訂儲存路徑 \"{{path}}\" 無法使用，將使用預設路徑",
 		"cannot_access_path": "無法存取路徑 {{path}}：{{error}}",
-		"settings_import_failed": "設定匯入失敗：{{error}}。",
-		"mistake_limit_guidance": "這可能表明模型思維過程失敗或無法正確使用工具，可透過使用者指導來緩解（例如「嘗試將工作分解為更小的步驟」）。",
+		"settings_import_failed": "設定匯入失敗：{{error}}�?,
+		"mistake_limit_guidance": "這可能表明模型思維過程失敗或無法正確使用工具，可透過使用者指導來緩解（例如「嘗試將工作分解為更小的步驟」）�?,
 		"violated_organization_allowlist": "執行工作失敗：目前設定檔與您的組織設定不相容",
-		"condense_failed": "壓縮上下文失敗",
-		"condense_not_enough_messages": "沒有足夠的訊息來壓縮上下文",
-		"condensed_recently": "上下文最近已壓縮；跳過此次嘗試",
+		"condense_failed": "壓縮上下文失�?,
+		"condense_not_enough_messages": "沒有足夠的訊息來壓縮上下�?,
+		"condensed_recently": "上下文最近已壓縮；跳過此次嘗�?,
 		"condense_handler_invalid": "壓縮上下文的 API 處理程式無效",
-		"condense_context_grew": "壓縮過程中上下文大小增加；跳過此次嘗試",
-		"url_timeout": "網站載入超時。這可能是由於網路連線緩慢、網站負載過重或暫時無法使用。你可以稍後重試或檢查 URL 是否正確。",
-		"url_not_found": "找不到網站位址。請檢查 URL 是否正確並重試。",
-		"no_internet": "無網路連線。請檢查網路連線並重試。",
-		"url_forbidden": "存取此網站被禁止。該網站可能封鎖自動存取或需要身分驗證。",
-		"url_page_not_found": "找不到頁面。請檢查 URL 是否正確。",
-		"url_request_aborted": "取得 URL 的請求被中止。如果網站封鎖自動存取、需要身分驗證或存在網路問題，就可能發生這種情況。請重試或檢查 URL 是否可以在一般瀏覽器中存取。",
+		"condense_context_grew": "壓縮過程中上下文大小增加；跳過此次嘗�?,
+		"url_timeout": "網站載入超時。這可能是由於網路連線緩慢、網站負載過重或暫時無法使用。你可以稍後重試或檢�?URL 是否正確�?,
+		"url_not_found": "找不到網站位址。請檢查 URL 是否正確並重試�?,
+		"no_internet": "無網路連線。請檢查網路連線並重試�?,
+		"url_forbidden": "存取此網站被禁止。該網站可能封鎖自動存取或需要身分驗證�?,
+		"url_page_not_found": "找不到頁面。請檢查 URL 是否正確�?,
+		"url_request_aborted": "取得 URL 的請求被中止。如果網站封鎖自動存取、需要身分驗證或存在網路問題，就可能發生這種情況。請重試或檢�?URL 是否可以在一般瀏覽器中存取�?,
 		"url_fetch_failed": "取得 URL 內容失敗：{{error}}",
 		"url_fetch_error_with_url": "取得 {{url}} 內容時發生錯誤：{{error}}",
 		"command_timeout": "命令執行超時，{{seconds}} 秒後",
-		"share_task_failed": "分享工作失敗。請重試。",
+		"share_task_failed": "分享工作失敗。請重試�?,
 		"share_no_active_task": "沒有活躍的工作可分享",
-		"share_auth_required": "需要身份驗證。請登入以分享工作。",
-		"share_not_enabled": "此組織未啟用工作分享功能。",
-		"share_task_not_found": "未找到工作或存取被拒絕。",
-		"delete_rules_folder_failed": "刪除規則資料夾失敗: {{rulesFolderPath}}。錯誤: {{error}}",
-		"command_not_found": "找不到指令 '{{name}}'",
+		"share_auth_required": "需要身份驗證。請登入以分享工作�?,
+		"share_not_enabled": "此組織未啟用工作分享功能�?,
+		"share_task_not_found": "未找到工作或存取被拒絕�?,
+		"delete_rules_folder_failed": "刪除規則資料夾失�? {{rulesFolderPath}}。錯�? {{error}}",
+		"command_not_found": "找不到指�?'{{name}}'",
 		"open_command_file": "開啟指令檔案失敗",
 		"delete_command": "刪除指令失敗",
-		"no_workspace_for_project_command": "找不到專案指令的工作區資料夾",
-		"command_already_exists": "指令 \"{{commandName}}\" 已存在",
+		"no_workspace_for_project_command": "找不到專案指令的工作區資料�?,
+		"command_already_exists": "指令 \"{{commandName}}\" 已存�?,
 		"create_command_failed": "建立指令失敗",
-		"command_template_content": "---\ndescription: \"此指令功能的簡要描述\"\n---\n\n這是一個新的斜線指令。編輯此檔案以自訂指令行為。",
+		"command_template_content": "---\ndescription: \"此指令功能的簡要描述\"\n---\n\n這是一個新的斜線指令。編輯此檔案以自訂指令行為�?,
 		"claudeCode": {
-			"processExited": "Claude Code 程序退出，退出碼：{{exitCode}}。",
+			"processExited": "Claude Code 程序退出，退出碼：{{exitCode}}�?,
 			"errorOutput": "錯誤輸出：{{output}}",
 			"processExitedWithError": "Claude Code 程序退出，退出碼：{{exitCode}}。錯誤輸出：{{output}}",
 			"stoppedWithReason": "Claude Code 停止，原因：{{reason}}",
-			"apiKeyModelPlanMismatch": "API 金鑰和訂閱方案允許不同的模型。請確保所選模型包含在您的方案中。",
-			"notFound": "找不到 Claude Code 可執行檔案 '{{claudePath}}'。\n\n請安裝 Claude Code CLI：\n1. 造訪 {{installationUrl}} 下載 Claude Code\n2. 依照作業系統的安裝說明進行操作\n3. 確保 'claude' 指令在 PATH 中可用\n4. 或者在 Roo 設定中的 'Claude Code 路徑' 下設定自訂路徑\n\n原始錯誤：{{originalError}}"
+			"apiKeyModelPlanMismatch": "API 金鑰和訂閱方案允許不同的模型。請確保所選模型包含在您的方案中�?,
+			"notFound": "找不�?Claude Code 可執行檔�?'{{claudePath}}'。\n\n請安�?Claude Code CLI：\n1. 造訪 {{installationUrl}} 下載 Claude Code\n2. 依照作業系統的安裝說明進行操作\n3. 確保 'claude' 指令�?PATH 中可用\n4. 或者在 Roo 設定中的 'Claude Code 路徑' 下設定自訂路徑\n\n原始錯誤：{{originalError}}"
 		},
 		"message": {
 			"no_active_task_to_delete": "沒有可刪除訊息的活躍工作",
 			"invalid_timestamp_for_deletion": "刪除操作的訊息時間戳無效",
 			"cannot_delete_missing_timestamp": "無法刪除訊息：缺少時間戳",
 			"cannot_delete_invalid_timestamp": "無法刪除訊息：時間戳無效",
-			"message_not_found": "未找到時間戳為 {{messageTs}} 的訊息",
+			"message_not_found": "未找到時間戳�?{{messageTs}} 的訊�?,
 			"error_deleting_message": "刪除訊息時出錯：{{error}}",
 			"error_editing_message": "編輯訊息時出錯：{{error}}"
 		},
 		"gemini": {
 			"generate_stream": "Gemini 產生內容串流錯誤：{{error}}",
 			"generate_complete_prompt": "Gemini 完成錯誤：{{error}}",
-			"sources": "來源："
+			"sources": "來源�?
 		},
 		"cerebras": {
-			"authenticationFailed": "Cerebras API 驗證失敗。請檢查您的 API 金鑰是否有效且未過期。",
-			"accessForbidden": "Cerebras API 存取被拒絕。您的 API 金鑰可能無法存取所請求的模型或功能。",
-			"rateLimitExceeded": "Cerebras API 速率限制已超出。請稍候再發出另一個請求。",
-			"serverError": "Cerebras API 伺服器錯誤 ({{status}})。請稍後重試。",
+			"authenticationFailed": "Cerebras API 驗證失敗。請檢查您的 API 金鑰是否有效且未過期�?,
+			"accessForbidden": "Cerebras API 存取被拒絕。您�?API 金鑰可能無法存取所請求的模型或功能�?,
+			"rateLimitExceeded": "Cerebras API 速率限制已超出。請稍候再發出另一個請求�?,
+			"serverError": "Cerebras API 伺服器錯�?({{status}})。請稍後重試�?,
 			"genericError": "Cerebras API 錯誤 ({{status}})：{{message}}",
 			"noResponseBody": "Cerebras API 錯誤：無回應主體",
 			"completionError": "Cerebras 完成錯誤：{{error}}"
 		},
 		"roo": {
-			"authenticationRequired": "Roo 提供者需要雲端認證。請登入 Roo Code Cloud。"
+			"authenticationRequired": "Roo 提供者需要雲端認證。請登入 RooWriter Cloud�?
 		},
 		"api": {
-			"invalidKeyInvalidChars": "API 金鑰包含無效字元。"
+			"invalidKeyInvalidChars": "API 金鑰包含無效字元�?
 		},
 		"manual_url_empty": "請輸入有效的回呼 URL",
-		"manual_url_no_query": "無效的回呼 URL：缺少查詢參數",
-		"manual_url_missing_params": "無效的回呼 URL：缺少必要參數（code 和 state）",
+		"manual_url_no_query": "無效的回�?URL：缺少查詢參�?,
+		"manual_url_missing_params": "無效的回�?URL：缺少必要參數（code �?state�?,
 		"manual_url_auth_failed": "手動 URL 身份驗證失敗",
 		"manual_url_auth_error": "身份驗證失敗",
 		"mode_import_failed": "匯入模式失敗：{{error}}"
 	},
 	"warnings": {
-		"no_terminal_content": "沒有選擇終端機內容",
+		"no_terminal_content": "沒有選擇終端機內�?,
 		"missing_task_files": "此工作的檔案遺失。您想從工作列表中刪除它嗎？",
 		"auto_import_failed": "自動匯入 RooCode 設定失敗：{{error}}"
 	},
 	"info": {
-		"no_changes": "沒有找到更改。",
-		"clipboard_copy": "系統訊息已成功複製到剪貼簿",
-		"history_cleanup": "已從歷史記錄中清理{{count}}個缺少檔案的工作。",
+		"no_changes": "沒有找到更改�?,
+		"clipboard_copy": "系統訊息已成功複製到剪貼�?,
+		"history_cleanup": "已從歷史記錄中清理{{count}}個缺少檔案的工作�?,
 		"custom_storage_path_set": "自訂儲存路徑已設定：{{path}}",
-		"default_storage_path": "已恢復使用預設儲存路徑",
-		"settings_imported": "設定已成功匯入。",
-		"auto_import_success": "已自動匯入 RooCode 設定：{{filename}}",
-		"share_link_copied": "分享連結已複製到剪貼簿",
-		"image_copied_to_clipboard": "圖片資料 URI 已複製到剪貼簿",
+		"default_storage_path": "已恢復使用預設儲存路�?,
+		"settings_imported": "設定已成功匯入�?,
+		"auto_import_success": "已自動匯�?RooCode 設定：{{filename}}",
+		"share_link_copied": "分享連結已複製到剪貼�?,
+		"image_copied_to_clipboard": "圖片資料 URI 已複製到剪貼�?,
 		"image_saved": "圖片已儲存至 {{path}}",
 		"organization_share_link_copied": "組織分享連結已複製到剪貼簿！",
 		"public_share_link_copied": "公開分享連結已複製到剪貼簿！",
-		"mode_exported": "模式 '{{mode}}' 已成功匯出",
-		"mode_imported": "模式已成功匯入"
+		"mode_exported": "模式 '{{mode}}' 已成功匯�?,
+		"mode_imported": "模式已成功匯�?
 	},
 	"answers": {
-		"yes": "是",
-		"no": "否",
+		"yes": "�?,
+		"no": "�?,
 		"remove": "刪除",
 		"keep": "保留"
 	},
@@ -162,23 +162,23 @@
 		"learn_more": "了解更多"
 	},
 	"tasks": {
-		"canceled": "工作錯誤：它已被使用者停止並取消。",
-		"deleted": "工作失敗：它已被使用者停止並刪除。",
-		"incomplete": "工作 #{{taskNumber}} (未完成)",
-		"no_messages": "工作 #{{taskNumber}} (無訊息)"
+		"canceled": "工作錯誤：它已被使用者停止並取消�?,
+		"deleted": "工作失敗：它已被使用者停止並刪除�?,
+		"incomplete": "工作 #{{taskNumber}} (未完�?",
+		"no_messages": "工作 #{{taskNumber}} (無訊�?"
 	},
 	"interruption": {
-		"responseInterruptedByUser": "回應被使用者中斷",
-		"responseInterruptedByApiError": "回應被 API 錯誤中斷"
+		"responseInterruptedByUser": "回應被使用者中�?,
+		"responseInterruptedByApiError": "回應�?API 錯誤中斷"
 	},
 	"storage": {
 		"prompt_custom_path": "輸入自訂會話歷史儲存路徑，留空以使用預設位置",
 		"path_placeholder": "D:\\RooCodeStorage",
-		"enter_absolute_path": "請輸入絕對路徑（例如 D:\\RooCodeStorage 或 /home/user/storage）",
+		"enter_absolute_path": "請輸入絕對路徑（例如 D:\\RooCodeStorage �?/home/user/storage�?,
 		"enter_valid_path": "請輸入有效的路徑"
 	},
 	"input": {
-		"task_prompt": "讓 Roo 做什麼？",
+		"task_prompt": "�?Roo 做什麼？",
 		"task_placeholder": "在這裡輸入工作"
 	},
 	"settings": {
@@ -187,22 +187,22 @@
 			"getGroqApiKey": "取得 Groq API 金鑰",
 			"claudeCode": {
 				"pathLabel": "Claude Code 路徑",
-				"description": "Claude Code CLI 的選用路徑。如果未設定，預設為 'claude'。",
+				"description": "Claude Code CLI 的選用路徑。如果未設定，預設為 'claude'�?,
 				"placeholder": "預設: claude"
 			}
 		}
 	},
 	"customModes": {
 		"errors": {
-			"yamlParseError": ".roomodes 檔案第 {{line}} 行 YAML 格式無效。請檢查：\n• 正確的縮排（使用空格，不要使用定位字元）\n• 匹配的引號和括號\n• 有效的 YAML 語法",
+			"yamlParseError": ".roomodes 檔案�?{{line}} �?YAML 格式無效。請檢查：\n�?正確的縮排（使用空格，不要使用定位字元）\n�?匹配的引號和括號\n�?有效�?YAML 語法",
 			"schemaValidationError": ".roomodes 中自訂模式格式無效：\n{{issues}}",
-			"invalidFormat": "自訂模式格式無效。請確保你的設定遵循正確的 YAML 格式。",
+			"invalidFormat": "自訂模式格式無效。請確保你的設定遵循正確�?YAML 格式�?,
 			"updateFailed": "更新自訂模式失敗：{{error}}",
 			"deleteFailed": "刪除自訂模式失敗：{{error}}",
 			"resetFailed": "重設自訂模式失敗：{{error}}",
 			"modeNotFound": "寫入錯誤：未找到模式",
-			"noWorkspaceForProject": "未找到專案特定模式的工作區資料夾",
-			"rulesCleanupFailed": "模式已成功刪除，但無法刪除位於 {{rulesFolderPath}} 的規則資料夾。您可能需要手動刪除。"
+			"noWorkspaceForProject": "未找到專案特定模式的工作區資料�?,
+			"rulesCleanupFailed": "模式已成功刪除，但無法刪除位�?{{rulesFolderPath}} 的規則資料夾。您可能需要手動刪除�?
 		},
 		"scope": {
 			"project": "專案",
@@ -211,29 +211,29 @@
 	},
 	"marketplace": {
 		"mode": {
-			"rulesCleanupFailed": "模式已成功移除，但無法刪除位於 {{rulesFolderPath}} 的規則資料夾。您可能需要手動刪除。"
+			"rulesCleanupFailed": "模式已成功移除，但無法刪除位�?{{rulesFolderPath}} 的規則資料夾。您可能需要手動刪除�?
 		}
 	},
 	"mdm": {
 		"errors": {
-			"cloud_auth_required": "您的組織需要 Roo Code Cloud 身份驗證。請登入以繼續。",
-			"organization_mismatch": "您必須使用組織的 Roo Code Cloud 帳戶進行身份驗證。",
+			"cloud_auth_required": "您的組織需�?RooWriter Cloud 身份驗證。請登入以繼續�?,
+			"organization_mismatch": "您必須使用組織的 RooWriter Cloud 帳戶進行身份驗證�?,
 			"manual_url_empty": "請輸入有效的回呼 URL",
-			"manual_url_no_query": "無效的回呼 URL：缺少查詢參數",
-			"manual_url_missing_params": "無效的回呼 URL：缺少必要參數（code 和 state）",
+			"manual_url_no_query": "無效的回�?URL：缺少查詢參�?,
+			"manual_url_missing_params": "無效的回�?URL：缺少必要參數（code �?state�?,
 			"manual_url_auth_failed": "手動 URL 身份驗證失敗",
 			"manual_url_auth_error": "身份驗證失敗",
-			"verification_failed": "無法驗證組織身份驗證。"
+			"verification_failed": "無法驗證組織身份驗證�?
 		},
 		"info": {
-			"organization_requires_auth": "您的組織需要身份驗證。"
+			"organization_requires_auth": "您的組織需要身份驗證�?
 		}
 	},
 	"prompts": {
 		"deleteMode": {
 			"title": "刪除自訂模式",
-			"description": "您確定要刪除此 {{scope}} 模式嗎？這也將刪除位於 {{rulesFolderPath}} 的關聯規則資料夾",
-			"descriptionNoRules": "您確定要刪除此自訂模式嗎？",
+			"description": "您確定要刪除�?{{scope}} 模式嗎？這也將刪除位�?{{rulesFolderPath}} 的關聯規則資料夾",
+			"descriptionNoRules": "您確定要刪除此自訂模式嗎�?,
 			"confirm": "刪除"
 		}
 	},
@@ -247,3 +247,4 @@
 		"url": "https://docs.roocode.com"
 	}
 }
+

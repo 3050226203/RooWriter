@@ -26,7 +26,6 @@ import { ClineProvider } from "./core/webview/ClineProvider"
 import { DIFF_VIEW_URI_SCHEME } from "./integrations/editor/DiffViewProvider"
 import { TerminalRegistry } from "./integrations/terminal/TerminalRegistry"
 import { McpServerManager } from "./services/mcp/McpServerManager"
-import { CodeIndexManager } from "./services/code-index/manager"
 import { MdmService } from "./services/mdm/MdmService"
 import { migrateSettings } from "./utils/migrateSettings"
 import { autoImportSettings } from "./utils/autoImportSettings"
@@ -100,33 +99,10 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	const contextProxy = await ContextProxy.getInstance(context)
 
-	// Initialize code index managers for all workspace folders.
-	const codeIndexManagers: CodeIndexManager[] = []
-
-	if (vscode.workspace.workspaceFolders) {
-		for (const folder of vscode.workspace.workspaceFolders) {
-			const manager = CodeIndexManager.getInstance(context, folder.uri.fsPath)
-
-			if (manager) {
-				codeIndexManagers.push(manager)
-
-				// Initialize in background; do not block extension activation
-				void manager.initialize(contextProxy).catch((error) => {
-					const message = error instanceof Error ? error.message : String(error)
-					outputChannel.appendLine(
-						`[CodeIndexManager] Error during background CodeIndexManager configuration/indexing for ${folder.uri.fsPath}: ${message}`,
-					)
-				})
-
-				context.subscriptions.push(manager)
-			}
-		}
-	}
-
-	// Initialize the provider *before* the Roo Code Cloud service.
+	// Initialize the provider *before* the RooWriter Cloud service.
 	const provider = new ClineProvider(context, outputChannel, "sidebar", contextProxy, mdmService)
 
-	// Initialize Roo Code Cloud service.
+	// Initialize RooWriter Cloud service.
 	const postStateListener = () => ClineProvider.getVisibleInstance()?.postStateToWebview()
 
 	authStateChangedHandler = async (data: { state: AuthState; previousState: AuthState }) => {
@@ -414,3 +390,4 @@ export async function deactivate() {
 	TelemetryService.instance.shutdown()
 	TerminalRegistry.cleanup()
 }
+

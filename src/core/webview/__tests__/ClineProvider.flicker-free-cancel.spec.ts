@@ -84,9 +84,7 @@ vi.mock("@roo-code/cloud", () => ({
 	getRooCodeApiUrl: vi.fn().mockReturnValue("https://api.roo-code.com"),
 }))
 
-vi.mock("../../../shared/embeddingModels", () => ({
-	EMBEDDING_MODEL_PROFILES: [],
-}))
+
 
 describe("ClineProvider flicker-free cancel", () => {
 	let provider: ClineProvider

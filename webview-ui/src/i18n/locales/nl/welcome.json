@@ -1,6 +1,6 @@
 {
-	"greeting": "Welkom bij Roo Code!",
-	"introduction": "Met een reeks ingebouwde en uitbreidbare Modi laat Roo Code je plannen, ontwerpen, coderen, debuggen en je productiviteit verhogen als nooit tevoren.",
+	"greeting": "Welkom bij RooWriter!",
+	"introduction": "Met een reeks ingebouwde en uitbreidbare Modi laat RooWriter je plannen, ontwerpen, coderen, debuggen en je productiviteit verhogen als nooit tevoren.",
 	"notice": "Om te beginnen heeft deze extensie een API-provider nodig.",
 	"start": "Aan de slag!",
 	"routers": {
@@ -18,7 +18,7 @@
 	},
 	"chooseProvider": "Om te beginnen heb je een LLM-provider nodig:",
 	"providerSignup": {
-		"rooCloudProvider": "Roo Code Cloud Provider",
+		"rooCloudProvider": "RooWriter Cloud Provider",
 		"rooCloudDescription": "De eenvoudigste manier om Roo te gebruiken. Een samengestelde mix van gratis en betaalde modellen tegen lage kosten",
 		"learnMore": "meer informatie",
 		"useAnotherProvider": "Gebruik een andere provider",
@@ -26,7 +26,7 @@
 		"getStarted": "Beginnen"
 	},
 	"waitingForCloud": {
-		"heading": "We brengen je naar Roo Code Cloud...",
+		"heading": "We brengen je naar RooWriter Cloud...",
 		"description": "Voltooi de registratie in je browser en je keert automatisch hier terug.",
 		"noPrompt": "Als je niet wordt gevraagd een URL te openen, <clickHere>klik hier</clickHere>.",
 		"havingTrouble": "Als je de registratie hebt voltooid maar problemen hebt, <clickHere>klik hier</clickHere>.",
@@ -36,8 +36,9 @@
 	"startRouter": "We raden aan om een LLM-router te gebruiken:",
 	"startCustom": "Of je kunt je eigen API-sleutel gebruiken:",
 	"telemetry": {
-		"helpImprove": "Help Roo Code verbeteren",
-		"helpImproveMessage": "Roo Code verzamelt fout- en gebruiksgegevens om ons te helpen bugs op te lossen en de extensie te verbeteren. Deze telemetrie verzamelt geen code, prompts of persoonlijke informatie. Je kunt dit uitschakelen in de <settingsLink>instellingen</settingsLink>."
+		"helpImprove": "Help RooWriter verbeteren",
+		"helpImproveMessage": "RooWriter verzamelt fout- en gebruiksgegevens om ons te helpen bugs op te lossen en de extensie te verbeteren. Deze telemetrie verzamelt geen code, prompts of persoonlijke informatie. Je kunt dit uitschakelen in de <settingsLink>instellingen</settingsLink>."
 	},
 	"importSettings": "Instellingen importeren"
 }
+

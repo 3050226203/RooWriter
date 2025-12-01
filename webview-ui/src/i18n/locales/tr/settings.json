@@ -33,7 +33,7 @@
 		"ui": "UI",
 		"experimental": "Deneysel",
 		"language": "Dil",
-		"about": "Roo Code Hakkında"
+		"about": "RooWriter Hakkında"
 	},
 	"about": {
 		"bugReport": {
@@ -51,7 +51,7 @@
 		"contact": {
 			"label": "Bizimle konuşmanız mı gerekiyor? Yazın"
 		},
-		"community": "İpuçları mı istiyorsunuz yoksa sadece diğer Roo Code kullanıcılarıyla takılmak mı istiyorsunuz? <redditLink>reddit.com/r/RooCode</redditLink> veya <discordLink>discord.gg/roocode</discordLink>'a katılın",
+		"community": "İpuçları mı istiyorsunuz yoksa sadece diğer RooWriter kullanıcılarıyla takılmak mı istiyorsunuz? <redditLink>reddit.com/r/RooCode</redditLink> veya <discordLink>discord.gg/roocode</discordLink>'a katılın",
 		"contactAndCommunity": "İletişim ve Topluluk",
 		"manageSettings": "Ayarları Yönet"
 	},
@@ -414,7 +414,7 @@
 			"draftModelDesc": "Spekülatif kod çözmenin doğru çalışması için taslak model aynı model ailesinden olmalıdır.",
 			"selectDraftModel": "Taslak Model Seç",
 			"noModelsFound": "Taslak model bulunamadı. Lütfen LM Studio'nun Sunucu Modu etkinken çalıştığından emin olun.",
-			"description": "LM Studio, modelleri bilgisayarınızda yerel olarak çalıştırmanıza olanak tanır. Başlamak için <a>hızlı başlangıç kılavuzlarına</a> bakın. Bu uzantıyla kullanmak için LM Studio'nun <b>yerel sunucu</b> özelliğini de başlatmanız gerekecektir. <span>Not:</span> Roo Code karmaşık istemler kullanır ve Claude modelleriyle en iyi şekilde çalışır. Daha az yetenekli modeller beklendiği gibi çalışmayabilir."
+			"description": "LM Studio, modelleri bilgisayarınızda yerel olarak çalıştırmanıza olanak tanır. Başlamak için <a>hızlı başlangıç kılavuzlarına</a> bakın. Bu uzantıyla kullanmak için LM Studio'nun <b>yerel sunucu</b> özelliğini de başlatmanız gerekecektir. <span>Not:</span> RooWriter karmaşık istemler kullanır ve Claude modelleriyle en iyi şekilde çalışır. Daha az yetenekli modeller beklendiği gibi çalışmayabilir."
 		},
 		"ollama": {
 			"baseUrl": "Temel URL (İsteğe bağlı)",
@@ -424,7 +424,7 @@
 			"numCtx": "Bağlam Penceresi Boyutu (num_ctx)",
 			"numCtxHelp": "Modelin varsayılan bağlam penceresi boyutunu geçersiz kılar. Modelin Modelfile yapılandırmasını kullanmak için boş bırakın. Minimum değer 128'dir.",
 			"description": "Ollama, modelleri bilgisayarınızda yerel olarak çalıştırmanıza olanak tanır. Başlamak için hızlı başlangıç kılavuzlarına bakın.",
-			"warning": "Not: Roo Code karmaşık istemler kullanır ve Claude modelleriyle en iyi şekilde çalışır. Daha az yetenekli modeller beklendiği gibi çalışmayabilir."
+			"warning": "Not: RooWriter karmaşık istemler kullanır ve Claude modelleriyle en iyi şekilde çalışır. Daha az yetenekli modeller beklendiği gibi çalışmayabilir."
 		},
 		"unboundApiKey": "Unbound API Anahtarı",
 		"getUnboundApiKey": "Unbound API Anahtarı Al",
@@ -435,8 +435,8 @@
 			"instructions": "Kullanım sırasında bir iletişim kutusu açılacak ve mevcut mesaj otomatik olarak panoya kopyalanacaktır. Bunları web yapay zekalarına (ChatGPT veya Claude gibi) yapıştırmanız, ardından yapay zekanın yanıtını iletişim kutusuna kopyalayıp onay düğmesine tıklamanız gerekir."
 		},
 		"roo": {
-			"authenticatedMessage": "Roo Code Cloud hesabın üzerinden güvenli bir şekilde kimlik doğrulandı.",
-			"connectButton": "Roo Code Cloud'a Bağlan"
+			"authenticatedMessage": "RooWriter Cloud hesabın üzerinden güvenli bir şekilde kimlik doğrulandı.",
+			"connectButton": "RooWriter Cloud'a Bağlan"
 		},
 		"openRouter": {
 			"providerRouting": {
@@ -446,7 +446,7 @@
 			}
 		},
 		"customModel": {
-			"capabilities": "Özel OpenAI uyumlu modelinizin yeteneklerini ve fiyatlandırmasını yapılandırın. Model yeteneklerini belirtirken dikkatli olun, çünkü bunlar Roo Code'un performansını etkileyebilir.",
+			"capabilities": "Özel OpenAI uyumlu modelinizin yeteneklerini ve fiyatlandırmasını yapılandırın. Model yeteneklerini belirtirken dikkatli olun, çünkü bunlar RooWriter'un performansını etkileyebilir.",
 			"maxTokens": {
 				"label": "Maksimum Çıktı Token'ları",
 				"description": "Modelin bir yanıtta üretebileceği maksimum token sayısı. (Sunucunun maksimum token'ları ayarlamasına izin vermek için -1 belirtin.)"
@@ -812,7 +812,7 @@
 			"modelSelectionLabel": "Görüntü Üretim Modeli",
 			"modelSelectionDescription": "Görüntü üretimi için kullanılacak modeli seçin",
 			"warningMissingKey": "⚠️ Görüntü üretimi için OpenRouter API anahtarı gereklidir. Lütfen yukarıda yapılandırın.",
-			"successConfigured": "✓ Görüntü üretimi yapılandırılmış ve kullanıma hazır"
+			"successConfigured": "�?Görüntü üretimi yapılandırılmış ve kullanıma hazır"
 		},
 		"RUN_SLASH_COMMAND": {
 			"name": "Model tarafından başlatılan slash komutlarını etkinleştir",
@@ -855,7 +855,7 @@
 		}
 	},
 	"modelPicker": {
-		"automaticFetch": "Uzantı <serviceLink>{{serviceName}}</serviceLink> üzerinde bulunan mevcut modellerin en güncel listesini otomatik olarak alır. Hangi modeli seçeceğinizden emin değilseniz, Roo Code <defaultModelLink>{{defaultModelId}}</defaultModelLink> ile en iyi şekilde çalışır. Şu anda mevcut olan ücretsiz seçenekleri bulmak için \"free\" araması da yapabilirsiniz.",
+		"automaticFetch": "Uzantı <serviceLink>{{serviceName}}</serviceLink> üzerinde bulunan mevcut modellerin en güncel listesini otomatik olarak alır. Hangi modeli seçeceğinizden emin değilseniz, RooWriter <defaultModelLink>{{defaultModelId}}</defaultModelLink> ile en iyi şekilde çalışır. Şu anda mevcut olan ücretsiz seçenekleri bulmak için \"free\" araması da yapabilirsiniz.",
 		"label": "Model",
 		"searchPlaceholder": "Ara",
 		"noMatchFound": "Eşleşme bulunamadı",
@@ -865,7 +865,7 @@
 		"feedback": "Herhangi bir sorunuz veya geri bildiriminiz varsa, <githubLink>github.com/RooCodeInc/Roo-Code</githubLink> adresinde bir konu açmaktan veya <redditLink>reddit.com/r/RooCode</redditLink> ya da <discordLink>discord.gg/roocode</discordLink>'a katılmaktan çekinmeyin",
 		"telemetry": {
 			"label": "Anonim hata ve kullanım raporlamaya izin ver",
-			"description": "Anonim kullanım verileri ve hata raporları göndererek Roo Code'u geliştirmeye yardım edin. Bu telemetri kod, prompt veya kişisel bilgi toplamaz. Daha fazla ayrıntı için <privacyLink>gizlilik politikamıza</privacyLink> bakın. Bunu istediğiniz zaman kapatabilirsiniz."
+			"description": "Anonim kullanım verileri ve hata raporları göndererek RooWriter'u geliştirmeye yardım edin. Bu telemetri kod, prompt veya kişisel bilgi toplamaz. Daha fazla ayrıntı için <privacyLink>gizlilik politikamıza</privacyLink> bakın. Bunu istediğiniz zaman kapatabilirsiniz."
 		},
 		"settings": {
 			"import": "İçe Aktar",
@@ -954,3 +954,4 @@
 		}
 	}
 }
+

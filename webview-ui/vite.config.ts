@@ -63,7 +63,7 @@ export default defineConfig(({ mode }) => {
 		"process.env.VSCODE_TEXTMATE_DEBUG": JSON.stringify(process.env.VSCODE_TEXTMATE_DEBUG),
 		"process.env.PKG_NAME": JSON.stringify(pkg.name),
 		"process.env.PKG_VERSION": JSON.stringify(pkg.version),
-		"process.env.PKG_OUTPUT_CHANNEL": JSON.stringify("Roo-Code"),
+		"process.env.PKG_OUTPUT_CHANNEL": JSON.stringify("RooWriter"),
 		...(gitSha ? { "process.env.PKG_SHA": JSON.stringify(gitSha) } : {}),
 	}
 
@@ -90,6 +90,7 @@ export default defineConfig(({ mode }) => {
 				"@": resolve(__dirname, "./src"),
 				"@src": resolve(__dirname, "./src"),
 				"@roo": resolve(__dirname, "../src/shared"),
+				"styled-components": resolve(__dirname, "node_modules", "styled-components"),
 			},
 		},
 		build: {

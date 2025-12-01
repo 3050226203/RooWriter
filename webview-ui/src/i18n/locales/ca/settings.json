@@ -33,7 +33,7 @@
 		"ui": "UI",
 		"experimental": "Experimental",
 		"language": "Idioma",
-		"about": "Sobre Roo Code"
+		"about": "Sobre RooWriter"
 	},
 	"about": {
 		"bugReport": {
@@ -51,7 +51,7 @@
 		"contact": {
 			"label": "Necessites parlar amb nosaltres? Escriu"
 		},
-		"community": "Vols consells o simplement passar l'estona amb altres usuaris de Roo Code? Uneix-te a <redditLink>reddit.com/r/RooCode</redditLink> o <discordLink>discord.gg/roocode</discordLink>",
+		"community": "Vols consells o simplement passar l'estona amb altres usuaris de RooWriter? Uneix-te a <redditLink>reddit.com/r/RooCode</redditLink> o <discordLink>discord.gg/roocode</discordLink>",
 		"contactAndCommunity": "Contacte i Comunitat",
 		"manageSettings": "Gestionar Configuració"
 	},
@@ -414,7 +414,7 @@
 			"draftModelDesc": "El model d'esborrany ha de ser de la mateixa família de models perquè la descodificació especulativa funcioni correctament.",
 			"selectDraftModel": "Seleccionar model d'esborrany",
 			"noModelsFound": "No s'han trobat models d'esborrany. Assegureu-vos que LM Studio s'està executant amb el mode servidor habilitat.",
-			"description": "LM Studio permet executar models localment al vostre ordinador. Per a instruccions sobre com començar, consulteu la seva <a>Guia d'inici ràpid</a>. També necessitareu iniciar la funció de <b>Servidor Local</b> de LM Studio per utilitzar-la amb aquesta extensió. <span>Nota:</span> Roo Code utilitza prompts complexos i funciona millor amb models Claude. Els models menys capaços poden no funcionar com s'espera."
+			"description": "LM Studio permet executar models localment al vostre ordinador. Per a instruccions sobre com començar, consulteu la seva <a>Guia d'inici ràpid</a>. També necessitareu iniciar la funció de <b>Servidor Local</b> de LM Studio per utilitzar-la amb aquesta extensió. <span>Nota:</span> RooWriter utilitza prompts complexos i funciona millor amb models Claude. Els models menys capaços poden no funcionar com s'espera."
 		},
 		"ollama": {
 			"baseUrl": "URL base (opcional)",
@@ -424,7 +424,7 @@
 			"numCtx": "Mida de la finestra de context (num_ctx)",
 			"numCtxHelp": "Sobreescriu la mida de la finestra de context per defecte del model. Deixeu-ho en blanc per utilitzar la configuració del Modelfile del model. El valor mínim és 128.",
 			"description": "Ollama permet executar models localment al vostre ordinador. Per a instruccions sobre com començar, consulteu la Guia d'inici ràpid.",
-			"warning": "Nota: Roo Code utilitza prompts complexos i funciona millor amb models Claude. Els models menys capaços poden no funcionar com s'espera."
+			"warning": "Nota: RooWriter utilitza prompts complexos i funciona millor amb models Claude. Els models menys capaços poden no funcionar com s'espera."
 		},
 		"unboundApiKey": "Clau API d'Unbound",
 		"getUnboundApiKey": "Obtenir clau API d'Unbound",
@@ -435,8 +435,8 @@
 			"instructions": "Durant l'ús, apareixerà un diàleg i el missatge actual es copiarà automàticament al porta-retalls. Necessiteu enganxar-lo a les versions web d'IA (com ChatGPT o Claude), després copiar la resposta de l'IA de nou al diàleg i fer clic al botó de confirmació."
 		},
 		"roo": {
-			"authenticatedMessage": "Autenticat de forma segura a través del teu compte de Roo Code Cloud.",
-			"connectButton": "Connecta amb Roo Code Cloud"
+			"authenticatedMessage": "Autenticat de forma segura a través del teu compte de RooWriter Cloud.",
+			"connectButton": "Connecta amb RooWriter Cloud"
 		},
 		"openRouter": {
 			"providerRouting": {
@@ -446,7 +446,7 @@
 			}
 		},
 		"customModel": {
-			"capabilities": "Configureu les capacitats i preus per al vostre model personalitzat compatible amb OpenAI. Tingueu cura en especificar les capacitats del model, ja que poden afectar com funciona Roo Code.",
+			"capabilities": "Configureu les capacitats i preus per al vostre model personalitzat compatible amb OpenAI. Tingueu cura en especificar les capacitats del model, ja que poden afectar com funciona RooWriter.",
 			"maxTokens": {
 				"label": "Màxim de tokens de sortida",
 				"description": "El nombre màxim de tokens que el model pot generar en una resposta. (Establiu -1 per permetre que el servidor estableixi el màxim de tokens.)"
@@ -811,7 +811,7 @@
 			"modelSelectionLabel": "Model de generació d'imatges",
 			"modelSelectionDescription": "Selecciona el model per a la generació d'imatges",
 			"warningMissingKey": "⚠️ La clau API d'OpenRouter és necessària per a la generació d'imatges. Si us plau, configura-la a dalt.",
-			"successConfigured": "✓ La generació d'imatges està configurada i llesta per utilitzar"
+			"successConfigured": "�?La generació d'imatges està configurada i llesta per utilitzar"
 		},
 		"RUN_SLASH_COMMAND": {
 			"name": "Habilitar comandes de barra diagonal iniciades pel model",
@@ -854,7 +854,7 @@
 		}
 	},
 	"modelPicker": {
-		"automaticFetch": "L'extensió obté automàticament la llista més recent de models disponibles a <serviceLink>{{serviceName}}</serviceLink>. Si no esteu segur de quin model triar, Roo Code funciona millor amb <defaultModelLink>{{defaultModelId}}</defaultModelLink>. També podeu cercar \"free\" per a opcions gratuïtes actualment disponibles.",
+		"automaticFetch": "L'extensió obté automàticament la llista més recent de models disponibles a <serviceLink>{{serviceName}}</serviceLink>. Si no esteu segur de quin model triar, RooWriter funciona millor amb <defaultModelLink>{{defaultModelId}}</defaultModelLink>. També podeu cercar \"free\" per a opcions gratuïtes actualment disponibles.",
 		"label": "Model",
 		"searchPlaceholder": "Cerca",
 		"noMatchFound": "No s'ha trobat cap coincidència",
@@ -864,7 +864,7 @@
 		"feedback": "Si teniu qualsevol pregunta o comentari, no dubteu a obrir un issue a <githubLink>github.com/RooCodeInc/Roo-Code</githubLink> o unir-vos a <redditLink>reddit.com/r/RooCode</redditLink> o <discordLink>discord.gg/roocode</discordLink>",
 		"telemetry": {
 			"label": "Permetre informes anònims d'errors i ús",
-			"description": "Ajuda a millorar Roo Code enviant dades d'ús anònimes i informes d'error. Aquesta telemetria no recull codi, prompts o informació personal. Consulta la nostra <privacyLink>política de privacitat</privacyLink> per a més detalls. Pots desactivar-ho en qualsevol moment."
+			"description": "Ajuda a millorar RooWriter enviant dades d'ús anònimes i informes d'error. Aquesta telemetria no recull codi, prompts o informació personal. Consulta la nostra <privacyLink>política de privacitat</privacyLink> per a més detalls. Pots desactivar-ho en qualsevol moment."
 		},
 		"settings": {
 			"import": "Importar",
@@ -953,3 +953,4 @@
 		}
 	}
 }
+

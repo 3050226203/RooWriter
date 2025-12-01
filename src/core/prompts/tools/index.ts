@@ -22,11 +22,9 @@ import { getUseMcpToolDescription } from "./use-mcp-tool"
 import { getAccessMcpResourceDescription } from "./access-mcp-resource"
 import { getSwitchModeDescription } from "./switch-mode"
 import { getNewTaskDescription } from "./new-task"
-import { getCodebaseSearchDescription } from "./codebase-search"
 import { getUpdateTodoListDescription } from "./update-todo-list"
 import { getRunSlashCommandDescription } from "./run-slash-command"
 import { getGenerateImageDescription } from "./generate-image"
-import { CodeIndexManager } from "../../../services/code-index/manager"
 
 // Map of tool names to their description functions
 const toolDescriptionMap: Record<string, (args: ToolArgs) => string | undefined> = {
@@ -49,7 +47,6 @@ const toolDescriptionMap: Record<string, (args: ToolArgs) => string | undefined>
 	attempt_completion: (args) => getAttemptCompletionDescription(args),
 	use_mcp_tool: (args) => getUseMcpToolDescription(args),
 	access_mcp_resource: (args) => getAccessMcpResourceDescription(args),
-	codebase_search: (args) => getCodebaseSearchDescription(args),
 	switch_mode: () => getSwitchModeDescription(),
 	new_task: (args) => getNewTaskDescription(args),
 	insert_content: (args) => getInsertContentDescription(args),
@@ -64,7 +61,6 @@ export function getToolDescriptionsForMode(
 	mode: Mode,
 	cwd: string,
 	supportsComputerUse: boolean,
-	codeIndexManager?: CodeIndexManager,
 	diffStrategy?: DiffStrategy,
 	browserViewportSize?: string,
 	mcpHub?: McpHub,
@@ -128,15 +124,11 @@ export function getToolDescriptionsForMode(
 		tools.delete("apply_patch") // Custom tool in edit group
 		tools.delete("codebase_search")
 		tools.delete("list_code_definition_names")
+		tools.delete("run_slash_command") // Writers don't need slash commands typically
 	}
 
-	// Conditionally exclude codebase_search if feature is disabled or not configured
-	if (
-		!codeIndexManager ||
-		!(codeIndexManager.isFeatureEnabled && codeIndexManager.isFeatureConfigured && codeIndexManager.isInitialized)
-	) {
-		tools.delete("codebase_search")
-	}
+	// Always exclude codebase_search as CodeIndexManager is removed
+	tools.delete("codebase_search")
 
 	// Conditionally exclude update_todo_list if disabled in settings
 	if (settings?.todoListEnabled === false) {
@@ -188,7 +180,6 @@ export {
 	getAccessMcpResourceDescription,
 	getSwitchModeDescription,
 	getInsertContentDescription,
-	getCodebaseSearchDescription,
 	getRunSlashCommandDescription,
 	getGenerateImageDescription,
 }

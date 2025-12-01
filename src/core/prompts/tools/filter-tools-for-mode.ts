@@ -3,7 +3,6 @@ import type { ModeConfig, ToolName, ToolGroup, ModelInfo } from "@roo-code/types
 import { getModeBySlug, getToolsForMode, isToolAllowedForMode } from "../../../shared/modes"
 import { TOOL_GROUPS, ALWAYS_AVAILABLE_TOOLS } from "../../../shared/tools"
 import { defaultModeSlug } from "../../../shared/modes"
-import type { CodeIndexManager } from "../../../services/code-index/manager"
 import type { McpHub } from "../../../services/mcp/McpHub"
 
 /**
@@ -79,7 +78,6 @@ export function applyModelToolCustomization(
  * @param mode - Current mode slug
  * @param customModes - Custom mode configurations
  * @param experiments - Experiment flags
- * @param codeIndexManager - Code index manager for codebase_search feature check
  * @param settings - Additional settings for tool filtering (includes modelInfo for model-specific customization)
  * @param mcpHub - MCP hub for checking available resources
  * @returns Filtered array of tools allowed for the mode
@@ -89,7 +87,6 @@ export function filterNativeToolsForMode(
 	mode: string | undefined,
 	customModes: ModeConfig[] | undefined,
 	experiments: Record<string, boolean> | undefined,
-	codeIndexManager?: CodeIndexManager,
 	settings?: Record<string, any>,
 	mcpHub?: McpHub,
 ): OpenAI.Chat.ChatCompletionTool[] {
@@ -125,13 +122,8 @@ export function filterNativeToolsForMode(
 	const modelInfo = settings?.modelInfo as ModelInfo | undefined
 	allowedToolNames = applyModelToolCustomization(allowedToolNames, modeConfig, modelInfo)
 
-	// Conditionally exclude codebase_search if feature is disabled or not configured
-	if (
-		!codeIndexManager ||
-		!(codeIndexManager.isFeatureEnabled && codeIndexManager.isFeatureConfigured && codeIndexManager.isInitialized)
-	) {
-		allowedToolNames.delete("codebase_search")
-	}
+	// Always exclude codebase_search as CodeIndexManager is removed
+	allowedToolNames.delete("codebase_search")
 
 	// Conditionally exclude update_todo_list if disabled in settings
 	if (settings?.todoListEnabled === false) {
@@ -159,13 +151,40 @@ export function filterNativeToolsForMode(
 	}
 
 	// Filter native tools based on allowed tool names
-	return nativeTools.filter((tool) => {
+	const filteredTools = nativeTools.filter((tool) => {
 		// Handle both ChatCompletionTool and ChatCompletionCustomTool
 		if ("function" in tool && tool.function) {
 			return allowedToolNames.has(tool.function.name)
 		}
 		return false
 	})
+
+	// [RooWriter] CRITICAL OPTIMIZATION: Force removal of heavy/irrelevant tools in writing modes
+	// regardless of their group or always-available status.
+	const isWritingMode = ["writer", "editor", "researcher", "publisher"].includes(modeSlug)
+	if (isWritingMode) {
+		return filteredTools.filter((tool) => {
+			// Safety check for function property
+			if (!("function" in tool) || !tool.function) {
+				return false
+			}
+			const name = tool.function.name
+			// Remove code-centric and heavy tools
+			if (
+				name === "execute_command" ||
+				name === "apply_diff" ||
+				name === "apply_patch" ||
+				name === "codebase_search" ||
+				name === "list_code_definition_names" ||
+				name === "run_slash_command" // Writers don't need slash commands typically
+			) {
+				return false
+			}
+			return true
+		})
+	}
+
+	return filteredTools
 }
 
 /**
@@ -184,7 +203,6 @@ function hasAnyMcpResources(mcpHub: McpHub): boolean {
  * @param mode - Current mode slug
  * @param customModes - Custom mode configurations
  * @param experiments - Experiment flags
- * @param codeIndexManager - Code index manager for codebase_search feature check
  * @param settings - Additional settings for tool filtering
  * @returns true if the tool is allowed in the mode, false otherwise
  */
@@ -193,7 +211,6 @@ export function isToolAllowedInMode(
 	mode: string | undefined,
 	customModes: ModeConfig[] | undefined,
 	experiments: Record<string, boolean> | undefined,
-	codeIndexManager?: CodeIndexManager,
 	settings?: Record<string, any>,
 ): boolean {
 	const modeSlug = mode ?? defaultModeSlug
@@ -202,12 +219,7 @@ export function isToolAllowedInMode(
 	if (ALWAYS_AVAILABLE_TOOLS.includes(toolName)) {
 		// But still check for conditional exclusions
 		if (toolName === "codebase_search") {
-			return !!(
-				codeIndexManager &&
-				codeIndexManager.isFeatureEnabled &&
-				codeIndexManager.isFeatureConfigured &&
-				codeIndexManager.isInitialized
-			)
+			return false
 		}
 		if (toolName === "update_todo_list") {
 			return settings?.todoListEnabled !== false
@@ -238,7 +250,6 @@ export function isToolAllowedInMode(
  * @param mode - Current mode slug
  * @param customModes - Custom mode configurations
  * @param experiments - Experiment flags
- * @param codeIndexManager - Code index manager for codebase_search feature check
  * @param settings - Additional settings for tool filtering
  * @returns Array of tool names that are available from the group
  */
@@ -247,7 +258,6 @@ export function getAvailableToolsInGroup(
 	mode: string | undefined,
 	customModes: ModeConfig[] | undefined,
 	experiments: Record<string, boolean> | undefined,
-	codeIndexManager?: CodeIndexManager,
 	settings?: Record<string, any>,
 ): ToolName[] {
 	const toolGroup = TOOL_GROUPS[groupName]
@@ -256,7 +266,7 @@ export function getAvailableToolsInGroup(
 	}
 
 	return toolGroup.tools.filter((tool) =>
-		isToolAllowedInMode(tool as ToolName, mode, customModes, experiments, codeIndexManager, settings),
+		isToolAllowedInMode(tool as ToolName, mode, customModes, experiments, settings),
 	) as ToolName[]
 }
 

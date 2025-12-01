@@ -49,7 +49,16 @@ import { QueuedMessages } from "./QueuedMessages"
 import DismissibleUpsell from "../common/DismissibleUpsell"
 import { useCloudUpsell } from "@src/hooks/useCloudUpsell"
 import { Cloud } from "lucide-react"
-import { TemplateSelector, WritingTemplate } from "../writer/TemplateSelector"
+// import { TemplateSelector, WritingTemplate } from "../writer/TemplateSelector"
+
+// Define types locally since we removed the import source and aren't using it anyway
+// This is just to satisfy any lingering type checks in this file
+// interface WritingTemplate {
+// 	id: string
+// 	name: string
+// 	description: string
+// 	prompt: string
+// }
 
 export interface ChatViewProps {
 	isHidden: boolean
@@ -1363,19 +1372,19 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 		vscode.postMessage({ type: "condenseTaskContextRequest", text: taskId })
 	}
 
-// ... existing imports ...
-// import { TemplateSelector, WritingTemplate } from "../writer/TemplateSelector" // Removed duplicate import
+	// ... existing imports ...
+	// import { TemplateSelector, WritingTemplate } from "../writer/TemplateSelector" // Removed duplicate import
 
-// ... inside ChatViewComponent ...
+	// ... inside ChatViewComponent ...
 
 	// const handleTemplateSelect = ... // Removed duplicate function definition
 
-	const handleTemplateSelect = useCallback((template: WritingTemplate) => {
-		// Auto-fill the chat input with the template prompt
-		setInputValue(template.prompt)
-		// Focus the text area so user can edit before sending
-		textAreaRef.current?.focus()
-	}, [])
+	// const handleTemplateSelect = useCallback((template: WritingTemplate) => {
+	// 	// Auto-fill the chat input with the template prompt
+	// 	setInputValue(template.prompt)
+	// 	// Focus the text area so user can edit before sending
+	// 	textAreaRef.current?.focus()
+	// }, [])
 
 	const areButtonsVisible = showScrollToBottom || primaryButtonText || secondaryButtonText || isStreaming
 
@@ -1432,9 +1441,11 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 						/>
 						<div className="flex flex-col gap-4 w-full">
 							<RooHero />
-							
-							{/* [RooWriter] Writing Template Selector - Always visible when no task */}
-							<TemplateSelector onSelect={handleTemplateSelect} />
+
+							<div className="flex flex-col gap-2 text-vscode-foreground p-4 border border-[var(--vscode-widget-border)] rounded-md bg-[var(--vscode-editor-background)]">
+								<h3 className="text-sm font-bold uppercase opacity-70">RooWriter</h3>
+								<p className="text-sm opacity-80">Your AI Writing Assistant.</p>
+							</div>
 
 							{/* Show RooTips when authenticated or when user is new */}
 							{taskHistory.length < 6 && <RooTips />}

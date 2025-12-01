@@ -1,7 +1,7 @@
 {
 	"extension": {
-		"name": "Roo Code",
-		"description": "Toàn bộ đội ngũ phát triển AI trong trình soạn thảo của bạn."
+		"name": "RooWriter",
+		"description": "Toàn b�?đội ngũ phát triển AI trong trình soạn thảo của bạn."
 	},
 	"number_format": {
 		"thousand_suffix": "k",
@@ -15,77 +15,77 @@
 		"other": "{{count}} mục"
 	},
 	"confirmation": {
-		"reset_state": "Bạn có chắc chắn muốn đặt lại tất cả trạng thái và lưu trữ bí mật trong tiện ích mở rộng không? Hành động này không thể hoàn tác.",
-		"delete_config_profile": "Bạn có chắc chắn muốn xóa hồ sơ cấu hình này không?",
-		"delete_custom_mode_with_rules": "Bạn có chắc chắn muốn xóa chế độ {scope} này không?\n\nThao tác này cũng sẽ xóa thư mục quy tắc liên quan tại:\n{rulesFolderPath}"
+		"reset_state": "Bạn có chắc chắn muốn đặt lại tất c�?trạng thái và lưu tr�?bí mật trong tiện ích m�?rộng không? Hành động này không th�?hoàn tác.",
+		"delete_config_profile": "Bạn có chắc chắn muốn xóa h�?sơ cấu hình này không?",
+		"delete_custom_mode_with_rules": "Bạn có chắc chắn muốn xóa ch�?đ�?{scope} này không?\n\nThao tác này cũng s�?xóa thư mục quy tắc liên quan tại:\n{rulesFolderPath}"
 	},
 	"errors": {
-		"invalid_data_uri": "Định dạng URI dữ liệu không hợp lệ",
+		"invalid_data_uri": "Định dạng URI d�?liệu không hợp l�?,
 		"error_copying_image": "Lỗi khi sao chép hình ảnh: {{errorMessage}}",
 		"error_saving_image": "Lỗi khi lưu hình ảnh: {{errorMessage}}",
-		"error_opening_image": "Lỗi khi mở hình ảnh: {{error}}",
-		"could_not_open_file": "Không thể mở tệp: {{errorMessage}}",
-		"could_not_open_file_generic": "Không thể mở tệp!",
-		"checkpoint_timeout": "Đã hết thời gian khi cố gắng khôi phục điểm kiểm tra.",
-		"checkpoint_failed": "Không thể khôi phục điểm kiểm tra.",
-		"git_not_installed": "Yêu cầu Git cho tính năng điểm kiểm tra. Vui lòng cài đặt Git để bật điểm kiểm tra.",
-		"checkpoint_no_first": "Không có điểm kiểm tra đầu tiên để so sánh.",
-		"checkpoint_no_previous": "Không có điểm kiểm tra trước đó để so sánh.",
+		"error_opening_image": "Lỗi khi m�?hình ảnh: {{error}}",
+		"could_not_open_file": "Không th�?m�?tệp: {{errorMessage}}",
+		"could_not_open_file_generic": "Không th�?m�?tệp!",
+		"checkpoint_timeout": "Đã hết thời gian khi c�?gắng khôi phục điểm kiểm tra.",
+		"checkpoint_failed": "Không th�?khôi phục điểm kiểm tra.",
+		"git_not_installed": "Yêu cầu Git cho tính năng điểm kiểm tra. Vui lòng cài đặt Git đ�?bật điểm kiểm tra.",
+		"checkpoint_no_first": "Không có điểm kiểm tra đầu tiên đ�?so sánh.",
+		"checkpoint_no_previous": "Không có điểm kiểm tra trước đó đ�?so sánh.",
 		"checkpoint_no_changes": "Không tìm thấy thay đổi.",
 		"checkpoint_diff_with_next": "Các thay đổi được so sánh với điểm kiểm tra tiếp theo",
-		"checkpoint_diff_since_first": "Các thay đổi kể từ điểm kiểm tra đầu tiên",
+		"checkpoint_diff_since_first": "Các thay đổi k�?t�?điểm kiểm tra đầu tiên",
 		"checkpoint_diff_to_current": "Các thay đổi đối với không gian làm việc hiện tại",
-		"nested_git_repos_warning": "Điểm kiểm tra bị vô hiệu hóa vì phát hiện kho git lồng nhau tại: {{path}}. Để sử dụng điểm kiểm tra, vui lòng xóa hoặc di chuyển kho git lồng nhau này.",
-		"no_workspace": "Vui lòng mở thư mục dự án trước",
-		"update_support_prompt": "Không thể cập nhật lời nhắc hỗ trợ",
-		"reset_support_prompt": "Không thể đặt lại lời nhắc hỗ trợ",
-		"enhance_prompt": "Không thể nâng cao lời nhắc",
-		"get_system_prompt": "Không thể lấy lời nhắc hệ thống",
-		"search_commits": "Không thể tìm kiếm các commit",
-		"save_api_config": "Không thể lưu cấu hình API",
-		"create_api_config": "Không thể tạo cấu hình API",
-		"rename_api_config": "Không thể đổi tên cấu hình API",
-		"load_api_config": "Không thể tải cấu hình API",
-		"delete_api_config": "Không thể xóa cấu hình API",
-		"list_api_config": "Không thể lấy danh sách cấu hình API",
-		"update_server_timeout": "Không thể cập nhật thời gian chờ máy chủ",
-		"hmr_not_running": "Máy chủ phát triển cục bộ không chạy, HMR sẽ không hoạt động. Vui lòng chạy 'npm run dev' trước khi khởi chạy tiện ích mở rộng để bật HMR.",
-		"retrieve_current_mode": "Lỗi không thể truy xuất chế độ hiện tại từ trạng thái.",
-		"failed_delete_repo": "Không thể xóa kho lưu trữ hoặc nhánh liên quan: {{error}}",
-		"failed_remove_directory": "Không thể xóa thư mục nhiệm vụ: {{error}}",
-		"custom_storage_path_unusable": "Đường dẫn lưu trữ tùy chỉnh \"{{path}}\" không thể sử dụng được, sẽ sử dụng đường dẫn mặc định",
-		"cannot_access_path": "Không thể truy cập đường dẫn {{path}}: {{error}}",
+		"nested_git_repos_warning": "Điểm kiểm tra b�?vô hiệu hóa vì phát hiện kho git lồng nhau tại: {{path}}. Đ�?s�?dụng điểm kiểm tra, vui lòng xóa hoặc di chuyển kho git lồng nhau này.",
+		"no_workspace": "Vui lòng m�?thư mục d�?án trước",
+		"update_support_prompt": "Không th�?cập nhật lời nhắc h�?tr�?,
+		"reset_support_prompt": "Không th�?đặt lại lời nhắc h�?tr�?,
+		"enhance_prompt": "Không th�?nâng cao lời nhắc",
+		"get_system_prompt": "Không th�?lấy lời nhắc h�?thống",
+		"search_commits": "Không th�?tìm kiếm các commit",
+		"save_api_config": "Không th�?lưu cấu hình API",
+		"create_api_config": "Không th�?tạo cấu hình API",
+		"rename_api_config": "Không th�?đổi tên cấu hình API",
+		"load_api_config": "Không th�?tải cấu hình API",
+		"delete_api_config": "Không th�?xóa cấu hình API",
+		"list_api_config": "Không th�?lấy danh sách cấu hình API",
+		"update_server_timeout": "Không th�?cập nhật thời gian ch�?máy ch�?,
+		"hmr_not_running": "Máy ch�?phát triển cục b�?không chạy, HMR s�?không hoạt động. Vui lòng chạy 'npm run dev' trước khi khởi chạy tiện ích m�?rộng đ�?bật HMR.",
+		"retrieve_current_mode": "Lỗi không th�?truy xuất ch�?đ�?hiện tại t�?trạng thái.",
+		"failed_delete_repo": "Không th�?xóa kho lưu tr�?hoặc nhánh liên quan: {{error}}",
+		"failed_remove_directory": "Không th�?xóa thư mục nhiệm v�? {{error}}",
+		"custom_storage_path_unusable": "Đường dẫn lưu tr�?tùy chỉnh \"{{path}}\" không th�?s�?dụng được, s�?s�?dụng đường dẫn mặc định",
+		"cannot_access_path": "Không th�?truy cập đường dẫn {{path}}: {{error}}",
 		"settings_import_failed": "Nhập cài đặt thất bại: {{error}}.",
-		"mistake_limit_guidance": "Điều này có thể cho thấy sự thất bại trong quá trình suy nghĩ của mô hình hoặc không thể sử dụng công cụ đúng cách, có thể được giảm thiểu bằng hướng dẫn của người dùng (ví dụ: \"Hãy thử chia nhỏ nhiệm vụ thành các bước nhỏ hơn\").",
-		"violated_organization_allowlist": "Không thể chạy tác vụ: hồ sơ hiện tại không tương thích với cài đặt của tổ chức của bạn",
-		"condense_failed": "Không thể nén ngữ cảnh",
-		"condense_not_enough_messages": "Không đủ tin nhắn để nén ngữ cảnh",
-		"condensed_recently": "Ngữ cảnh đã được nén gần đây; bỏ qua lần thử này",
-		"condense_handler_invalid": "Trình xử lý API để nén ngữ cảnh không hợp lệ",
-		"condense_context_grew": "Kích thước ngữ cảnh tăng lên trong quá trình nén; bỏ qua lần thử này",
-		"url_timeout": "Trang web mất quá nhiều thời gian để tải (timeout). Điều này có thể do kết nối chậm, trang web nặng hoặc tạm thời không khả dụng. Bạn có thể thử lại sau hoặc kiểm tra xem URL có đúng không.",
-		"url_not_found": "Không thể tìm thấy địa chỉ trang web. Vui lòng kiểm tra URL có đúng không và thử lại.",
-		"no_internet": "Không có kết nối internet. Vui lòng kiểm tra kết nối mạng và thử lại.",
-		"url_forbidden": "Truy cập vào trang web này bị cấm. Trang có thể chặn truy cập tự động hoặc yêu cầu xác thực.",
+		"mistake_limit_guidance": "Điều này có th�?cho thấy s�?thất bại trong quá trình suy nghĩ của mô hình hoặc không th�?s�?dụng công c�?đúng cách, có th�?được giảm thiểu bằng hướng dẫn của người dùng (ví d�? \"Hãy th�?chia nh�?nhiệm v�?thành các bước nh�?hơn\").",
+		"violated_organization_allowlist": "Không th�?chạy tác v�? h�?sơ hiện tại không tương thích với cài đặt của t�?chức của bạn",
+		"condense_failed": "Không th�?nén ng�?cảnh",
+		"condense_not_enough_messages": "Không đ�?tin nhắn đ�?nén ng�?cảnh",
+		"condensed_recently": "Ng�?cảnh đã được nén gần đây; b�?qua lần th�?này",
+		"condense_handler_invalid": "Trình x�?lý API đ�?nén ng�?cảnh không hợp l�?,
+		"condense_context_grew": "Kích thước ng�?cảnh tăng lên trong quá trình nén; b�?qua lần th�?này",
+		"url_timeout": "Trang web mất quá nhiều thời gian đ�?tải (timeout). Điều này có th�?do kết nối chậm, trang web nặng hoặc tạm thời không kh�?dụng. Bạn có th�?th�?lại sau hoặc kiểm tra xem URL có đúng không.",
+		"url_not_found": "Không th�?tìm thấy địa ch�?trang web. Vui lòng kiểm tra URL có đúng không và th�?lại.",
+		"no_internet": "Không có kết nối internet. Vui lòng kiểm tra kết nối mạng và th�?lại.",
+		"url_forbidden": "Truy cập vào trang web này b�?cấm. Trang có th�?chặn truy cập t�?động hoặc yêu cầu xác thực.",
 		"url_page_not_found": "Không tìm thấy trang. Vui lòng kiểm tra URL có đúng không.",
-		"url_request_aborted": "Yêu cầu lấy URL đã bị hủy. Điều này có thể xảy ra nếu trang web chặn truy cập tự động, yêu cầu xác thực hoặc có vấn đề về mạng. Vui lòng thử lại hoặc kiểm tra xem URL có thể truy cập được trong trình duyệt thông thường không.",
+		"url_request_aborted": "Yêu cầu lấy URL đã b�?hủy. Điều này có th�?xảy ra nếu trang web chặn truy cập t�?động, yêu cầu xác thực hoặc có vấn đ�?v�?mạng. Vui lòng th�?lại hoặc kiểm tra xem URL có th�?truy cập được trong trình duyệt thông thường không.",
 		"url_fetch_failed": "Lỗi lấy nội dung URL: {{error}}",
 		"url_fetch_error_with_url": "Lỗi lấy nội dung cho {{url}}: {{error}}",
-		"command_timeout": "Thực thi lệnh đã hết thời gian chờ sau {{seconds}} giây",
-		"share_task_failed": "Không thể chia sẻ nhiệm vụ",
-		"share_no_active_task": "Không có nhiệm vụ hoạt động để chia sẻ",
-		"share_auth_required": "Cần xác thực. Vui lòng đăng nhập để chia sẻ nhiệm vụ.",
-		"share_not_enabled": "Chia sẻ nhiệm vụ không được bật cho tổ chức này.",
-		"share_task_not_found": "Không tìm thấy nhiệm vụ hoặc truy cập bị từ chối.",
-		"mode_import_failed": "Nhập chế độ thất bại: {{error}}",
-		"delete_rules_folder_failed": "Không thể xóa thư mục quy tắc: {{rulesFolderPath}}. Lỗi: {{error}}",
+		"command_timeout": "Thực thi lệnh đã hết thời gian ch�?sau {{seconds}} giây",
+		"share_task_failed": "Không th�?chia s�?nhiệm v�?,
+		"share_no_active_task": "Không có nhiệm v�?hoạt động đ�?chia s�?,
+		"share_auth_required": "Cần xác thực. Vui lòng đăng nhập đ�?chia s�?nhiệm v�?",
+		"share_not_enabled": "Chia s�?nhiệm v�?không được bật cho t�?chức này.",
+		"share_task_not_found": "Không tìm thấy nhiệm v�?hoặc truy cập b�?t�?chối.",
+		"mode_import_failed": "Nhập ch�?đ�?thất bại: {{error}}",
+		"delete_rules_folder_failed": "Không th�?xóa thư mục quy tắc: {{rulesFolderPath}}. Lỗi: {{error}}",
 		"command_not_found": "Không tìm thấy lệnh '{{name}}'",
-		"open_command_file": "Không thể mở tệp lệnh",
-		"delete_command": "Không thể xóa lệnh",
-		"no_workspace_for_project_command": "Không tìm thấy thư mục workspace cho lệnh dự án",
+		"open_command_file": "Không th�?m�?tệp lệnh",
+		"delete_command": "Không th�?xóa lệnh",
+		"no_workspace_for_project_command": "Không tìm thấy thư mục workspace cho lệnh d�?án",
 		"command_already_exists": "Lệnh \"{{commandName}}\" đã tồn tại",
-		"create_command_failed": "Không thể tạo lệnh",
-		"command_template_content": "---\ndescription: \"Mô tả ngắn gọn về chức năng của lệnh này\"\n---\n\nĐây là một lệnh slash mới. Chỉnh sửa tệp này để tùy chỉnh hành vi của lệnh.",
+		"create_command_failed": "Không th�?tạo lệnh",
+		"command_template_content": "---\ndescription: \"Mô t�?ngắn gọn v�?chức năng của lệnh này\"\n---\n\nĐây là một lệnh slash mới. Chỉnh sửa tệp này đ�?tùy chỉnh hành vi của lệnh.",
 		"claudeCode": {
 			"processExited": "Tiến trình Claude Code thoát với mã {{exitCode}}.",
 			"errorOutput": "Đầu ra lỗi: {{output}}",
@@ -95,66 +95,66 @@
 			"notFound": "Claude Code executable '{{claudePath}}' not found.\n\nPlease install Claude Code CLI:\n1. Visit {{installationUrl}} to download Claude Code\n2. Follow the installation instructions for your operating system\n3. Ensure the 'claude' command is available in your PATH\n4. Alternatively, configure a custom path in Roo settings under 'Claude Code Path'\n\nOriginal error: {{originalError}}"
 		},
 		"message": {
-			"no_active_task_to_delete": "Không có nhiệm vụ hoạt động để xóa tin nhắn",
-			"invalid_timestamp_for_deletion": "Dấu thời gian tin nhắn không hợp lệ để xóa",
-			"cannot_delete_missing_timestamp": "Không thể xóa tin nhắn: thiếu dấu thời gian",
-			"cannot_delete_invalid_timestamp": "Không thể xóa tin nhắn: dấu thời gian không hợp lệ",
+			"no_active_task_to_delete": "Không có nhiệm v�?hoạt động đ�?xóa tin nhắn",
+			"invalid_timestamp_for_deletion": "Dấu thời gian tin nhắn không hợp l�?đ�?xóa",
+			"cannot_delete_missing_timestamp": "Không th�?xóa tin nhắn: thiếu dấu thời gian",
+			"cannot_delete_invalid_timestamp": "Không th�?xóa tin nhắn: dấu thời gian không hợp l�?,
 			"message_not_found": "Không tìm thấy tin nhắn có dấu thời gian {{messageTs}}",
 			"error_deleting_message": "Lỗi xóa tin nhắn: {{error}}",
 			"error_editing_message": "Lỗi chỉnh sửa tin nhắn: {{error}}"
 		},
 		"gemini": {
-			"generate_stream": "Lỗi luồng ngữ cảnh tạo Gemini: {{error}}",
+			"generate_stream": "Lỗi luồng ng�?cảnh tạo Gemini: {{error}}",
 			"generate_complete_prompt": "Lỗi hoàn thành Gemini: {{error}}",
 			"sources": "Nguồn:"
 		},
 		"cerebras": {
-			"authenticationFailed": "Xác thực API Cerebras thất bại. Vui lòng kiểm tra khóa API của bạn có hợp lệ và chưa hết hạn.",
-			"accessForbidden": "Truy cập API Cerebras bị từ chối. Khóa API của bạn có thể không có quyền truy cập vào mô hình hoặc tính năng được yêu cầu.",
-			"rateLimitExceeded": "Vượt quá giới hạn tốc độ API Cerebras. Vui lòng chờ trước khi thực hiện yêu cầu khác.",
-			"serverError": "Lỗi máy chủ API Cerebras ({{status}}). Vui lòng thử lại sau.",
+			"authenticationFailed": "Xác thực API Cerebras thất bại. Vui lòng kiểm tra khóa API của bạn có hợp l�?và chưa hết hạn.",
+			"accessForbidden": "Truy cập API Cerebras b�?t�?chối. Khóa API của bạn có th�?không có quyền truy cập vào mô hình hoặc tính năng được yêu cầu.",
+			"rateLimitExceeded": "Vượt quá giới hạn tốc đ�?API Cerebras. Vui lòng ch�?trước khi thực hiện yêu cầu khác.",
+			"serverError": "Lỗi máy ch�?API Cerebras ({{status}}). Vui lòng th�?lại sau.",
 			"genericError": "Lỗi API Cerebras ({{status}}): {{message}}",
 			"noResponseBody": "Lỗi API Cerebras: Không có nội dung phản hồi",
 			"completionError": "Lỗi hoàn thành Cerebras: {{error}}"
 		},
 		"roo": {
-			"authenticationRequired": "Nhà cung cấp Roo yêu cầu xác thực đám mây. Vui lòng đăng nhập vào Roo Code Cloud."
+			"authenticationRequired": "Nhà cung cấp Roo yêu cầu xác thực đám mây. Vui lòng đăng nhập vào RooWriter Cloud."
 		},
 		"api": {
-			"invalidKeyInvalidChars": "Khóa API chứa ký tự không hợp lệ."
+			"invalidKeyInvalidChars": "Khóa API chứa ký t�?không hợp l�?"
 		},
-		"manual_url_empty": "Vui lòng nhập URL callback hợp lệ",
-		"manual_url_no_query": "URL callback không hợp lệ: thiếu tham số truy vấn",
-		"manual_url_missing_params": "URL callback không hợp lệ: thiếu tham số bắt buộc (code và state)",
-		"manual_url_auth_failed": "Xác thực URL thủ công thất bại",
+		"manual_url_empty": "Vui lòng nhập URL callback hợp l�?,
+		"manual_url_no_query": "URL callback không hợp l�? thiếu tham s�?truy vấn",
+		"manual_url_missing_params": "URL callback không hợp l�? thiếu tham s�?bắt buộc (code và state)",
+		"manual_url_auth_failed": "Xác thực URL th�?công thất bại",
 		"manual_url_auth_error": "Xác thực thất bại"
 	},
 	"warnings": {
 		"no_terminal_content": "Không có nội dung terminal được chọn",
-		"missing_task_files": "Các tệp của nhiệm vụ này bị thiếu. Bạn có muốn xóa nó khỏi danh sách nhiệm vụ không?",
-		"auto_import_failed": "Không thể tự động nhập cài đặt RooCode: {{error}}"
+		"missing_task_files": "Các tệp của nhiệm v�?này b�?thiếu. Bạn có muốn xóa nó khỏi danh sách nhiệm v�?không?",
+		"auto_import_failed": "Không th�?t�?động nhập cài đặt RooCode: {{error}}"
 	},
 	"info": {
 		"no_changes": "Không tìm thấy thay đổi nào.",
-		"clipboard_copy": "Lời nhắc hệ thống đã được sao chép thành công vào clipboard",
-		"history_cleanup": "Đã dọn dẹp {{count}} nhiệm vụ có tệp bị thiếu khỏi lịch sử.",
-		"custom_storage_path_set": "Đã thiết lập đường dẫn lưu trữ tùy chỉnh: {{path}}",
-		"default_storage_path": "Đã quay lại sử dụng đường dẫn lưu trữ mặc định",
+		"clipboard_copy": "Lời nhắc h�?thống đã được sao chép thành công vào clipboard",
+		"history_cleanup": "Đã dọn dẹp {{count}} nhiệm v�?có tệp b�?thiếu khỏi lịch s�?",
+		"custom_storage_path_set": "Đã thiết lập đường dẫn lưu tr�?tùy chỉnh: {{path}}",
+		"default_storage_path": "Đã quay lại s�?dụng đường dẫn lưu tr�?mặc định",
 		"settings_imported": "Cài đặt đã được nhập thành công.",
-		"auto_import_success": "Cài đặt RooCode đã được tự động nhập từ {{filename}}",
-		"share_link_copied": "Liên kết chia sẻ đã được sao chép vào clipboard",
-		"image_copied_to_clipboard": "URI dữ liệu hình ảnh đã được sao chép vào clipboard",
+		"auto_import_success": "Cài đặt RooCode đã được t�?động nhập t�?{{filename}}",
+		"share_link_copied": "Liên kết chia s�?đã được sao chép vào clipboard",
+		"image_copied_to_clipboard": "URI d�?liệu hình ảnh đã được sao chép vào clipboard",
 		"image_saved": "Hình ảnh đã được lưu vào {{path}}",
-		"organization_share_link_copied": "Liên kết chia sẻ tổ chức đã được sao chép vào clipboard!",
-		"public_share_link_copied": "Liên kết chia sẻ công khai đã được sao chép vào clipboard!",
-		"mode_exported": "Chế độ '{{mode}}' đã được xuất thành công",
-		"mode_imported": "Chế độ đã được nhập thành công"
+		"organization_share_link_copied": "Liên kết chia s�?t�?chức đã được sao chép vào clipboard!",
+		"public_share_link_copied": "Liên kết chia s�?công khai đã được sao chép vào clipboard!",
+		"mode_exported": "Ch�?đ�?'{{mode}}' đã được xuất thành công",
+		"mode_imported": "Ch�?đ�?đã được nhập thành công"
 	},
 	"answers": {
 		"yes": "Có",
 		"no": "Không",
 		"remove": "Xóa",
-		"keep": "Giữ"
+		"keep": "Gi�?
 	},
 	"buttons": {
 		"save": "Lưu",
@@ -162,24 +162,24 @@
 		"learn_more": "Tìm hiểu thêm"
 	},
 	"tasks": {
-		"canceled": "Lỗi nhiệm vụ: Nó đã bị dừng và hủy bởi người dùng.",
-		"deleted": "Nhiệm vụ thất bại: Nó đã bị dừng và xóa bởi người dùng.",
-		"incomplete": "Nhiệm vụ #{{taskNumber}} (Chưa hoàn thành)",
-		"no_messages": "Nhiệm vụ #{{taskNumber}} (Không có tin nhắn)"
+		"canceled": "Lỗi nhiệm v�? Nó đã b�?dừng và hủy bởi người dùng.",
+		"deleted": "Nhiệm v�?thất bại: Nó đã b�?dừng và xóa bởi người dùng.",
+		"incomplete": "Nhiệm v�?#{{taskNumber}} (Chưa hoàn thành)",
+		"no_messages": "Nhiệm v�?#{{taskNumber}} (Không có tin nhắn)"
 	},
 	"interruption": {
-		"responseInterruptedByUser": "Phản hồi bị gián đoạn bởi người dùng",
-		"responseInterruptedByApiError": "Phản hồi bị gián đoạn bởi lỗi API"
+		"responseInterruptedByUser": "Phản hồi b�?gián đoạn bởi người dùng",
+		"responseInterruptedByApiError": "Phản hồi b�?gián đoạn bởi lỗi API"
 	},
 	"storage": {
-		"prompt_custom_path": "Nhập đường dẫn lưu trữ tùy chỉnh cho lịch sử hội thoại, để trống để sử dụng vị trí mặc định",
+		"prompt_custom_path": "Nhập đường dẫn lưu tr�?tùy chỉnh cho lịch s�?hội thoại, đ�?trống đ�?s�?dụng v�?trí mặc định",
 		"path_placeholder": "D:\\RooCodeStorage",
-		"enter_absolute_path": "Vui lòng nhập đường dẫn tuyệt đối (ví dụ: D:\\RooCodeStorage hoặc /home/user/storage)",
-		"enter_valid_path": "Vui lòng nhập đường dẫn hợp lệ"
+		"enter_absolute_path": "Vui lòng nhập đường dẫn tuyệt đối (ví d�? D:\\RooCodeStorage hoặc /home/user/storage)",
+		"enter_valid_path": "Vui lòng nhập đường dẫn hợp l�?
 	},
 	"input": {
 		"task_prompt": "Bạn muốn Roo làm gì?",
-		"task_placeholder": "Nhập nhiệm vụ của bạn ở đây"
+		"task_placeholder": "Nhập nhiệm v�?của bạn �?đây"
 	},
 	"settings": {
 		"providers": {
@@ -194,59 +194,59 @@
 	},
 	"customModes": {
 		"errors": {
-			"yamlParseError": "YAML không hợp lệ trong tệp .roomodes tại dòng {{line}}. Vui lòng kiểm tra:\n• Thụt lề đúng (dùng dấu cách, không dùng tab)\n• Dấu ngoặc kép và ngoặc đơn khớp nhau\n• Cú pháp YAML hợp lệ",
-			"schemaValidationError": "Định dạng chế độ tùy chỉnh không hợp lệ trong .roomodes:\n{{issues}}",
-			"invalidFormat": "Định dạng chế độ tùy chỉnh không hợp lệ. Vui lòng đảm bảo cài đặt của bạn tuân theo định dạng YAML đúng.",
-			"updateFailed": "Cập nhật chế độ tùy chỉnh thất bại: {{error}}",
-			"deleteFailed": "Xóa chế độ tùy chỉnh thất bại: {{error}}",
-			"resetFailed": "Đặt lại chế độ tùy chỉnh thất bại: {{error}}",
-			"modeNotFound": "Lỗi ghi: Không tìm thấy chế độ",
-			"noWorkspaceForProject": "Không tìm thấy thư mục workspace cho chế độ dành riêng cho dự án",
-			"rulesCleanupFailed": "Đã xóa chế độ thành công, nhưng không thể xóa thư mục quy tắc tại {{rulesFolderPath}}. Bạn có thể cần xóa thủ công."
+			"yamlParseError": "YAML không hợp l�?trong tệp .roomodes tại dòng {{line}}. Vui lòng kiểm tra:\n�?Thụt l�?đúng (dùng dấu cách, không dùng tab)\n�?Dấu ngoặc kép và ngoặc đơn khớp nhau\n�?Cú pháp YAML hợp l�?,
+			"schemaValidationError": "Định dạng ch�?đ�?tùy chỉnh không hợp l�?trong .roomodes:\n{{issues}}",
+			"invalidFormat": "Định dạng ch�?đ�?tùy chỉnh không hợp l�? Vui lòng đảm bảo cài đặt của bạn tuân theo định dạng YAML đúng.",
+			"updateFailed": "Cập nhật ch�?đ�?tùy chỉnh thất bại: {{error}}",
+			"deleteFailed": "Xóa ch�?đ�?tùy chỉnh thất bại: {{error}}",
+			"resetFailed": "Đặt lại ch�?đ�?tùy chỉnh thất bại: {{error}}",
+			"modeNotFound": "Lỗi ghi: Không tìm thấy ch�?đ�?,
+			"noWorkspaceForProject": "Không tìm thấy thư mục workspace cho ch�?đ�?dành riêng cho d�?án",
+			"rulesCleanupFailed": "Đã xóa ch�?đ�?thành công, nhưng không th�?xóa thư mục quy tắc tại {{rulesFolderPath}}. Bạn có th�?cần xóa th�?công."
 		},
 		"scope": {
-			"project": "dự án",
+			"project": "d�?án",
 			"global": "toàn cầu"
 		}
 	},
 	"marketplace": {
 		"mode": {
-			"rulesCleanupFailed": "Đã xóa chế độ thành công, nhưng không thể xóa thư mục quy tắc tại {{rulesFolderPath}}. Bạn có thể cần xóa thủ công."
+			"rulesCleanupFailed": "Đã xóa ch�?đ�?thành công, nhưng không th�?xóa thư mục quy tắc tại {{rulesFolderPath}}. Bạn có th�?cần xóa th�?công."
 		}
 	},
 	"mdm": {
 		"errors": {
-			"cloud_auth_required": "Tổ chức của bạn yêu cầu xác thực Roo Code Cloud. Vui lòng đăng nhập để tiếp tục.",
-			"organization_mismatch": "Bạn phải được xác thực bằng tài khoản Roo Code Cloud của tổ chức.",
-			"manual_url_empty": "Vui lòng nhập URL callback hợp lệ",
-			"manual_url_no_query": "URL callback không hợp lệ: thiếu tham số truy vấn",
-			"manual_url_missing_params": "URL callback không hợp lệ: thiếu tham số bắt buộc (code và state)",
-			"manual_url_auth_failed": "Xác thực URL thủ công thất bại",
+			"cloud_auth_required": "T�?chức của bạn yêu cầu xác thực RooWriter Cloud. Vui lòng đăng nhập đ�?tiếp tục.",
+			"organization_mismatch": "Bạn phải được xác thực bằng tài khoản RooWriter Cloud của t�?chức.",
+			"manual_url_empty": "Vui lòng nhập URL callback hợp l�?,
+			"manual_url_no_query": "URL callback không hợp l�? thiếu tham s�?truy vấn",
+			"manual_url_missing_params": "URL callback không hợp l�? thiếu tham s�?bắt buộc (code và state)",
+			"manual_url_auth_failed": "Xác thực URL th�?công thất bại",
 			"manual_url_auth_error": "Xác thực thất bại",
-			"verification_failed": "Không thể xác minh xác thực tổ chức."
+			"verification_failed": "Không th�?xác minh xác thực t�?chức."
 		},
 		"info": {
-			"organization_requires_auth": "Tổ chức của bạn yêu cầu xác thực."
+			"organization_requires_auth": "T�?chức của bạn yêu cầu xác thực."
 		}
 	},
 	"prompts": {
 		"deleteMode": {
-			"title": "Xóa chế độ tùy chỉnh",
-			"description": "Bạn có chắc chắn muốn xóa chế độ {{scope}} này không? Thao tác này cũng θα xóa thư mục quy tắc liên quan tại {{rulesFolderPath}}",
+			"title": "Xóa ch�?đ�?tùy chỉnh",
+			"description": "Bạn có chắc chắn muốn xóa ch�?đ�?{{scope}} này không? Thao tác này cũng θα xóa thư mục quy tắc liên quan tại {{rulesFolderPath}}",
 			"translations": {
-				"title": "Xóa chế độ",
-				"description": "Bạn có chắc chắn muốn xóa chế độ này không?",
-				"deleteMessage": "Chỉ chế độ này",
-				"rulesFolderMessage": "Thư mục quy tắc cũng sẽ bị xóa nếu tồn tại.",
-				"deleteConfirmation": "Chắc chắn xóa chế độ này?"
+				"title": "Xóa ch�?đ�?,
+				"description": "Bạn có chắc chắn muốn xóa ch�?đ�?này không?",
+				"deleteMessage": "Ch�?ch�?đ�?này",
+				"rulesFolderMessage": "Thư mục quy tắc cũng s�?b�?xóa nếu tồn tại.",
+				"deleteConfirmation": "Chắc chắn xóa ch�?đ�?này?"
 			},
-			"descriptionNoRules": "Bạn có chắc chắn muốn xóa chế độ tùy chỉnh này không?",
+			"descriptionNoRules": "Bạn có chắc chắn muốn xóa ch�?đ�?tùy chỉnh này không?",
 			"confirm": "Xóa"
 		}
 	},
 	"commands": {
 		"preventCompletionWithOpenTodos": {
-			"description": "Ngăn chặn hoàn thành nhiệm vụ khi có các todo chưa hoàn thành trong danh sách todo"
+			"description": "Ngăn chặn hoàn thành nhiệm v�?khi có các todo chưa hoàn thành trong danh sách todo"
 		}
 	},
 	"docsLink": {
@@ -254,3 +254,4 @@
 		"url": "https://docs.roocode.com"
 	}
 }
+

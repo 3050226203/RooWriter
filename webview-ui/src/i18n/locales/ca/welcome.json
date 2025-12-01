@@ -1,6 +1,6 @@
 {
-	"greeting": "Benvingut a Roo Code!",
-	"introduction": "Amb una gamma de Modes integrats i ampliables, Roo Code et permet planificar, arquitectar, codificar, depurar i augmentar la teva productivitat com mai abans.",
+	"greeting": "Benvingut a RooWriter!",
+	"introduction": "Amb una gamma de Modes integrats i ampliables, RooWriter et permet planificar, arquitectar, codificar, depurar i augmentar la teva productivitat com mai abans.",
 	"notice": "Per començar, aquesta extensió necessita un proveïdor d'API.",
 	"start": "Som-hi!",
 	"routers": {
@@ -18,7 +18,7 @@
 	},
 	"chooseProvider": "Per començar, necessites un proveïdor LLM:",
 	"providerSignup": {
-		"rooCloudProvider": "Proveïdor Roo Code Cloud",
+		"rooCloudProvider": "Proveïdor RooWriter Cloud",
 		"rooCloudDescription": "La manera més senzilla d'utilitzar Roo. Una combinació seleccionada de models gratuïts i de pagament a un cost baix",
 		"learnMore": "més informació",
 		"useAnotherProvider": "Utilitza un altre proveïdor",
@@ -26,7 +26,7 @@
 		"getStarted": "Començar"
 	},
 	"waitingForCloud": {
-		"heading": "Et portem a Roo Code Cloud...",
+		"heading": "Et portem a RooWriter Cloud...",
 		"description": "Completa el registre al navegador i tornaràs aquí automàticament.",
 		"noPrompt": "Si no se t'avisa per obrir una URL, <clickHere>feu clic aquí</clickHere>.",
 		"havingTrouble": "Si has completat el registre però tens problemes, <clickHere>feu clic aquí</clickHere>.",
@@ -36,8 +36,9 @@
 	"startRouter": "Recomanem utilitzar un router LLM:",
 	"startCustom": "O pots utilitzar la teva pròpia clau API:",
 	"telemetry": {
-		"helpImprove": "Ajuda a millorar Roo Code",
-		"helpImproveMessage": "Roo Code recopila dades d'errors i d'ús per ajudar-nos a corregir errors i millorar l'extensió. Aquesta telemetria no recopila codi, prompts o informació personal. Pots desactivar això a la <settingsLink>configuració</settingsLink>."
+		"helpImprove": "Ajuda a millorar RooWriter",
+		"helpImproveMessage": "RooWriter recopila dades d'errors i d'ús per ajudar-nos a corregir errors i millorar l'extensió. Aquesta telemetria no recopila codi, prompts o informació personal. Pots desactivar això a la <settingsLink>configuració</settingsLink>."
 	},
 	"importSettings": "Importar configuració"
 }
+

@@ -1,4 +1,4 @@
-// pnpm --filter roo-cline test core/webview/__tests__/ClineProvider.spec.ts
+// pnpm --filter roo-writer test core/webview/__tests__/ClineProvider.spec.ts
 
 import Anthropic from "@anthropic-ai/sdk"
 import * as vscode from "vscode"
@@ -3873,3 +3873,4 @@ describe("ClineProvider - Comprehensive Edit/Delete Edge Cases", () => {
 		})
 	})
 })
+

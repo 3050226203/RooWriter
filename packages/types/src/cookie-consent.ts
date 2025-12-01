@@ -1,6 +1,6 @@
 /**
  * Cookie consent constants and types
- * Shared across all Roo Code repositories
+ * Shared across all RooWriter repositories
  */
 
 /**
@@ -20,3 +20,4 @@ export type ConsentCookieValue = "true" | "false"
 export const COOKIE_CONSENT_EVENTS = {
 	CHANGED: "cookieConsentChanged",
 } as const
+

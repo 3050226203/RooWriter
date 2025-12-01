@@ -1,30 +1,31 @@
 {
 	"readFile": {
-		"linesRange": " (第 {{start}}-{{end}} 行)",
-		"definitionsOnly": " (僅定義)",
-		"maxLines": " (最多 {{max}} 行)",
-		"imageTooLarge": "圖片檔案過大 ({{size}} MB)。允許的最大大小為 {{max}} MB。",
+		"linesRange": " (�?{{start}}-{{end}} �?",
+		"definitionsOnly": " (僅定�?",
+		"maxLines": " (最�?{{max}} �?",
+		"imageTooLarge": "圖片檔案過大 ({{size}} MB)。允許的最大大小為 {{max}} MB�?,
 		"imageWithSize": "圖片檔案 ({{size}} KB)"
 	},
-	"toolRepetitionLimitReached": "Roo 似乎陷入循環，反覆嘗試同一操作 ({{toolName}})。這可能表明目前策略存在問題。請考慮重新描述工作、提供更具體的指示或引導其嘗試不同的方法。",
+	"toolRepetitionLimitReached": "Roo 似乎陷入循環，反覆嘗試同一操作 ({{toolName}})。這可能表明目前策略存在問題。請考慮重新描述工作、提供更具體的指示或引導其嘗試不同的方法�?,
 	"codebaseSearch": {
-		"approval": "正在搜尋程式碼庫中的「{{query}}」..."
+		"approval": "正在搜尋程式碼庫中的「{{query}}�?.."
 	},
 	"newTask": {
 		"errors": {
-			"policy_restriction": "由於政策限制，無法建立新工作。"
+			"policy_restriction": "由於政策限制，無法建立新工作�?
 		}
 	},
 	"generateImage": {
-		"openRouterApiKeyRequired": "使用 OpenRouter 模型生成圖像需要 OpenRouter API 金鑰。請在圖像生成實驗設定中配置。",
+		"openRouterApiKeyRequired": "使用 OpenRouter 模型生成圖像需�?OpenRouter API 金鑰。請在圖像生成實驗設定中配置�?,
 		"failedWithStatus": "圖像生成失敗：{{status}} {{statusText}}",
 		"failedWithMessage": "圖像生成失敗：{{message}}",
 		"noImageGenerated": "回應中未生成圖像",
 		"invalidImageData": "回應中的圖像資料無效",
-		"invalidImageFormat": "收到的圖像格式無效",
+		"invalidImageFormat": "收到的圖像格式無�?,
 		"unknownError": "發生未知錯誤",
 		"roo": {
-			"authRequired": "圖像生成需要 Roo Code Cloud 認證。請登入 Roo Code Cloud。"
+			"authRequired": "圖像生成需�?RooWriter Cloud 認證。請登入 RooWriter Cloud�?
 		}
 	}
 }
+

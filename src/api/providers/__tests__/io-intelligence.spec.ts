@@ -60,7 +60,7 @@ vi.mock("../fetchers/io-intelligence", () => ({
 
 // Mock constants
 vi.mock("../constants", () => ({
-	DEFAULT_HEADERS: { "User-Agent": "roo-cline" },
+	DEFAULT_HEADERS: { "User-Agent": "roo-writer" },
 }))
 
 // Mock transform functions
@@ -303,3 +303,4 @@ describe("IOIntelligenceHandler", () => {
 		expect(result).toBe("")
 	})
 })
+

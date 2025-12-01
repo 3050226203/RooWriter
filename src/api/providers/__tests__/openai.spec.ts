@@ -111,8 +111,8 @@ describe("OpenAiHandler", () => {
 				baseURL: expect.any(String),
 				apiKey: expect.any(String),
 				defaultHeaders: {
-					"HTTP-Referer": "https://github.com/RooVetGit/Roo-Cline",
-					"X-Title": "Roo Code",
+					"HTTP-Referer": "https://github.com/RooVetGit/roo-writer",
+					"X-Title": "RooWriter",
 					"User-Agent": `RooCode/${Package.version}`,
 				},
 				timeout: expect.any(Number),
@@ -1266,3 +1266,5 @@ describe("getOpenAiModels", () => {
 		expect(result).toEqual(["gpt-4", "gpt-3.5-turbo"])
 	})
 })
+
+

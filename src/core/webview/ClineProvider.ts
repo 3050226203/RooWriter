@@ -56,7 +56,6 @@ import { Mode, defaultModeSlug, getModeBySlug } from "../../shared/modes"
 import { experimentDefault } from "../../shared/experiments"
 import { formatLanguage } from "../../shared/language"
 import { WebviewMessage } from "../../shared/WebviewMessage"
-import { EMBEDDING_MODEL_PROFILES } from "../../shared/embeddingModels"
 import { ProfileValidator } from "../../shared/ProfileValidator"
 
 import { Terminal } from "../../integrations/terminal/Terminal"
@@ -68,8 +67,6 @@ import { McpHub } from "../../services/mcp/McpHub"
 import { McpServerManager } from "../../services/mcp/McpServerManager"
 import { MarketplaceManager } from "../../services/marketplace"
 import { ShadowCheckpointService } from "../../services/checkpoints/ShadowCheckpointService"
-import { CodeIndexManager } from "../../services/code-index/manager"
-import type { IndexProgressUpdate } from "../../services/code-index/interfaces/manager"
 import { MdmService } from "../../services/mdm/MdmService"
 
 import { fileExistsAtPath } from "../../utils/fs"
@@ -93,7 +90,7 @@ import { getSystemPromptFilePath } from "../prompts/sections/custom-system-promp
 
 import { webviewMessageHandler } from "./webviewMessageHandler"
 import type { ClineMessage, TodoItem } from "@roo-code/types"
-import { readApiMessages, saveApiMessages, saveTaskMessages } from "../task-persistence"
+import { readApiMessages, saveApiMessages, saveTaskMessages, taskMetadata } from "../task-persistence"
 import { readTaskMessages } from "../task-persistence/taskMessages"
 import { getNonce } from "./getNonce"
 import { getUri } from "./getUri"
@@ -132,8 +129,6 @@ export class ClineProvider
 	private webviewDisposables: vscode.Disposable[] = []
 	private view?: vscode.WebviewView | vscode.WebviewPanel
 	private clineStack: Task[] = []
-	private codeIndexStatusSubscription?: vscode.Disposable
-	private codeIndexManager?: CodeIndexManager
 	private _workspaceTracker?: WorkspaceTracker // workSpaceTracker read-only for access outside this class
 	protected mcpHub?: McpHub // Change from private to protected
 	private marketplaceManager: MarketplaceManager
@@ -169,7 +164,6 @@ export class ClineProvider
 		ClineProvider.activeInstances.add(this)
 
 		this.mdmService = mdmService
-		this.updateGlobalState("codebaseIndexModels", EMBEDDING_MODEL_PROFILES)
 
 		// Start configuration loading (which might trigger indexing) in the background.
 		// Don't await, allowing activation to continue immediately.
@@ -205,8 +199,26 @@ export class ClineProvider
 
 			// Create named listener functions so we can remove them later.
 			const onTaskStarted = () => this.emit(RooCodeEventName.TaskStarted, instance.taskId)
-			const onTaskCompleted = (taskId: string, tokenUsage: any, toolUsage: any) =>
+			const onTaskCompleted = async (taskId: string, tokenUsage: any, toolUsage: any) => {
 				this.emit(RooCodeEventName.TaskCompleted, taskId, tokenUsage, toolUsage)
+				// [RooWriter] Ensure final state is persisted
+				try {
+					const { historyItem } = await taskMetadata({
+						taskId: instance.taskId,
+						rootTaskId: instance.rootTaskId,
+						parentTaskId: instance.parentTaskId,
+						taskNumber: instance.taskNumber,
+						messages: instance.clineMessages,
+						globalStoragePath: this.context.globalStorageUri.fsPath,
+						workspace: instance.workspacePath,
+						mode: await instance.getTaskMode(),
+					})
+					await this.updateTaskHistory(historyItem)
+					await this.postStateToWebview()
+				} catch (error) {
+					console.error("Failed to update task history on completion:", error)
+				}
+			}
 			const onTaskAborted = async () => {
 				this.emit(RooCodeEventName.TaskAborted, instance.taskId)
 
@@ -246,8 +258,26 @@ export class ClineProvider
 			const onTaskUnpaused = (taskId: string) => this.emit(RooCodeEventName.TaskUnpaused, taskId)
 			const onTaskSpawned = (taskId: string) => this.emit(RooCodeEventName.TaskSpawned, taskId)
 			const onTaskUserMessage = (taskId: string) => this.emit(RooCodeEventName.TaskUserMessage, taskId)
-			const onTaskTokenUsageUpdated = (taskId: string, tokenUsage: TokenUsage) =>
+			const onTaskTokenUsageUpdated = async (taskId: string, tokenUsage: TokenUsage) => {
 				this.emit(RooCodeEventName.TaskTokenUsageUpdated, taskId, tokenUsage)
+				// [RooWriter] Update history with new token usage
+				try {
+					const { historyItem } = await taskMetadata({
+						taskId: instance.taskId,
+						rootTaskId: instance.rootTaskId,
+						parentTaskId: instance.parentTaskId,
+						taskNumber: instance.taskNumber,
+						messages: instance.clineMessages,
+						globalStoragePath: this.context.globalStorageUri.fsPath,
+						workspace: instance.workspacePath,
+						mode: await instance.getTaskMode(),
+					})
+					await this.updateTaskHistory(historyItem)
+					// await this.postStateToWebview() // Intentionally omitted to prevent excessive re-renders
+				} catch (error) {
+					console.error("Failed to update task history on token usage update:", error)
+				}
+			}
 
 			// Attach the listeners.
 			instance.on(RooCodeEventName.TaskStarted, onTaskStarted)
@@ -284,7 +314,7 @@ export class ClineProvider
 			])
 		}
 
-		// Initialize Roo Code Cloud profile sync.
+		// Initialize RooWriter Cloud profile sync.
 		if (CloudService.hasInstance()) {
 			this.initializeCloudProfileSync().catch((error) => {
 				this.log(`Failed to initialize cloud profile sync: ${error}`)
@@ -785,17 +815,6 @@ export class ClineProvider
 		// and executes code based on the message that is received.
 		this.setWebviewMessageListener(webviewView.webview)
 
-		// Initialize code index status subscription for the current workspace.
-		this.updateCodeIndexStatusSubscription()
-
-		// Listen for active editor changes to update code index status for the
-		// current workspace.
-		const activeEditorSubscription = vscode.window.onDidChangeActiveTextEditor(() => {
-			// Update subscription when workspace might have changed.
-			this.updateCodeIndexStatusSubscription()
-		})
-		this.webviewDisposables.push(activeEditorSubscription)
-
 		// Listen for when the panel becomes visible.
 		// https://github.com/microsoft/vscode-discussions/discussions/840
 		if ("onDidChangeViewState" in webviewView) {
@@ -829,8 +848,6 @@ export class ClineProvider
 				} else {
 					this.log("Clearing webview resources for sidebar view")
 					this.clearWebviewResources()
-					// Reset current workspace manager reference when view is disposed
-					this.codeIndexManager = undefined
 				}
 			},
 			null,
@@ -1119,7 +1136,7 @@ export class ClineProvider
 						window.AUDIO_BASE_URI = "${audioUri}"
 						window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 					</script>
-					<title>Roo Code</title>
+					<title>RooWriter</title>
 				</head>
 				<body>
 					<div id="root"></div>
@@ -1198,7 +1215,7 @@ export class ClineProvider
 				window.AUDIO_BASE_URI = "${audioUri}"
 				window.MATERIAL_ICONS_BASE_URI = "${materialIconsUri}"
 			</script>
-            <title>Roo Code</title>
+            <title>RooWriter</title>
           </head>
           <body>
             <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -1913,8 +1930,6 @@ export class ClineProvider
 			maxConcurrentFileReads,
 			condensingApiConfigId,
 			customCondensingPrompt,
-			codebaseIndexConfig,
-			codebaseIndexModels,
 			profileThresholds,
 			alwaysAllowFollowupQuestions,
 			followupAutoApproveTimeoutMs,
@@ -1960,7 +1975,9 @@ export class ClineProvider
 		const machineId = vscode.env.machineId
 		const mergedAllowedCommands = this.mergeAllowedCommands(allowedCommands)
 		const mergedDeniedCommands = this.mergeDeniedCommands(deniedCommands)
-		const cwd = this.cwd
+
+		// [RooWriter] Ensure cwd is populated properly
+		const cwd = this.cwd || vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || ""
 
 		// Check if there's a system prompt override for the current mode
 		const currentMode = mode ?? defaultModeSlug
@@ -2066,20 +2083,6 @@ export class ClineProvider
 			organizationSettingsVersion,
 			condensingApiConfigId,
 			customCondensingPrompt,
-			codebaseIndexModels: codebaseIndexModels ?? EMBEDDING_MODEL_PROFILES,
-			codebaseIndexConfig: {
-				codebaseIndexEnabled: codebaseIndexConfig?.codebaseIndexEnabled ?? false,
-				codebaseIndexQdrantUrl: codebaseIndexConfig?.codebaseIndexQdrantUrl ?? "http://localhost:6333",
-				codebaseIndexEmbedderProvider: codebaseIndexConfig?.codebaseIndexEmbedderProvider ?? "openai",
-				codebaseIndexEmbedderBaseUrl: codebaseIndexConfig?.codebaseIndexEmbedderBaseUrl ?? "",
-				codebaseIndexEmbedderModelId: codebaseIndexConfig?.codebaseIndexEmbedderModelId ?? "",
-				codebaseIndexEmbedderModelDimension: codebaseIndexConfig?.codebaseIndexEmbedderModelDimension ?? 1536,
-				codebaseIndexOpenAiCompatibleBaseUrl: codebaseIndexConfig?.codebaseIndexOpenAiCompatibleBaseUrl,
-				codebaseIndexSearchMaxResults: codebaseIndexConfig?.codebaseIndexSearchMaxResults,
-				codebaseIndexSearchMinScore: codebaseIndexConfig?.codebaseIndexSearchMinScore,
-				codebaseIndexBedrockRegion: codebaseIndexConfig?.codebaseIndexBedrockRegion,
-				codebaseIndexBedrockProfile: codebaseIndexConfig?.codebaseIndexBedrockProfile,
-			},
 			// Only set mdmCompliant if there's an actual MDM policy
 			// undefined means no MDM policy, true means compliant, false means non-compliant
 			mdmCompliant: this.mdmService?.requiresCloudAuth() ? this.checkMdmCompliance() : undefined,
@@ -2293,24 +2296,6 @@ export class ClineProvider
 			organizationSettingsVersion,
 			condensingApiConfigId: stateValues.condensingApiConfigId,
 			customCondensingPrompt: stateValues.customCondensingPrompt,
-			codebaseIndexModels: stateValues.codebaseIndexModels ?? EMBEDDING_MODEL_PROFILES,
-			codebaseIndexConfig: {
-				codebaseIndexEnabled: stateValues.codebaseIndexConfig?.codebaseIndexEnabled ?? false,
-				codebaseIndexQdrantUrl:
-					stateValues.codebaseIndexConfig?.codebaseIndexQdrantUrl ?? "http://localhost:6333",
-				codebaseIndexEmbedderProvider:
-					stateValues.codebaseIndexConfig?.codebaseIndexEmbedderProvider ?? "openai",
-				codebaseIndexEmbedderBaseUrl: stateValues.codebaseIndexConfig?.codebaseIndexEmbedderBaseUrl ?? "",
-				codebaseIndexEmbedderModelId: stateValues.codebaseIndexConfig?.codebaseIndexEmbedderModelId ?? "",
-				codebaseIndexEmbedderModelDimension:
-					stateValues.codebaseIndexConfig?.codebaseIndexEmbedderModelDimension,
-				codebaseIndexOpenAiCompatibleBaseUrl:
-					stateValues.codebaseIndexConfig?.codebaseIndexOpenAiCompatibleBaseUrl,
-				codebaseIndexSearchMaxResults: stateValues.codebaseIndexConfig?.codebaseIndexSearchMaxResults,
-				codebaseIndexSearchMinScore: stateValues.codebaseIndexConfig?.codebaseIndexSearchMinScore,
-				codebaseIndexBedrockRegion: stateValues.codebaseIndexConfig?.codebaseIndexBedrockRegion,
-				codebaseIndexBedrockProfile: stateValues.codebaseIndexConfig?.codebaseIndexBedrockProfile,
-			},
 			profileThresholds: stateValues.profileThresholds ?? {},
 			includeDiagnosticMessages: stateValues.includeDiagnosticMessages ?? true,
 			maxDiagnosticMessages: stateValues.maxDiagnosticMessages ?? 50,
@@ -2350,6 +2335,9 @@ export class ClineProvider
 
 	async updateTaskHistory(item: HistoryItem): Promise<HistoryItem[]> {
 		const history = (this.getGlobalState("taskHistory") as HistoryItem[] | undefined) || []
+		console.log(
+			`[updateTaskHistory] Updating history for task ${item.id}. Current history length: ${history.length}`,
+		)
 		const existingItemIndex = history.findIndex((h) => h.id === item.id)
 
 		if (existingItemIndex !== -1) {
@@ -2365,6 +2353,7 @@ export class ClineProvider
 		}
 
 		await this.updateGlobalState("taskHistory", history)
+		console.log(`[updateTaskHistory] History updated. New length: ${history.length}`)
 		this.recentTasksCache = undefined
 
 		return history
@@ -2536,55 +2525,15 @@ export class ClineProvider
 	 * Gets the CodeIndexManager for the current active workspace
 	 * @returns CodeIndexManager instance for the current workspace or the default one
 	 */
-	public getCurrentWorkspaceCodeIndexManager(): CodeIndexManager | undefined {
-		return CodeIndexManager.getInstance(this.context)
+	public getCurrentWorkspaceCodeIndexManager(): undefined {
+		return undefined
 	}
 
 	/**
 	 * Updates the code index status subscription to listen to the current workspace manager
 	 */
 	private updateCodeIndexStatusSubscription(): void {
-		// Get the current workspace manager
-		const currentManager = this.getCurrentWorkspaceCodeIndexManager()
-
-		// If the manager hasn't changed, no need to update subscription
-		if (currentManager === this.codeIndexManager) {
-			return
-		}
-
-		// Dispose the old subscription if it exists
-		if (this.codeIndexStatusSubscription) {
-			this.codeIndexStatusSubscription.dispose()
-			this.codeIndexStatusSubscription = undefined
-		}
-
-		// Update the current workspace manager reference
-		this.codeIndexManager = currentManager
-
-		// Subscribe to the new manager's progress updates if it exists
-		if (currentManager) {
-			this.codeIndexStatusSubscription = currentManager.onProgressUpdate((update: IndexProgressUpdate) => {
-				// Only send updates if this manager is still the current one
-				if (currentManager === this.getCurrentWorkspaceCodeIndexManager()) {
-					// Get the full status from the manager to ensure we have all fields correctly formatted
-					const fullStatus = currentManager.getCurrentStatus()
-					this.postMessageToWebview({
-						type: "indexingStatusUpdate",
-						values: fullStatus,
-					})
-				}
-			})
-
-			if (this.view) {
-				this.webviewDisposables.push(this.codeIndexStatusSubscription)
-			}
-
-			// Send initial status for the current workspace
-			this.postMessageToWebview({
-				type: "indexingStatusUpdate",
-				values: currentManager.getCurrentStatus(),
-			})
-		}
+		// Removed CodeIndexManager integration
 	}
 
 	/**
@@ -2605,15 +2554,34 @@ export class ClineProvider
 		}
 
 		const history = this.getGlobalState("taskHistory") ?? []
+
+		// [Debug] Log history retrieval for troubleshooting
+		console.log(`[getRecentTasks] Total history items: ${history.length}`)
+		console.log(`[getRecentTasks] Current CWD: ${this.cwd}`)
+
 		const workspaceTasks: HistoryItem[] = []
 
+		// Normalize current cwd for comparison
+		const normalizedCwd = this.cwd.toLowerCase().replace(/[\\/]+/g, "/")
+
 		for (const item of history) {
-			if (!item.ts || !item.task || item.workspace !== this.cwd) {
+			if (!item.ts || !item.task) {
+				continue
+			}
+
+			// Normalize item workspace
+			const normalizedItemWorkspace = item.workspace?.toLowerCase().replace(/[\\/]+/g, "/")
+
+			if (normalizedItemWorkspace !== normalizedCwd) {
+				// [Debug] Log filtered item
+				// console.log(`[getRecentTasks] Filtered item: ${item.id} (ws: ${item.workspace})`)
 				continue
 			}
 
 			workspaceTasks.push(item)
 		}
+
+		console.log(`[getRecentTasks] Workspace tasks: ${workspaceTasks.length}`)
 
 		if (workspaceTasks.length === 0) {
 			this.recentTasksCache = []
@@ -2733,6 +2701,24 @@ export class ClineProvider
 		})
 
 		await this.addClineToStack(task)
+
+		// [RooWriter] Ensure task is persisted immediately to history so it appears in Recent Tasks
+		try {
+			const { historyItem } = await taskMetadata({
+				taskId: task.taskId,
+				rootTaskId: task.rootTaskId,
+				parentTaskId: task.parentTaskId,
+				taskNumber: task.taskNumber,
+				messages: task.clineMessages,
+				globalStoragePath: this.context.globalStorageUri.fsPath,
+				workspace: task.workspacePath,
+				mode: await task.getTaskMode(),
+			})
+			await this.updateTaskHistory(historyItem)
+			await this.postStateToWebview()
+		} catch (error) {
+			console.error("Failed to persist new task to history:", error)
+		}
 
 		this.log(
 			`[createTask] ${task.parentTask ? "child" : "parent"} task ${task.taskId}.${task.instanceId} instantiated`,
@@ -3123,7 +3109,7 @@ export class ClineProvider
 			}
 		}
 
-		// The API expects: user â†’ assistant (with tool_use) â†’ user (with tool_result)
+		// The API expects: user â†?assistant (with tool_use) â†?user (with tool_result)
 		// We need to add a NEW user message with the tool_result AFTER the assistant's tool_use
 		// NOT add it to an existing user message
 		if (toolUseId) {
@@ -3278,3 +3264,4 @@ export class ClineProvider
 		}
 	}
 }
+

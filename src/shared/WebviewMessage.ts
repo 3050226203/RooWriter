@@ -10,6 +10,7 @@ import {
 	type ShareVisibility,
 	type QueuedMessage,
 	marketplaceItemSchema,
+	type HistoryItem,
 } from "@roo-code/types"
 
 import { Mode } from "./modes"
@@ -50,6 +51,7 @@ export interface WebviewMessage {
 		| "shareCurrentTask"
 		| "showTaskWithId"
 		| "deleteTaskWithId"
+		| "updateTask"
 		| "exportTaskWithId"
 		| "importSettings"
 		| "exportSettings"
@@ -114,7 +116,6 @@ export interface WebviewMessage {
 		| "deleteMcpServer"
 		| "humanRelayResponse"
 		| "humanRelayCancel"
-		| "codebaseIndexEnabled"
 		| "telemetrySetting"
 		| "testBrowserConnection"
 		| "browserConnectionResult"
@@ -128,11 +129,6 @@ export interface WebviewMessage {
 		| "rooCloudManualUrl"
 		| "switchOrganization"
 		| "condenseTaskContextRequest"
-		| "requestIndexingStatus"
-		| "startIndexing"
-		| "clearIndexData"
-		| "indexingStatusUpdate"
-		| "indexCleared"
 		| "focusPanelRequest"
 		| "openExternal"
 		| "filterMarketplaceItems"
@@ -151,8 +147,6 @@ export interface WebviewMessage {
 		| "importModeResult"
 		| "checkRulesDirectory"
 		| "checkRulesDirectoryResult"
-		| "saveCodeIndexSettingsAtomic"
-		| "requestCodeIndexSecretStatus"
 		| "requestCommands"
 		| "openCommandFile"
 		| "deleteCommand"
@@ -197,6 +191,7 @@ export interface WebviewMessage {
 	isEnabled?: boolean
 	mode?: Mode
 	promptMode?: PromptMode
+	historyItem?: HistoryItem
 	customPrompt?: PromptComponent
 	dataUrls?: string[]
 	values?: Record<string, any>
@@ -227,37 +222,6 @@ export interface WebviewMessage {
 	list?: string[] // For dismissedUpsells response
 	organizationId?: string | null // For organization switching
 	useProviderSignup?: boolean // For rooCloudSignIn to use provider signup flow
-	codeIndexSettings?: {
-		// Global state settings
-		codebaseIndexEnabled: boolean
-		codebaseIndexQdrantUrl: string
-		codebaseIndexEmbedderProvider:
-			| "openai"
-			| "ollama"
-			| "openai-compatible"
-			| "gemini"
-			| "mistral"
-			| "vercel-ai-gateway"
-			| "bedrock"
-			| "openrouter"
-		codebaseIndexEmbedderBaseUrl?: string
-		codebaseIndexEmbedderModelId: string
-		codebaseIndexEmbedderModelDimension?: number // Generic dimension for all providers
-		codebaseIndexOpenAiCompatibleBaseUrl?: string
-		codebaseIndexBedrockRegion?: string
-		codebaseIndexBedrockProfile?: string
-		codebaseIndexSearchMaxResults?: number
-		codebaseIndexSearchMinScore?: number
-
-		// Secret settings
-		codeIndexOpenAiKey?: string
-		codeIndexQdrantApiKey?: string
-		codebaseIndexOpenAiCompatibleApiKey?: string
-		codebaseIndexGeminiApiKey?: string
-		codebaseIndexMistralApiKey?: string
-		codebaseIndexVercelAiGatewayApiKey?: string
-		codebaseIndexOpenRouterApiKey?: string
-	}
 	updatedSettings?: RooCodeSettings
 }
 
@@ -278,16 +242,6 @@ export const checkoutRestorePayloadSchema = z.object({
 
 export type CheckpointRestorePayload = z.infer<typeof checkoutRestorePayloadSchema>
 
-export interface IndexingStatusPayload {
-	state: "Standby" | "Indexing" | "Indexed" | "Error"
-	message: string
-}
-
-export interface IndexClearedPayload {
-	success: boolean
-	error?: string
-}
-
 export const installMarketplaceItemWithParametersPayloadSchema = z.object({
 	item: marketplaceItemSchema,
 	parameters: z.record(z.string(), z.any()),
@@ -300,8 +254,6 @@ export type InstallMarketplaceItemWithParametersPayload = z.infer<
 export type WebViewMessagePayload =
 	| CheckpointDiffPayload
 	| CheckpointRestorePayload
-	| IndexingStatusPayload
-	| IndexClearedPayload
 	| InstallMarketplaceItemWithParametersPayload
 	| UpdateTodoListPayload
 	| EditQueuedMessagePayload

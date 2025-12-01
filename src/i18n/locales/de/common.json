@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Roo Code",
+		"name": "RooWriter",
 		"description": "Ein komplettes Entwicklerteam mit KI in deinem Editor."
 	},
 	"number_format": {
@@ -118,7 +118,7 @@
 			"completionError": "Cerebras-Vervollständigungsfehler: {{error}}"
 		},
 		"roo": {
-			"authenticationRequired": "Roo-Anbieter erfordert Cloud-Authentifizierung. Bitte melde dich bei Roo Code Cloud an."
+			"authenticationRequired": "Roo-Anbieter erfordert Cloud-Authentifizierung. Bitte melde dich bei RooWriter Cloud an."
 		},
 		"api": {
 			"invalidKeyInvalidChars": "API-Schlüssel enthält ungültige Zeichen."
@@ -194,7 +194,7 @@
 	},
 	"customModes": {
 		"errors": {
-			"yamlParseError": "Ungültiges YAML in .roomodes-Datei in Zeile {{line}}. Bitte überprüfe:\n• Korrekte Einrückung (verwende Leerzeichen, keine Tabs)\n• Passende Anführungszeichen und Klammern\n• Gültige YAML-Syntax",
+			"yamlParseError": "Ungültiges YAML in .roomodes-Datei in Zeile {{line}}. Bitte überprüfe:\n�?Korrekte Einrückung (verwende Leerzeichen, keine Tabs)\n�?Passende Anführungszeichen und Klammern\n�?Gültige YAML-Syntax",
 			"schemaValidationError": "Ungültiges Format für benutzerdefinierte Modi in .roomodes:\n{{issues}}",
 			"invalidFormat": "Ungültiges Format für benutzerdefinierte Modi. Bitte stelle sicher, dass deine Einstellungen dem korrekten YAML-Format folgen.",
 			"updateFailed": "Fehler beim Aktualisieren des benutzerdefinierten Modus: {{error}}",
@@ -216,8 +216,8 @@
 	},
 	"mdm": {
 		"errors": {
-			"cloud_auth_required": "Deine Organisation erfordert eine Roo Code Cloud-Authentifizierung. Bitte melde dich an, um fortzufahren.",
-			"organization_mismatch": "Du musst mit dem Roo Code Cloud-Konto deiner Organisation authentifiziert sein.",
+			"cloud_auth_required": "Deine Organisation erfordert eine RooWriter Cloud-Authentifizierung. Bitte melde dich an, um fortzufahren.",
+			"organization_mismatch": "Du musst mit dem RooWriter Cloud-Konto deiner Organisation authentifiziert sein.",
 			"verification_failed": "Die Organisationsauthentifizierung konnte nicht verifiziert werden."
 		},
 		"info": {
@@ -242,3 +242,4 @@
 		"url": "https://docs.roocode.com"
 	}
 }
+

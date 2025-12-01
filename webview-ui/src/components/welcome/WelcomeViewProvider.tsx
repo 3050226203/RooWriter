@@ -169,7 +169,7 @@ const WelcomeViewProvider = () => {
 									value={manualUrl}
 									onChange={handleManualUrlChange}
 									onKeyDown={handleKeyDown}
-									placeholder="vscode://RooVeterinaryInc.roo-cline/auth/clerk/callback?state=..."
+									placeholder="vscode://RooVeterinaryInc.roo-writer/auth/clerk/callback?state=..."
 									className="w-full"
 								/>
 							</div>
@@ -202,7 +202,7 @@ const WelcomeViewProvider = () => {
 				</div>
 
 				<div className="mb-4">
-					{/* Roo Code Cloud Provider Option */}
+					{/* RooWriter Cloud Provider Option */}
 					<div
 						className="flex items-start gap-3 p-4 mb-3 border border-vscode-panel-border rounded-md cursor-pointer hover:bg-vscode-list-hoverBackground"
 						onClick={() => setSelectedProvider("roo")}>
@@ -268,8 +268,7 @@ const WelcomeViewProvider = () => {
 			<div className="sticky bottom-0 bg-vscode-sideBar-background p-4 border-t border-vscode-panel-border">
 				<div className="flex flex-col gap-2">
 					<Button onClick={handleGetStarted} variant="primary">
-						{t("welcome:providerSignup.getStarted")} â†’
-					</Button>
+						{t("welcome:providerSignup.getStarted")} â†?					</Button>
 					{errorMessage && selectedProvider === "custom" && (
 						<div className="text-vscode-errorForeground text-sm">{errorMessage}</div>
 					)}
@@ -280,3 +279,5 @@ const WelcomeViewProvider = () => {
 }
 
 export default WelcomeViewProvider
+
+

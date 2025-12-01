@@ -24,7 +24,8 @@
 		"invalidImageFormat": "Geçersiz görüntü formatı alındı",
 		"unknownError": "Bilinmeyen bir hata oluştu",
 		"roo": {
-			"authRequired": "Görüntü oluşturma için Roo Code Cloud kimlik doğrulaması gereklidir. Lütfen Roo Code Cloud'da oturum açın."
+			"authRequired": "Görüntü oluşturma için RooWriter Cloud kimlik doğrulaması gereklidir. Lütfen RooWriter Cloud'da oturum açın."
 		}
 	}
 }
+

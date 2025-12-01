@@ -37,7 +37,6 @@ import { generateImageTool } from "../tools/GenerateImageTool"
 import { formatResponse } from "../prompts/responses"
 import { validateToolUse } from "../tools/validateToolUse"
 import { Task } from "../task/Task"
-import { codebaseSearchTool } from "../tools/CodebaseSearchTool"
 import { experiments, EXPERIMENT_IDS } from "../../shared/experiments"
 import { applyDiffTool as applyDiffToolClass } from "../tools/ApplyDiffTool"
 import { isNativeProtocol } from "@roo-code/types"
@@ -401,8 +400,6 @@ export async function presentAssistantMessage(cline: Task) {
 						return `[${block.name}]`
 					case "switch_mode":
 						return `[${block.name} to '${block.params.mode_slug}'${block.params.reason ? ` because: ${block.params.reason}` : ""}]`
-					case "codebase_search": // Add case for the new tool
-						return `[${block.name} for '${block.params.query}']`
 					case "update_todo_list":
 						return `[${block.name}]`
 					case "new_task": {
@@ -877,15 +874,6 @@ export async function presentAssistantMessage(cline: Task) {
 					break
 				case "list_files":
 					await listFilesTool.handle(cline, block as ToolUse<"list_files">, {
-						askApproval,
-						handleError,
-						pushToolResult,
-						removeClosingTag,
-						toolProtocol,
-					})
-					break
-				case "codebase_search":
-					await codebaseSearchTool.handle(cline, block as ToolUse<"codebase_search">, {
 						askApproval,
 						handleError,
 						pushToolResult,

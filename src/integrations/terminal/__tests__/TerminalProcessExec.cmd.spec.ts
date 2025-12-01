@@ -83,7 +83,7 @@ async function testCmdCommand(
 			executeCommand: vi.fn(),
 			cwd: vscode.Uri.file("C:\\test\\path"),
 		},
-		name: "Roo Code",
+		name: "RooWriter",
 		processId: Promise.resolve(123),
 		creationOptions: {},
 		exitStatus: undefined,
@@ -328,3 +328,4 @@ describePlatform("TerminalProcess with CMD Command Output", () => {
 		})
 	})
 })
+

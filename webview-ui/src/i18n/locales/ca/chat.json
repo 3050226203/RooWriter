@@ -1,5 +1,5 @@
 {
-	"greeting": "Benvingut a Roo Code",
+	"greeting": "Benvingut a RooWriter",
 	"task": {
 		"title": "Tasca",
 		"expand": "Expandir tasca",
@@ -21,11 +21,11 @@
 		"sharePublicly": "Compartir públicament",
 		"sharePubliclyDescription": "Qualsevol amb l'enllaç pot accedir",
 		"connectToCloud": "Connecta al núvol",
-		"connectToCloudDescription": "Inicia sessió a Roo Code Cloud per compartir tasques",
+		"connectToCloudDescription": "Inicia sessió a RooWriter Cloud per compartir tasques",
 		"sharingDisabledByOrganization": "Compartició deshabilitada per l'organització",
 		"shareSuccessOrganization": "Enllaç d'organització copiat al porta-retalls",
 		"shareSuccessPublic": "Enllaç públic copiat al porta-retalls",
-		"openInCloud": "Obrir tasca a Roo Code Cloud",
+		"openInCloud": "Obrir tasca a RooWriter Cloud",
 		"openInCloudIntro": "Continua monitoritzant o interactuant amb Roo des de qualsevol lloc. Escaneja, fes clic o copia per obrir.",
 		"openApiHistory": "Obrir historial d'API",
 		"openUiHistory": "Obrir historial d'UI"
@@ -87,7 +87,7 @@
 		"tooltip": "Cancel·la l'operació actual"
 	},
 	"scrollToBottom": "Desplaça't al final del xat",
-	"about": "Roo Code és tot un equip de desenvolupament d'IA al teu editor.",
+	"about": "RooWriter és tot un equip de desenvolupament d'IA al teu editor.",
 	"docs": "Consulta els nostres <DocsLink>documents</DocsLink> per a més informació.",
 	"onboarding": "La teva llista de tasques en aquest espai de treball està buida.",
 	"rooTips": {
@@ -97,7 +97,7 @@
 		},
 		"modelAgnostic": {
 			"title": "Porta el teu propi model",
-			"description": "Fes servir la teva pròpia clau de proveïdor o fins i tot executa inferència local — sense sobrepreus, sense bloquejos, sense restriccions"
+			"description": "Fes servir la teva pròpia clau de proveïdor o fins i tot executa inferència local �?sense sobrepreus, sense bloquejos, sense restriccions"
 		}
 	},
 	"selectMode": "Selecciona el mode d'interacció",
@@ -284,18 +284,18 @@
 		"countdownDisplay": "{{count}}s"
 	},
 	"announcement": {
-		"title": "🎉 Roo Code {{version}} Llançat",
+		"title": "🎉 RooWriter {{version}} Llançat",
 		"stealthModel": {
-			"feature": "<bold>Model stealth GRATUÏT per temps limitat</bold> - Code Supernova: Ara actualitzat amb una <bold>finestra de context d'1M tokens</bold>! Un model de codificació agèntica versàtil que suporta entrades d'imatges, disponible a través de Roo Code Cloud.",
+			"feature": "<bold>Model stealth GRATUÏT per temps limitat</bold> - Code Supernova: Ara actualitzat amb una <bold>finestra de context d'1M tokens</bold>! Un model de codificació agèntica versàtil que suporta entrades d'imatges, disponible a través de RooWriter Cloud.",
 			"note": "(Nota: els prompts i completacions són registrats pel creador del model i utilitzats per millorar-lo)",
-			"connectButton": "Connectar a Roo Code Cloud",
-			"selectModel": "Selecciona <code>roo/code-supernova</code> del proveïdor Roo Code Cloud a Configuració per començar.",
+			"connectButton": "Connectar a RooWriter Cloud",
+			"selectModel": "Selecciona <code>roo/code-supernova</code> del proveïdor RooWriter Cloud a Configuració per començar.",
 			"goToSettingsButton": "Anar a Configuració"
 		},
 		"release": {
 			"heading": "Novetats:",
 			"browserUse": "Browser Use 2.0 millora l'experiència de navegació dins del xat amb sessions persistents, comentaris més clars, un panell de navegador dedicat i descripcions d'accions més naturals",
-			"cloudPaid": "El proveïdor de Roo Code Cloud ara ofereix models de pagament: compra crèdits i utilitza'ls tant per a agents al núvol com per a inferència"
+			"cloudPaid": "El proveïdor de RooWriter Cloud ara ofereix models de pagament: compra crèdits i utilitza'ls tant per a agents al núvol com per a inferència"
 		},
 		"cloudAgents": {
 			"heading": "Novetats al núvol:",
@@ -342,7 +342,7 @@
 	"profileViolationWarning": "El perfil actual no és compatible amb la configuració de la teva organització",
 	"shellIntegration": {
 		"title": "Advertència d'execució d'ordres",
-		"description": "La teva ordre s'està executant sense la integració de shell del terminal VSCode. Per suprimir aquest advertiment, pots desactivar la integració de shell a la secció <strong>Terminal</strong> de la <settingsLink>configuració de Roo Code</settingsLink> o solucionar problemes d'integració del terminal VSCode utilitzant l'enllaç a continuació.",
+		"description": "La teva ordre s'està executant sense la integració de shell del terminal VSCode. Per suprimir aquest advertiment, pots desactivar la integració de shell a la secció <strong>Terminal</strong> de la <settingsLink>configuració de RooWriter</settingsLink> o solucionar problemes d'integració del terminal VSCode utilitzant l'enllaç a continuació.",
 		"troubleshooting": "Fes clic aquí per a la documentació d'integració de shell."
 	},
 	"ask": {
@@ -383,7 +383,7 @@
 		"ariaLabel": "Versió {{version}} - Feu clic per veure les notes de llançament"
 	},
 	"rooCloudCTA": {
-		"title": "Roo Code Cloud està evolucionant!",
+		"title": "RooWriter Cloud està evolucionant!",
 		"description": "Executa agents remots al núvol, accedeix a les teves tasques des de qualsevol lloc, col·labora amb altres i molt més.",
 		"joinWaitlist": "Registra't per rebre les últimes actualitzacions."
 	},
@@ -435,3 +435,4 @@
 		"started": "Iniciat"
 	}
 }
+

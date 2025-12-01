@@ -1,30 +1,31 @@
 {
 	"readFile": {
 		"linesRange": " (dòng {{start}}-{{end}})",
-		"definitionsOnly": " (chỉ định nghĩa)",
+		"definitionsOnly": " (ch�?định nghĩa)",
 		"maxLines": " (tối đa {{max}} dòng)",
 		"imageTooLarge": "Tệp hình ảnh quá lớn ({{size}} MB). Kích thước tối đa cho phép là {{max}} MB.",
 		"imageWithSize": "Tệp hình ảnh ({{size}} KB)"
 	},
-	"toolRepetitionLimitReached": "Roo dường như đang bị mắc kẹt trong một vòng lặp, liên tục cố gắng thực hiện cùng một hành động ({{toolName}}). Điều này có thể cho thấy vấn đề với chiến lược hiện tại. Hãy cân nhắc việc diễn đạt lại nhiệm vụ, cung cấp hướng dẫn cụ thể hơn, hoặc hướng Roo theo một cách tiếp cận khác.",
+	"toolRepetitionLimitReached": "Roo dường như đang b�?mắc kẹt trong một vòng lặp, liên tục c�?gắng thực hiện cùng một hành động ({{toolName}}). Điều này có th�?cho thấy vấn đ�?với chiến lược hiện tại. Hãy cân nhắc việc diễn đạt lại nhiệm v�? cung cấp hướng dẫn c�?th�?hơn, hoặc hướng Roo theo một cách tiếp cận khác.",
 	"codebaseSearch": {
-		"approval": "Đang tìm kiếm '{{query}}' trong cơ sở mã..."
+		"approval": "Đang tìm kiếm '{{query}}' trong cơ s�?mã..."
 	},
 	"newTask": {
 		"errors": {
-			"policy_restriction": "Không thể tạo nhiệm vụ mới do hạn chế chính sách."
+			"policy_restriction": "Không th�?tạo nhiệm v�?mới do hạn ch�?chính sách."
 		}
 	},
 	"generateImage": {
-		"openRouterApiKeyRequired": "Yêu cầu khóa API OpenRouter để tạo hình ảnh với các mô hình OpenRouter. Vui lòng cấu hình trong cài đặt thử nghiệm Tạo hình ảnh.",
+		"openRouterApiKeyRequired": "Yêu cầu khóa API OpenRouter đ�?tạo hình ảnh với các mô hình OpenRouter. Vui lòng cấu hình trong cài đặt th�?nghiệm Tạo hình ảnh.",
 		"failedWithStatus": "Tạo hình ảnh thất bại: {{status}} {{statusText}}",
 		"failedWithMessage": "Tạo hình ảnh thất bại: {{message}}",
 		"noImageGenerated": "Không có hình ảnh nào được tạo trong phản hồi",
-		"invalidImageData": "Dữ liệu hình ảnh không hợp lệ trong phản hồi",
-		"invalidImageFormat": "Nhận được định dạng hình ảnh không hợp lệ",
+		"invalidImageData": "D�?liệu hình ảnh không hợp l�?trong phản hồi",
+		"invalidImageFormat": "Nhận được định dạng hình ảnh không hợp l�?,
 		"unknownError": "Đã xảy ra lỗi không xác định",
 		"roo": {
-			"authRequired": "Yêu cầu xác thực Roo Code Cloud để tạo hình ảnh. Vui lòng đăng nhập vào Roo Code Cloud."
+			"authRequired": "Yêu cầu xác thực RooWriter Cloud đ�?tạo hình ảnh. Vui lòng đăng nhập vào RooWriter Cloud."
 		}
 	}
 }
+
