@@ -209,7 +209,16 @@ export class ClineProvider
 				this.emit(RooCodeEventName.TaskCompleted, taskId, tokenUsage, toolUsage)
 				// [RooWriter] Ensure final state is persisted
 				try {
-					const { historyItem } = await taskMetadata(instance)
+					const { historyItem } = await taskMetadata({
+						taskId: instance.taskId,
+						rootTaskId: instance.rootTaskId,
+						parentTaskId: instance.parentTaskId,
+						taskNumber: instance.taskNumber,
+						messages: instance.clineMessages,
+						globalStoragePath: this.context.globalStorageUri.fsPath,
+						workspace: instance.workspacePath,
+						mode: await instance.getTaskMode(),
+					})
 					await this.updateTaskHistory(historyItem)
 				} catch (error) {
 					console.error("Failed to update task history on completion:", error)
@@ -258,7 +267,16 @@ export class ClineProvider
 				this.emit(RooCodeEventName.TaskTokenUsageUpdated, taskId, tokenUsage)
 				// [RooWriter] Update history with new token usage
 				try {
-					const { historyItem } = await taskMetadata(instance)
+					const { historyItem } = await taskMetadata({
+						taskId: instance.taskId,
+						rootTaskId: instance.rootTaskId,
+						parentTaskId: instance.parentTaskId,
+						taskNumber: instance.taskNumber,
+						messages: instance.clineMessages,
+						globalStoragePath: this.context.globalStorageUri.fsPath,
+						workspace: instance.workspacePath,
+						mode: await instance.getTaskMode(),
+					})
 					await this.updateTaskHistory(historyItem)
 				} catch (error) {
 					console.error("Failed to update task history on token usage update:", error)
@@ -2752,7 +2770,16 @@ export class ClineProvider
 
 		// [RooWriter] Ensure task is persisted immediately to history so it appears in Recent Tasks
 		try {
-			const { historyItem } = await taskMetadata(task)
+			const { historyItem } = await taskMetadata({
+				taskId: task.taskId,
+				rootTaskId: task.rootTaskId,
+				parentTaskId: task.parentTaskId,
+				taskNumber: task.taskNumber,
+				messages: task.clineMessages,
+				globalStoragePath: this.context.globalStorageUri.fsPath,
+				workspace: task.workspacePath,
+				mode: await task.getTaskMode(),
+			})
 			await this.updateTaskHistory(historyItem)
 		} catch (error) {
 			console.error("Failed to persist new task to history:", error)
