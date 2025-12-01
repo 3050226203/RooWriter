@@ -51,7 +51,7 @@ export const useTaskSearch = () => {
 
 	const fzf = useMemo(() => {
 		return new Fzf(presentableTasks, {
-			selector: (item) => item.task,
+			selector: (item) => `${item.task} ${item.snapshot || ""}`,
 		})
 	}, [presentableTasks])
 

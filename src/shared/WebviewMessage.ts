@@ -10,6 +10,7 @@ import {
 	type ShareVisibility,
 	type QueuedMessage,
 	marketplaceItemSchema,
+	type HistoryItem,
 } from "@roo-code/types"
 
 import { Mode } from "./modes"
@@ -50,6 +51,7 @@ export interface WebviewMessage {
 		| "shareCurrentTask"
 		| "showTaskWithId"
 		| "deleteTaskWithId"
+		| "updateTask"
 		| "exportTaskWithId"
 		| "importSettings"
 		| "exportSettings"
@@ -197,6 +199,7 @@ export interface WebviewMessage {
 	isEnabled?: boolean
 	mode?: Mode
 	promptMode?: PromptMode
+	historyItem?: HistoryItem
 	customPrompt?: PromptComponent
 	dataUrls?: string[]
 	values?: Record<string, any>
