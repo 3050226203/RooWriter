@@ -1225,7 +1225,7 @@ export const webviewMessageHandler = async (
 			break
 		}
 		case "openKeyboardShortcuts": {
-			// Open VSCode keyboard shortcuts settings and optionally filter to show the Roo Code commands
+			// Open VSCode keyboard shortcuts settings and optionally filter to show the RooWriter commands
 			const searchQuery = message.text || ""
 			if (searchQuery) {
 				// Open with a search query pre-filled
@@ -2836,3 +2836,4 @@ export const webviewMessageHandler = async (
 		}
 	}
 }
+

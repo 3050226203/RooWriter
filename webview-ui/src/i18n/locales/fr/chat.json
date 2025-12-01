@@ -1,5 +1,5 @@
 {
-	"greeting": "Bienvenue sur Roo Code",
+	"greeting": "Bienvenue sur RooWriter",
 	"task": {
 		"title": "Tâche",
 		"expand": "Développer la tâche",
@@ -21,11 +21,11 @@
 		"sharePublicly": "Partager publiquement",
 		"sharePubliclyDescription": "Toute personne avec le lien peut accéder",
 		"connectToCloud": "Se connecter au Cloud",
-		"connectToCloudDescription": "Connecte-toi à Roo Code Cloud pour partager des tâches",
+		"connectToCloudDescription": "Connecte-toi à RooWriter Cloud pour partager des tâches",
 		"sharingDisabledByOrganization": "Partage désactivé par l'organisation",
 		"shareSuccessOrganization": "Lien d'organisation copié dans le presse-papiers",
 		"shareSuccessPublic": "Lien public copié dans le presse-papiers",
-		"openInCloud": "Ouvrir la tâche dans Roo Code Cloud",
+		"openInCloud": "Ouvrir la tâche dans RooWriter Cloud",
 		"openInCloudIntro": "Continue à surveiller ou interagir avec Roo depuis n'importe où. Scanne, clique ou copie pour ouvrir.",
 		"openApiHistory": "Ouvrir l'historique de l'API",
 		"openUiHistory": "Ouvrir l'historique de l'UI"
@@ -87,7 +87,7 @@
 		"tooltip": "Annuler l'opération actuelle"
 	},
 	"scrollToBottom": "Défiler jusqu'au bas du chat",
-	"about": "Roo Code est une équipe complète de développeurs IA dans votre éditeur.",
+	"about": "RooWriter est une équipe complète de développeurs IA dans votre éditeur.",
 	"docs": "Consultez notre <DocsLink>documentation</DocsLink> pour en savoir plus.",
 	"onboarding": "Votre liste de tâches dans cet espace de travail est vide.",
 	"rooTips": {
@@ -97,7 +97,7 @@
 		},
 		"modelAgnostic": {
 			"title": "Apportez votre propre modèle",
-			"description": "Utilisez votre propre clé de fournisseur ou même exécutez une inférence locale — pas de majoration, pas de verrouillage, pas de restrictions"
+			"description": "Utilisez votre propre clé de fournisseur ou même exécutez une inférence locale �?pas de majoration, pas de verrouillage, pas de restrictions"
 		}
 	},
 	"selectMode": "Sélectionner le mode d'interaction",
@@ -284,18 +284,18 @@
 		"countdownDisplay": "{{count}}s"
 	},
 	"announcement": {
-		"title": "🎉 Roo Code {{version}} est sortie",
+		"title": "🎉 RooWriter {{version}} est sortie",
 		"stealthModel": {
-			"feature": "<bold>Modèle stealth GRATUIT pour une durée limitée</bold> - Code Supernova : Maintenant amélioré avec une <bold>fenêtre de contexte de 1M tokens</bold> ! Un modèle de codage agentique polyvalent qui prend en charge les entrées d'images, accessible via Roo Code Cloud.",
+			"feature": "<bold>Modèle stealth GRATUIT pour une durée limitée</bold> - Code Supernova : Maintenant amélioré avec une <bold>fenêtre de contexte de 1M tokens</bold> ! Un modèle de codage agentique polyvalent qui prend en charge les entrées d'images, accessible via RooWriter Cloud.",
 			"note": "(Note : les prompts et complétions sont enregistrés par le créateur du modèle et utilisés pour l'améliorer)",
-			"connectButton": "Se connecter à Roo Code Cloud",
-			"selectModel": "Sélectionnez <code>roo/code-supernova</code> du fournisseur Roo Code Cloud dans Paramètres pour commencer.",
+			"connectButton": "Se connecter à RooWriter Cloud",
+			"selectModel": "Sélectionnez <code>roo/code-supernova</code> du fournisseur RooWriter Cloud dans Paramètres pour commencer.",
 			"goToSettingsButton": "Aller aux Paramètres"
 		},
 		"release": {
 			"heading": "Nouveautés dans cette version :",
 			"browserUse": "Browser Use 2.0 améliore l'expérience de navigation en chat avec des sessions persistantes, des retours plus clairs, un panneau de navigateur dédié et des descriptions d'actions plus naturelles",
-			"cloudPaid": "Le fournisseur Roo Code Cloud propose désormais des modèles payants : achète des crédits et utilise-les pour les agents cloud et l'inférence"
+			"cloudPaid": "Le fournisseur RooWriter Cloud propose désormais des modèles payants : achète des crédits et utilise-les pour les agents cloud et l'inférence"
 		},
 		"cloudAgents": {
 			"heading": "Nouveautés dans le Cloud :",
@@ -342,7 +342,7 @@
 	"profileViolationWarning": "Le profil actuel n'est pas compatible avec les paramètres de votre organisation",
 	"shellIntegration": {
 		"title": "Avertissement d'exécution de commande",
-		"description": "Votre commande est exécutée sans l'intégration shell du terminal VSCode. Pour supprimer cet avertissement, vous pouvez désactiver l'intégration shell dans la section <strong>Terminal</strong> des <settingsLink>paramètres de Roo Code</settingsLink> ou résoudre les problèmes d'intégration du terminal VSCode en utilisant le lien ci-dessous.",
+		"description": "Votre commande est exécutée sans l'intégration shell du terminal VSCode. Pour supprimer cet avertissement, vous pouvez désactiver l'intégration shell dans la section <strong>Terminal</strong> des <settingsLink>paramètres de RooWriter</settingsLink> ou résoudre les problèmes d'intégration du terminal VSCode en utilisant le lien ci-dessous.",
 		"troubleshooting": "Cliquez ici pour la documentation d'intégration shell."
 	},
 	"ask": {
@@ -383,7 +383,7 @@
 		"ariaLabel": "Version {{version}} - Cliquez pour voir les notes de version"
 	},
 	"rooCloudCTA": {
-		"title": "Roo Code Cloud évolue !",
+		"title": "RooWriter Cloud évolue !",
 		"description": "Exécutez des agents distants dans le cloud, accédez à vos tâches de n'importe où, collaborez avec d'autres et bien plus encore.",
 		"joinWaitlist": "Inscrivez-vous pour recevoir les dernières mises à jour."
 	},
@@ -435,3 +435,4 @@
 		"started": "Commencé"
 	}
 }
+

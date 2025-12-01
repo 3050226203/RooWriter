@@ -24,7 +24,8 @@
 		"invalidImageFormat": "Ongeldig afbeeldingsformaat ontvangen",
 		"unknownError": "Er is een onbekende fout opgetreden",
 		"roo": {
-			"authRequired": "Roo Code Cloud-authenticatie is vereist voor het genereren van afbeeldingen. Log in bij Roo Code Cloud."
+			"authRequired": "RooWriter Cloud-authenticatie is vereist voor het genereren van afbeeldingen. Log in bij RooWriter Cloud."
 		}
 	}
 }
+

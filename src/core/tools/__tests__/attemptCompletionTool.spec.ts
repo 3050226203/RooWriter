@@ -21,7 +21,7 @@ vi.mock("vscode", () => ({
 // Mock Package module
 vi.mock("../../../shared/package", () => ({
 	Package: {
-		name: "roo-cline",
+		name: "roo-writer",
 	},
 }))
 
@@ -474,3 +474,4 @@ describe("attemptCompletionTool", () => {
 		})
 	})
 })
+

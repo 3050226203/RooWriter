@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Roo Code",
+		"name": "RooWriter",
 		"description": "Düzenleyicinizde tam bir AI geliştirici ekibi."
 	},
 	"number_format": {
@@ -118,7 +118,7 @@
 			"completionError": "Cerebras tamamlama hatası: {{error}}"
 		},
 		"roo": {
-			"authenticationRequired": "Roo sağlayıcısı bulut kimlik doğrulaması gerektirir. Lütfen Roo Code Cloud'a giriş yapın."
+			"authenticationRequired": "Roo sağlayıcısı bulut kimlik doğrulaması gerektirir. Lütfen RooWriter Cloud'a giriş yapın."
 		},
 		"api": {
 			"invalidKeyInvalidChars": "API anahtarı geçersiz karakterler içeriyor."
@@ -194,7 +194,7 @@
 	},
 	"customModes": {
 		"errors": {
-			"yamlParseError": ".roomodes dosyasının {{line}}. satırında geçersiz YAML. Kontrol et:\n• Doğru girinti (tab değil boşluk kullan)\n• Eşleşen tırnak işaretleri ve parantezler\n• Geçerli YAML sözdizimi",
+			"yamlParseError": ".roomodes dosyasının {{line}}. satırında geçersiz YAML. Kontrol et:\n�?Doğru girinti (tab değil boşluk kullan)\n�?Eşleşen tırnak işaretleri ve parantezler\n�?Geçerli YAML sözdizimi",
 			"schemaValidationError": ".roomodes'ta geçersiz özel mod formatı:\n{{issues}}",
 			"invalidFormat": "Geçersiz özel mod formatı. Ayarlarının doğru YAML formatını takip ettiğinden emin ol.",
 			"updateFailed": "Özel mod güncellemesi başarısız: {{error}}",
@@ -216,8 +216,8 @@
 	},
 	"mdm": {
 		"errors": {
-			"cloud_auth_required": "Kuruluşunuz Roo Code Cloud kimlik doğrulaması gerektiriyor. Devam etmek için giriş yapın.",
-			"organization_mismatch": "Kuruluşunuzun Roo Code Cloud hesabıyla kimlik doğrulaması yapmalısınız.",
+			"cloud_auth_required": "Kuruluşunuz RooWriter Cloud kimlik doğrulaması gerektiriyor. Devam etmek için giriş yapın.",
+			"organization_mismatch": "Kuruluşunuzun RooWriter Cloud hesabıyla kimlik doğrulaması yapmalısınız.",
 			"manual_url_empty": "Lütfen geçerli bir callback URL'si girin",
 			"manual_url_no_query": "Geçersiz callback URL'si: sorgu parametreleri eksik",
 			"manual_url_missing_params": "Geçersiz callback URL'si: gerekli parametreler eksik (code ve state)",
@@ -247,3 +247,4 @@
 		"url": "https://docs.roocode.com"
 	}
 }
+

@@ -6,7 +6,7 @@ import { TelemetryEventName, type TelemetryEvent } from "@roo-code/types"
 import { BaseTelemetryClient } from "./BaseTelemetryClient"
 
 /**
- * PostHogTelemetryClient handles telemetry event tracking for the Roo Code extension.
+ * PostHogTelemetryClient handles telemetry event tracking for the RooWriter extension.
  * Uses PostHog analytics to track user interactions and system events.
  * Respects user privacy settings and VSCode's global telemetry configuration.
  */
@@ -91,3 +91,4 @@ export class PostHogTelemetryClient extends BaseTelemetryClient {
 		await this.client.shutdown()
 	}
 }
+

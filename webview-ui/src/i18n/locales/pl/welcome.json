@@ -1,6 +1,6 @@
 {
-	"greeting": "Witaj w Roo Code!",
-	"introduction": "Dzięki szerokiej gamie wbudowanych i rozszerzalnych Trybów, Roo Code pozwala planować, projektować architekturę, kodować, debugować i zwiększać produktywność jak nigdy dotąd.",
+	"greeting": "Witaj w RooWriter!",
+	"introduction": "Dzięki szerokiej gamie wbudowanych i rozszerzalnych Trybów, RooWriter pozwala planować, projektować architekturę, kodować, debugować i zwiększać produktywność jak nigdy dotąd.",
 	"notice": "Aby rozpocząć, to rozszerzenie potrzebuje dostawcy API.",
 	"start": "Zaczynajmy!",
 	"routers": {
@@ -18,7 +18,7 @@
 	},
 	"chooseProvider": "Aby rozpocząć, potrzebujesz dostawcy LLM:",
 	"providerSignup": {
-		"rooCloudProvider": "Dostawca Roo Code Cloud",
+		"rooCloudProvider": "Dostawca RooWriter Cloud",
 		"rooCloudDescription": "Najprostszy sposób korzystania z Roo. Wybrana mieszanka darmowych i płatnych modeli po niskich kosztach",
 		"learnMore": "dowiedz się więcej",
 		"useAnotherProvider": "Użyj innego dostawcy",
@@ -26,7 +26,7 @@
 		"getStarted": "Rozpocznij"
 	},
 	"waitingForCloud": {
-		"heading": "Zabieramy cię do Roo Code Cloud...",
+		"heading": "Zabieramy cię do RooWriter Cloud...",
 		"description": "Ukończ rejestrację w przeglądarce i automatycznie wrócisz tutaj.",
 		"noPrompt": "Jeśli nie zostaniesz poproszony o otwarcie adresu URL, <clickHere>kliknij tutaj</clickHere>.",
 		"havingTrouble": "Jeśli ukończyłeś rejestrację, ale masz problemy, <clickHere>kliknij tutaj</clickHere>.",
@@ -36,8 +36,9 @@
 	"startRouter": "Zalecamy korzystanie z routera LLM:",
 	"startCustom": "Lub możesz użyć własnego klucza API:",
 	"telemetry": {
-		"helpImprove": "Pomóż ulepszyć Roo Code",
-		"helpImproveMessage": "Roo Code zbiera dane o błędach i użytkowaniu, aby pomóc nam naprawiać błędy i ulepszać rozszerzenie. Ta telemetria nie zbiera kodu, promptów ani danych osobowych. Możesz wyłączyć to w <settingsLink>ustawieniach</settingsLink>."
+		"helpImprove": "Pomóż ulepszyć RooWriter",
+		"helpImproveMessage": "RooWriter zbiera dane o błędach i użytkowaniu, aby pomóc nam naprawiać błędy i ulepszać rozszerzenie. Ta telemetria nie zbiera kodu, promptów ani danych osobowych. Możesz wyłączyć to w <settingsLink>ustawieniach</settingsLink>."
 	},
 	"importSettings": "Importuj ustawienia"
 }
+

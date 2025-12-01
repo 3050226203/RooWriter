@@ -1,28 +1,28 @@
 {
 	"extension": {
-		"name": "Roo Code",
-		"description": "您编辑器中的完整AI开发团队。"
+		"name": "RooWriter",
+		"description": "您编辑器中的完整AI开发团队�?
 	},
 	"number_format": {
 		"thousand_suffix": "k",
 		"million_suffix": "m",
 		"billion_suffix": "b"
 	},
-	"welcome": "欢迎，{{name}}！您有 {{count}} 条通知。",
+	"welcome": "欢迎，{{name}}！您�?{{count}} 条通知�?,
 	"items": {
 		"zero": "没有项目",
-		"one": "1个项目",
-		"other": "{{count}}个项目"
+		"one": "1个项�?,
+		"other": "{{count}}个项�?
 	},
 	"confirmation": {
-		"reset_state": "您确定要重置扩展中的所有状态和密钥存储吗？此操作无法撤消。",
-		"delete_config_profile": "您确定要删除此配置文件吗？",
-		"delete_custom_mode_with_rules": "您确定要删除此 {scope} 模式吗？\n\n这也将删除位于以下位置的关联规则文件夹：\n{rulesFolderPath}"
+		"reset_state": "您确定要重置扩展中的所有状态和密钥存储吗？此操作无法撤消�?,
+		"delete_config_profile": "您确定要删除此配置文件吗�?,
+		"delete_custom_mode_with_rules": "您确定要删除�?{scope} 模式吗？\n\n这也将删除位于以下位置的关联规则文件夹：\n{rulesFolderPath}"
 	},
 	"errors": {
 		"invalid_mcp_config": "项目MCP配置格式无效",
-		"invalid_mcp_settings_format": "MCP设置JSON格式无效。请确保您的设置遵循正确的JSON格式。",
-		"invalid_mcp_settings_syntax": "MCP设置JSON格式无效。请检查您的设置文件是否有语法错误。",
+		"invalid_mcp_settings_format": "MCP设置JSON格式无效。请确保您的设置遵循正确的JSON格式�?,
+		"invalid_mcp_settings_syntax": "MCP设置JSON格式无效。请检查您的设置文件是否有语法错误�?,
 		"invalid_mcp_settings_validation": "MCP设置格式无效：{{errorMessages}}",
 		"failed_initialize_project_mcp": "初始化项目MCP服务器失败：{{error}}",
 		"invalid_data_uri": "数据 URI 格式无效",
@@ -30,18 +30,18 @@
 		"error_saving_image": "保存图片时出错：{{errorMessage}}",
 		"error_opening_image": "打开图片时出错：{{error}}",
 		"could_not_open_file": "无法打开文件：{{errorMessage}}",
-		"could_not_open_file_generic": "无法打开文件！",
-		"checkpoint_timeout": "尝试恢复检查点时超时。",
-		"checkpoint_failed": "恢复检查点失败。",
-		"git_not_installed": "检查点功能需要 Git。请安装 Git 以启用检查点。",
-		"checkpoint_no_first": "没有第一个存档点可供比较。",
-		"checkpoint_no_previous": "没有上一个存档点可供比较。",
-		"checkpoint_no_changes": "未发现任何更改。",
-		"checkpoint_diff_with_next": "与下一个存档点比较的更改",
-		"checkpoint_diff_since_first": "自第一个存档点以来的更改",
-		"checkpoint_diff_to_current": "对当前工作区的更改",
-		"nested_git_repos_warning": "存档点已禁用，因为在 {{path}} 检测到嵌套的 git 仓库。要使用存档点，请移除或重新定位此嵌套的 git 仓库。",
-		"no_workspace": "请先打开项目文件夹",
+		"could_not_open_file_generic": "无法打开文件�?,
+		"checkpoint_timeout": "尝试恢复检查点时超时�?,
+		"checkpoint_failed": "恢复检查点失败�?,
+		"git_not_installed": "检查点功能需�?Git。请安装 Git 以启用检查点�?,
+		"checkpoint_no_first": "没有第一个存档点可供比较�?,
+		"checkpoint_no_previous": "没有上一个存档点可供比较�?,
+		"checkpoint_no_changes": "未发现任何更改�?,
+		"checkpoint_diff_with_next": "与下一个存档点比较的更�?,
+		"checkpoint_diff_since_first": "自第一个存档点以来的更�?,
+		"checkpoint_diff_to_current": "对当前工作区的更�?,
+		"nested_git_repos_warning": "存档点已禁用，因为在 {{path}} 检测到嵌套�?git 仓库。要使用存档点，请移除或重新定位此嵌套的 git 仓库�?,
+		"no_workspace": "请先打开项目文件�?,
 		"update_support_prompt": "更新支持消息失败",
 		"reset_support_prompt": "重置支持消息失败",
 		"enhance_prompt": "增强消息失败",
@@ -53,46 +53,46 @@
 		"load_api_config": "加载API配置失败",
 		"delete_api_config": "删除API配置失败",
 		"list_api_config": "获取API配置列表失败",
-		"update_server_timeout": "更新服务器超时设置失败",
-		"hmr_not_running": "本地开发服务器未运行，HMR将不起作用。请在启动扩展前运行'npm run dev'以启用HMR。",
-		"retrieve_current_mode": "从状态中检索当前模式失败。",
+		"update_server_timeout": "更新服务器超时设置失�?,
+		"hmr_not_running": "本地开发服务器未运行，HMR将不起作用。请在启动扩展前运行'npm run dev'以启用HMR�?,
+		"retrieve_current_mode": "从状态中检索当前模式失败�?,
 		"failed_delete_repo": "删除关联的影子仓库或分支失败：{{error}}",
 		"failed_remove_directory": "删除任务目录失败：{{error}}",
-		"custom_storage_path_unusable": "自定义存储路径 \"{{path}}\" 不可用，将使用默认路径",
+		"custom_storage_path_unusable": "自定义存储路�?\"{{path}}\" 不可用，将使用默认路�?,
 		"cannot_access_path": "无法访问路径 {{path}}：{{error}}",
-		"settings_import_failed": "设置导入失败：{{error}}。",
-		"mistake_limit_guidance": "这可能表明模型思维过程失败或无法正确使用工具，可通过用户指导来缓解（例如\"尝试将任务分解为更小的步骤\"）。",
-		"violated_organization_allowlist": "执行任务失败：当前配置文件与您的组织设置不兼容",
-		"condense_failed": "压缩上下文失败",
-		"condense_not_enough_messages": "没有足够的对话来压缩上下文",
-		"condensed_recently": "上下文最近已压缩；跳过此次尝试",
+		"settings_import_failed": "设置导入失败：{{error}}�?,
+		"mistake_limit_guidance": "这可能表明模型思维过程失败或无法正确使用工具，可通过用户指导来缓解（例如\"尝试将任务分解为更小的步骤\"）�?,
+		"violated_organization_allowlist": "执行任务失败：当前配置文件与您的组织设置不兼�?,
+		"condense_failed": "压缩上下文失�?,
+		"condense_not_enough_messages": "没有足够的对话来压缩上下�?,
+		"condensed_recently": "上下文最近已压缩；跳过此次尝�?,
 		"condense_handler_invalid": "压缩上下文的API处理程序无效",
-		"condense_context_grew": "压缩过程中上下文大小增加；跳过此次尝试",
-		"url_timeout": "网站加载超时。这可能是由于网络连接缓慢、网站负载过重或暂时不可用。你可以稍后重试或检查 URL 是否正确。",
-		"url_not_found": "找不到网站地址。请检查 URL 是否正确并重试。",
-		"no_internet": "无网络连接。请检查网络连接并重试。",
-		"url_forbidden": "访问此网站被禁止。该网站可能阻止自动访问或需要身份验证。",
-		"url_page_not_found": "页面未找到。请检查 URL 是否正确。",
-		"url_request_aborted": "获取 URL 的请求被中止。如果网站阻止自动访问、需要身份验证或存在网络问题，就可能发生这种情况。请重试或检查 URL 是否可以在普通浏览器中访问。",
+		"condense_context_grew": "压缩过程中上下文大小增加；跳过此次尝�?,
+		"url_timeout": "网站加载超时。这可能是由于网络连接缓慢、网站负载过重或暂时不可用。你可以稍后重试或检�?URL 是否正确�?,
+		"url_not_found": "找不到网站地址。请检�?URL 是否正确并重试�?,
+		"no_internet": "无网络连接。请检查网络连接并重试�?,
+		"url_forbidden": "访问此网站被禁止。该网站可能阻止自动访问或需要身份验证�?,
+		"url_page_not_found": "页面未找到。请检�?URL 是否正确�?,
+		"url_request_aborted": "获取 URL 的请求被中止。如果网站阻止自动访问、需要身份验证或存在网络问题，就可能发生这种情况。请重试或检�?URL 是否可以在普通浏览器中访问�?,
 		"url_fetch_failed": "获取 URL 内容失败：{{error}}",
 		"url_fetch_error_with_url": "获取 {{url}} 内容时出错：{{error}}",
 		"command_timeout": "命令执行超时，{{seconds}} 秒后",
-		"share_task_failed": "分享任务失败。请重试。",
-		"share_no_active_task": "没有活跃任务可分享",
-		"share_auth_required": "需要身份验证。请登录以分享任务。",
-		"share_not_enabled": "此组织未启用任务分享功能。",
-		"share_task_not_found": "未找到任务或访问被拒绝。",
+		"share_task_failed": "分享任务失败。请重试�?,
+		"share_no_active_task": "没有活跃任务可分�?,
+		"share_auth_required": "需要身份验证。请登录以分享任务�?,
+		"share_not_enabled": "此组织未启用任务分享功能�?,
+		"share_task_not_found": "未找到任务或访问被拒绝�?,
 		"mode_import_failed": "导入模式失败：{{error}}",
 		"delete_rules_folder_failed": "删除规则文件夹失败：{{rulesFolderPath}}。错误：{{error}}",
-		"command_not_found": "未找到命令 '{{name}}'",
+		"command_not_found": "未找到命�?'{{name}}'",
 		"open_command_file": "打开命令文件失败",
 		"delete_command": "删除命令失败",
 		"no_workspace_for_project_command": "未找到项目命令的工作区文件夹",
-		"command_already_exists": "命令 \"{{commandName}}\" 已存在",
+		"command_already_exists": "命令 \"{{commandName}}\" 已存�?,
 		"create_command_failed": "创建命令失败",
-		"command_template_content": "---\ndescription: \"此命令功能的简要描述\"\n---\n\n这是一个新的斜杠命令。编辑此文件以自定义命令行为。",
+		"command_template_content": "---\ndescription: \"此命令功能的简要描述\"\n---\n\n这是一个新的斜杠命令。编辑此文件以自定义命令行为�?,
 		"claudeCode": {
-			"processExited": "Claude Code 进程退出，退出码：{{exitCode}}。",
+			"processExited": "Claude Code 进程退出，退出码：{{exitCode}}�?,
 			"errorOutput": "错误输出：{{output}}",
 			"processExitedWithError": "Claude Code 进程退出，退出码：{{exitCode}}。错误输出：{{output}}",
 			"stoppedWithReason": "Claude Code 停止，原因：{{reason}}",
@@ -104,33 +104,33 @@
 			"invalid_timestamp_for_deletion": "删除操作的消息时间戳无效",
 			"cannot_delete_missing_timestamp": "无法删除消息：缺少时间戳",
 			"cannot_delete_invalid_timestamp": "无法删除消息：时间戳无效",
-			"message_not_found": "未找到时间戳为 {{messageTs}} 的消息",
+			"message_not_found": "未找到时间戳�?{{messageTs}} 的消�?,
 			"error_deleting_message": "删除消息时出错：{{error}}",
 			"error_editing_message": "编辑消息时出错：{{error}}"
 		},
 		"gemini": {
 			"generate_stream": "Gemini 生成上下文流错误：{{error}}",
 			"generate_complete_prompt": "Gemini 完成错误：{{error}}",
-			"sources": "来源："
+			"sources": "来源�?
 		},
 		"cerebras": {
-			"authenticationFailed": "Cerebras API 身份验证失败。请检查你的 API 密钥是否有效且未过期。",
-			"accessForbidden": "Cerebras API 访问被禁止。你的 API 密钥可能无法访问请求的模型或功能。",
-			"rateLimitExceeded": "Cerebras API 速率限制已超出。请稍等后再发起另一个请求。",
-			"serverError": "Cerebras API 服务器错误 ({{status}})。请稍后重试。",
+			"authenticationFailed": "Cerebras API 身份验证失败。请检查你�?API 密钥是否有效且未过期�?,
+			"accessForbidden": "Cerebras API 访问被禁止。你�?API 密钥可能无法访问请求的模型或功能�?,
+			"rateLimitExceeded": "Cerebras API 速率限制已超出。请稍等后再发起另一个请求�?,
+			"serverError": "Cerebras API 服务器错�?({{status}})。请稍后重试�?,
 			"genericError": "Cerebras API 错误 ({{status}})：{{message}}",
 			"noResponseBody": "Cerebras API 错误：无响应主体",
 			"completionError": "Cerebras 完成错误：{{error}}"
 		},
 		"roo": {
-			"authenticationRequired": "Roo 提供商需要云认证。请登录 Roo Code Cloud。"
+			"authenticationRequired": "Roo 提供商需要云认证。请登录 RooWriter Cloud�?
 		},
 		"api": {
-			"invalidKeyInvalidChars": "API 密钥包含无效字符。"
+			"invalidKeyInvalidChars": "API 密钥包含无效字符�?
 		},
 		"manual_url_empty": "请输入有效的回调 URL",
-		"manual_url_no_query": "无效的回调 URL：缺少查询参数",
-		"manual_url_missing_params": "无效的回调 URL：缺少必需参数（code 和 state）",
+		"manual_url_no_query": "无效的回�?URL：缺少查询参�?,
+		"manual_url_missing_params": "无效的回�?URL：缺少必需参数（code �?state�?,
 		"manual_url_auth_failed": "手动 URL 身份验证失败",
 		"manual_url_auth_error": "身份验证失败"
 	},
@@ -140,24 +140,24 @@
 		"auto_import_failed": "自动导入 RooCode 设置失败：{{error}}"
 	},
 	"info": {
-		"no_changes": "未找到更改。",
-		"clipboard_copy": "系统消息已成功复制到剪贴板",
-		"history_cleanup": "已从历史记录中清理{{count}}个缺少文件的任务。",
+		"no_changes": "未找到更改�?,
+		"clipboard_copy": "系统消息已成功复制到剪贴�?,
+		"history_cleanup": "已从历史记录中清理{{count}}个缺少文件的任务�?,
 		"custom_storage_path_set": "自定义存储路径已设置：{{path}}",
-		"default_storage_path": "已恢复使用默认存储路径",
-		"settings_imported": "设置已成功导入。",
-		"auto_import_success": "已自动导入 RooCode 设置：{{filename}}",
-		"share_link_copied": "分享链接已复制到剪贴板",
-		"image_copied_to_clipboard": "图片数据 URI 已复制到剪贴板",
+		"default_storage_path": "已恢复使用默认存储路�?,
+		"settings_imported": "设置已成功导入�?,
+		"auto_import_success": "已自动导�?RooCode 设置：{{filename}}",
+		"share_link_copied": "分享链接已复制到剪贴�?,
+		"image_copied_to_clipboard": "图片数据 URI 已复制到剪贴�?,
 		"image_saved": "图片已保存到 {{path}}",
 		"organization_share_link_copied": "组织分享链接已复制到剪贴板！",
 		"public_share_link_copied": "公开分享链接已复制到剪贴板！",
-		"mode_exported": "模式 '{{mode}}' 已成功导出",
-		"mode_imported": "模式已成功导入"
+		"mode_exported": "模式 '{{mode}}' 已成功导�?,
+		"mode_imported": "模式已成功导�?
 	},
 	"answers": {
-		"yes": "是",
-		"no": "否",
+		"yes": "�?,
+		"no": "�?,
 		"remove": "删除",
 		"keep": "保留"
 	},
@@ -167,24 +167,24 @@
 		"learn_more": "了解更多"
 	},
 	"tasks": {
-		"canceled": "任务错误：它已被用户停止并取消。",
-		"deleted": "任务失败：它已被用户停止并删除。",
-		"incomplete": "任务 #{{taskNumber}} (未完成)",
-		"no_messages": "任务 #{{taskNumber}} (无消息)"
+		"canceled": "任务错误：它已被用户停止并取消�?,
+		"deleted": "任务失败：它已被用户停止并删除�?,
+		"incomplete": "任务 #{{taskNumber}} (未完�?",
+		"no_messages": "任务 #{{taskNumber}} (无消�?"
 	},
 	"interruption": {
-		"responseInterruptedByUser": "响应被用户中断",
-		"responseInterruptedByApiError": "响应被 API 错误中断"
+		"responseInterruptedByUser": "响应被用户中�?,
+		"responseInterruptedByApiError": "响应�?API 错误中断"
 	},
 	"storage": {
-		"prompt_custom_path": "输入自定义会话历史存储路径，留空以使用默认位置",
+		"prompt_custom_path": "输入自定义会话历史存储路径，留空以使用默认位�?,
 		"path_placeholder": "D:\\RooCodeStorage",
-		"enter_absolute_path": "请输入绝对路径（例如 D:\\RooCodeStorage 或 /home/user/storage）",
+		"enter_absolute_path": "请输入绝对路径（例如 D:\\RooCodeStorage �?/home/user/storage�?,
 		"enter_valid_path": "请输入有效的路径"
 	},
 	"input": {
 		"task_prompt": "让Roo做什么？",
-		"task_placeholder": "在这里输入任务"
+		"task_placeholder": "在这里输入任�?
 	},
 	"settings": {
 		"providers": {
@@ -192,22 +192,22 @@
 			"getGroqApiKey": "获取 Groq API 密钥",
 			"claudeCode": {
 				"pathLabel": "Claude Code 路径",
-				"description": "Claude Code CLI 的可选路径。如果未设置，默认为 'claude'。",
+				"description": "Claude Code CLI 的可选路径。如果未设置，默认为 'claude'�?,
 				"placeholder": "默认: claude"
 			}
 		}
 	},
 	"customModes": {
 		"errors": {
-			"yamlParseError": ".roomodes 文件第 {{line}} 行 YAML 格式无效。请检查：\n• 正确的缩进（使用空格，不要使用制表符）\n• 匹配的引号和括号\n• 有效的 YAML 语法",
+			"yamlParseError": ".roomodes 文件�?{{line}} �?YAML 格式无效。请检查：\n�?正确的缩进（使用空格，不要使用制表符）\n�?匹配的引号和括号\n�?有效�?YAML 语法",
 			"schemaValidationError": ".roomodes 中自定义模式格式无效：\n{{issues}}",
-			"invalidFormat": "自定义模式格式无效。请确保你的设置遵循正确的 YAML 格式。",
+			"invalidFormat": "自定义模式格式无效。请确保你的设置遵循正确�?YAML 格式�?,
 			"updateFailed": "更新自定义模式失败：{{error}}",
 			"deleteFailed": "删除自定义模式失败：{{error}}",
 			"resetFailed": "重置自定义模式失败：{{error}}",
 			"modeNotFound": "写入错误：未找到模式",
 			"noWorkspaceForProject": "未找到项目特定模式的工作区文件夹",
-			"rulesCleanupFailed": "模式删除成功，但无法删除位于 {{rulesFolderPath}} 的规则文件夹。您可能需要手动删除。"
+			"rulesCleanupFailed": "模式删除成功，但无法删除位于 {{rulesFolderPath}} 的规则文件夹。您可能需要手动删除�?
 		},
 		"scope": {
 			"project": "项目",
@@ -216,28 +216,28 @@
 	},
 	"marketplace": {
 		"mode": {
-			"rulesCleanupFailed": "模式已成功移除，但无法删除位于 {{rulesFolderPath}} 的规则文件夹。您可能需要手动删除。"
+			"rulesCleanupFailed": "模式已成功移除，但无法删除位�?{{rulesFolderPath}} 的规则文件夹。您可能需要手动删除�?
 		}
 	},
 	"mdm": {
 		"errors": {
-			"cloud_auth_required": "您的组织需要 Roo Code Cloud 身份验证。请登录以继续。",
-			"organization_mismatch": "您必须使用组织的 Roo Code Cloud 账户进行身份验证。",
+			"cloud_auth_required": "您的组织需�?RooWriter Cloud 身份验证。请登录以继续�?,
+			"organization_mismatch": "您必须使用组织的 RooWriter Cloud 账户进行身份验证�?,
 			"manual_url_empty": "请输入有效的回调 URL",
-			"manual_url_no_query": "无效的回调 URL：缺少查询参数",
-			"manual_url_missing_params": "无效的回调 URL：缺少必需参数（code 和 state）",
+			"manual_url_no_query": "无效的回�?URL：缺少查询参�?,
+			"manual_url_missing_params": "无效的回�?URL：缺少必需参数（code �?state�?,
 			"manual_url_auth_failed": "手动 URL 身份验证失败",
 			"manual_url_auth_error": "身份验证失败",
-			"verification_failed": "无法验证组织身份验证。"
+			"verification_failed": "无法验证组织身份验证�?
 		},
 		"info": {
-			"organization_requires_auth": "您的组织需要身份验证。"
+			"organization_requires_auth": "您的组织需要身份验证�?
 		}
 	},
 	"prompts": {
 		"deleteMode": {
-			"title": "删除自定义模式",
-			"description": "您确定要删除此 {{scope}} 模式吗？这也将删除位于 {{rulesFolderPath}} 的关联规则文件夹",
+			"title": "删除自定义模�?,
+			"description": "您确定要删除�?{{scope}} 模式吗？这也将删除位�?{{rulesFolderPath}} 的关联规则文件夹",
 			"descriptionNoRules": "您确定要删除此自定义模式吗？",
 			"confirm": "删除"
 		}
@@ -252,3 +252,4 @@
 		"url": "https://docs.roocode.com"
 	}
 }
+

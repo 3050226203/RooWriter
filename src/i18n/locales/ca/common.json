@@ -4,7 +4,7 @@
 		"task_placeholder": "Escriu la teva tasca aquí"
 	},
 	"extension": {
-		"name": "Roo Code",
+		"name": "RooWriter",
 		"description": "Tot un equip de desenvolupadors d'IA al teu editor."
 	},
 	"number_format": {
@@ -121,7 +121,7 @@
 			"completionError": "Error de finalització de Cerebras: {{error}}"
 		},
 		"roo": {
-			"authenticationRequired": "El proveïdor Roo requereix autenticació al núvol. Si us plau, inicieu sessió a Roo Code Cloud."
+			"authenticationRequired": "El proveïdor Roo requereix autenticació al núvol. Si us plau, inicieu sessió a RooWriter Cloud."
 		},
 		"api": {
 			"invalidKeyInvalidChars": "La clau API conté caràcters no vàlids."
@@ -194,7 +194,7 @@
 	},
 	"customModes": {
 		"errors": {
-			"yamlParseError": "YAML no vàlid al fitxer .roomodes a la línia {{line}}. Comprova:\n• Indentació correcta (utilitza espais, no tabuladors)\n• Cometes i claudàtors coincidents\n• Sintaxi YAML vàlida",
+			"yamlParseError": "YAML no vàlid al fitxer .roomodes a la línia {{line}}. Comprova:\n�?Indentació correcta (utilitza espais, no tabuladors)\n�?Cometes i claudàtors coincidents\n�?Sintaxi YAML vàlida",
 			"schemaValidationError": "Format de modes personalitzats no vàlid a .roomodes:\n{{issues}}",
 			"invalidFormat": "Format de modes personalitzats no vàlid. Assegura't que la teva configuració segueix el format YAML correcte.",
 			"updateFailed": "Error en actualitzar el mode personalitzat: {{error}}",
@@ -216,8 +216,8 @@
 	},
 	"mdm": {
 		"errors": {
-			"cloud_auth_required": "La teva organització requereix autenticació de Roo Code Cloud. Si us plau, inicia sessió per continuar.",
-			"organization_mismatch": "Has d'estar autenticat amb el compte de Roo Code Cloud de la teva organització.",
+			"cloud_auth_required": "La teva organització requereix autenticació de RooWriter Cloud. Si us plau, inicia sessió per continuar.",
+			"organization_mismatch": "Has d'estar autenticat amb el compte de RooWriter Cloud de la teva organització.",
 			"manual_url_empty": "Si us plau, introdueix una URL de callback vàlida",
 			"manual_url_no_query": "URL de callback no vàlida: falten paràmetres de consulta",
 			"manual_url_missing_params": "URL de callback no vàlida: falten paràmetres requerits (code i state)",
@@ -247,3 +247,4 @@
 		"url": "https://docs.roocode.com"
 	}
 }
+

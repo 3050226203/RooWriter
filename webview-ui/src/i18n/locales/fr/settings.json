@@ -33,7 +33,7 @@
 		"ui": "UI",
 		"experimental": "Expérimental",
 		"language": "Langue",
-		"about": "À propos de Roo Code"
+		"about": "À propos de RooWriter"
 	},
 	"about": {
 		"bugReport": {
@@ -51,7 +51,7 @@
 		"contact": {
 			"label": "Besoin de nous parler ? Écrivez"
 		},
-		"community": "Vous voulez des conseils ou simplement discuter avec d'autres utilisateurs de Roo Code ? Rejoignez <redditLink>reddit.com/r/RooCode</redditLink> ou <discordLink>discord.gg/roocode</discordLink>",
+		"community": "Vous voulez des conseils ou simplement discuter avec d'autres utilisateurs de RooWriter ? Rejoignez <redditLink>reddit.com/r/RooCode</redditLink> ou <discordLink>discord.gg/roocode</discordLink>",
 		"contactAndCommunity": "Contact et Communauté",
 		"manageSettings": "Gérer les Paramètres"
 	},
@@ -414,7 +414,7 @@
 			"draftModelDesc": "Le modèle brouillon doit être de la même famille de modèles pour que le décodage spéculatif fonctionne correctement.",
 			"selectDraftModel": "Sélectionner le modèle brouillon",
 			"noModelsFound": "Aucun modèle brouillon trouvé. Veuillez vous assurer que LM Studio est en cours d'exécution avec le mode serveur activé.",
-			"description": "LM Studio vous permet d'exécuter des modèles localement sur votre ordinateur. Pour obtenir des instructions sur la mise en route, consultez leur <a>guide de démarrage rapide</a>. Vous devrez également démarrer la fonction <b>serveur local</b> de LM Studio pour l'utiliser avec cette extension. <span>Remarque :</span> Roo Code utilise des prompts complexes et fonctionne mieux avec les modèles Claude. Les modèles moins performants peuvent ne pas fonctionner comme prévu."
+			"description": "LM Studio vous permet d'exécuter des modèles localement sur votre ordinateur. Pour obtenir des instructions sur la mise en route, consultez leur <a>guide de démarrage rapide</a>. Vous devrez également démarrer la fonction <b>serveur local</b> de LM Studio pour l'utiliser avec cette extension. <span>Remarque :</span> RooWriter utilise des prompts complexes et fonctionne mieux avec les modèles Claude. Les modèles moins performants peuvent ne pas fonctionner comme prévu."
 		},
 		"ollama": {
 			"baseUrl": "URL de base (optionnel)",
@@ -424,7 +424,7 @@
 			"numCtx": "Taille de la fenêtre de contexte (num_ctx)",
 			"numCtxHelp": "Remplace la taille de la fenêtre de contexte par défaut du modèle. Laissez vide pour utiliser la configuration du Modelfile du modèle. La valeur minimale est 128.",
 			"description": "Ollama vous permet d'exécuter des modèles localement sur votre ordinateur. Pour obtenir des instructions sur la mise en route, consultez le guide de démarrage rapide.",
-			"warning": "Remarque : Roo Code utilise des prompts complexes et fonctionne mieux avec les modèles Claude. Les modèles moins performants peuvent ne pas fonctionner comme prévu."
+			"warning": "Remarque : RooWriter utilise des prompts complexes et fonctionne mieux avec les modèles Claude. Les modèles moins performants peuvent ne pas fonctionner comme prévu."
 		},
 		"unboundApiKey": "Clé API Unbound",
 		"getUnboundApiKey": "Obtenir la clé API Unbound",
@@ -435,8 +435,8 @@
 			"instructions": "Pendant l'utilisation, une boîte de dialogue apparaîtra et le message actuel sera automatiquement copié dans le presse-papiers. Vous devez le coller dans les versions web de l'IA (comme ChatGPT ou Claude), puis copier la réponse de l'IA dans la boîte de dialogue et cliquer sur le bouton de confirmation."
 		},
 		"roo": {
-			"authenticatedMessage": "Authentifié de manière sécurisée via ton compte Roo Code Cloud.",
-			"connectButton": "Se connecter à Roo Code Cloud"
+			"authenticatedMessage": "Authentifié de manière sécurisée via ton compte RooWriter Cloud.",
+			"connectButton": "Se connecter à RooWriter Cloud"
 		},
 		"openRouter": {
 			"providerRouting": {
@@ -446,7 +446,7 @@
 			}
 		},
 		"customModel": {
-			"capabilities": "Configurez les capacités et les prix pour votre modèle personnalisé compatible OpenAI. Soyez prudent lors de la spécification des capacités du modèle, car elles peuvent affecter le fonctionnement de Roo Code.",
+			"capabilities": "Configurez les capacités et les prix pour votre modèle personnalisé compatible OpenAI. Soyez prudent lors de la spécification des capacités du modèle, car elles peuvent affecter le fonctionnement de RooWriter.",
 			"maxTokens": {
 				"label": "Tokens de sortie maximum",
 				"description": "Nombre maximum de tokens que le modèle peut générer dans une réponse. (Spécifiez -1 pour permettre au serveur de définir les tokens maximum.)"
@@ -811,7 +811,7 @@
 			"modelSelectionLabel": "Modèle de génération d'images",
 			"modelSelectionDescription": "Sélectionnez le modèle pour la génération d'images",
 			"warningMissingKey": "⚠️ Une clé API OpenRouter est requise pour la génération d'images. Veuillez la configurer ci-dessus.",
-			"successConfigured": "✓ La génération d'images est configurée et prête à utiliser"
+			"successConfigured": "�?La génération d'images est configurée et prête à utiliser"
 		},
 		"RUN_SLASH_COMMAND": {
 			"name": "Activer les commandes slash initiées par le modèle",
@@ -854,7 +854,7 @@
 		}
 	},
 	"modelPicker": {
-		"automaticFetch": "L'extension récupère automatiquement la liste la plus récente des modèles disponibles sur <serviceLink>{{serviceName}}</serviceLink>. Si vous ne savez pas quel modèle choisir, Roo Code fonctionne mieux avec <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Vous pouvez également rechercher \"free\" pour les options gratuites actuellement disponibles.",
+		"automaticFetch": "L'extension récupère automatiquement la liste la plus récente des modèles disponibles sur <serviceLink>{{serviceName}}</serviceLink>. Si vous ne savez pas quel modèle choisir, RooWriter fonctionne mieux avec <defaultModelLink>{{defaultModelId}}</defaultModelLink>. Vous pouvez également rechercher \"free\" pour les options gratuites actuellement disponibles.",
 		"label": "Modèle",
 		"searchPlaceholder": "Rechercher",
 		"noMatchFound": "Aucune correspondance trouvée",
@@ -864,7 +864,7 @@
 		"feedback": "Si vous avez des questions ou des commentaires, n'hésitez pas à ouvrir un problème sur <githubLink>github.com/RooCodeInc/Roo-Code</githubLink> ou à rejoindre <redditLink>reddit.com/r/RooCode</redditLink> ou <discordLink>discord.gg/roocode</discordLink>",
 		"telemetry": {
 			"label": "Autoriser les rapports anonymes d'erreurs et d'utilisation",
-			"description": "Aidez à améliorer Roo Code en envoyant des données d'utilisation anonymes et des rapports d'erreurs. Cette télémétrie ne collecte pas de code, de prompts ou d'informations personnelles. Consultez notre <privacyLink>politique de confidentialité</privacyLink> pour plus de détails."
+			"description": "Aidez à améliorer RooWriter en envoyant des données d'utilisation anonymes et des rapports d'erreurs. Cette télémétrie ne collecte pas de code, de prompts ou d'informations personnelles. Consultez notre <privacyLink>politique de confidentialité</privacyLink> pour plus de détails."
 		},
 		"settings": {
 			"import": "Importer",
@@ -953,3 +953,4 @@
 		}
 	}
 }
+

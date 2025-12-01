@@ -2,25 +2,26 @@
 	"title": "MCP 服务器",
 	"done": "完成",
 	"marketplace": "MCP 市场",
-	"description": "<0>Model Context Protocol</0> 支持与本地MCP服务通信，提供扩展功能。您可以使用<1>社区服务器</1>，或通过指令创建定制工具（例如：\"新增获取最新npm文档的工具\"）。",
-	"instructions": "使用说明",
+	"description": "<0>模型上下文协议</0> 实现了与本地运行的 MCP 服务器的通信，这些服务器提供额外的工具和资源来扩展 RooWriter 的能力。您可以使用<1>社区制作的服务器</1>或要求 RooWriter 创建特定于您的工作流的新工具（例如，“添加一个获取最新 npm 文档的工具”）。",
+	"instructions": "说明",
 	"enableToggle": {
 		"title": "启用 MCP 服务器",
-		"description": "开启后 Roo 可用已连接 MCP 服务器的工具，能力更强。不用这些工具时建议关闭，节省 API Token 费用。"
+		"description": "打开此开关以让 RooWriter 使用已连接的 MCP 服务器中的工具。这赋予了 RooWriter 更多能力。如果您不打算使用这些额外工具，请关闭它以帮助降低 API Token 成本。"
 	},
 	"enableServerCreation": {
 		"title": "启用 MCP 服务器创建",
-		"description": "开启后 Roo 可帮你创建<1>新</1>自定义 MCP 服务器。<0>了解服务器创建</0>",
-		"hint": "提示：不需要 Roo 创建新 MCP 服务器时建议关闭，减少 API Token 费用。"
+		"description": "启用此项以让 RooWriter 帮助您构建<1>新的</1>自定义 MCP 服务器。<0>了解服务器创建</0>",
+		"hint": "提示：为降低 API Token 成本，请在您未主动要求 RooWriter 创建新 MCP 服务器时禁用此设置。"
 	},
 	"editGlobalMCP": "编辑全局 MCP",
 	"editProjectMCP": "编辑项目 MCP",
-	"learnMoreEditingSettings": "了解如何编辑 MCP 设置文件",
+	"refreshMCP": "刷新 MCP 服务器",
+	"learnMoreEditingSettings": "了解更多关于编辑 MCP 设置文件的信息",
 	"tool": {
 		"alwaysAllow": "始终允许",
 		"parameters": "参数",
 		"noDescription": "无描述",
-		"togglePromptInclusion": "切换在提示中的包含"
+		"togglePromptInclusion": "切换包含在提示中"
 	},
 	"tabs": {
 		"tools": "工具",
@@ -34,21 +35,21 @@
 	},
 	"networkTimeout": {
 		"label": "网络超时",
-		"description": "服务器响应最大等待时间",
+		"description": "等待服务器响应的最长时间",
 		"options": {
-			"15seconds": "15秒",
-			"30seconds": "30秒",
-			"1minute": "1分钟",
-			"5minutes": "5分钟",
-			"10minutes": "10分钟",
-			"15minutes": "15分钟",
-			"30minutes": "30分钟",
-			"60minutes": "60分钟"
+			"15seconds": "15 秒",
+			"30seconds": "30 秒",
+			"1minute": "1 分钟",
+			"5minutes": "5 分钟",
+			"10minutes": "10 分钟",
+			"15minutes": "15 分钟",
+			"30minutes": "30 分钟",
+			"60minutes": "60 分钟"
 		}
 	},
 	"deleteDialog": {
 		"title": "删除 MCP 服务器",
-		"description": "确认删除 MCP 服务器 \"{{serverName}}\"？此操作不可逆。",
+		"description": "您确定要删除 MCP 服务器 \"{{serverName}}\" 吗？此操作无法撤销。",
 		"cancel": "取消",
 		"delete": "删除"
 	},
@@ -56,7 +57,6 @@
 		"retrying": "重试中...",
 		"retryConnection": "重试连接"
 	},
-	"refreshMCP": "刷新 MCP 服务器",
 	"execution": {
 		"running": "运行中",
 		"completed": "已完成",

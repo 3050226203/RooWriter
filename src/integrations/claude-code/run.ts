@@ -170,7 +170,7 @@ function runProcess({
 		"stream-json",
 		"--disallowedTools",
 		claudeCodeTools,
-		// Roo Code will handle recursive calls
+		// RooWriter will handle recursive calls
 		"--max-turns",
 		"1",
 	)
@@ -273,3 +273,4 @@ function createClaudeCodeNotFoundError(claudePath: string, originalError: Error)
 	error.name = "ClaudeCodeNotFoundError"
 	return error
 }
+

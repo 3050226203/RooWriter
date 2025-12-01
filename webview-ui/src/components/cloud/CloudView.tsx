@@ -309,7 +309,7 @@ export const CloudView = ({ userInfo, isAuthenticated, cloudApiUrl, onDone, orga
 										value={manualUrl}
 										onChange={handleManualUrlChange}
 										onKeyDown={handleKeyDown}
-										placeholder="vscode://RooVeterinaryInc.roo-cline/auth/clerk/callback?state=..."
+										placeholder="vscode://RooVeterinaryInc.roo-writer/auth/clerk/callback?state=..."
 										className="w-full"
 									/>
 									<p className="mt-1">
@@ -342,3 +342,4 @@ export const CloudView = ({ userInfo, isAuthenticated, cloudApiUrl, onDone, orga
 		</Tab>
 	)
 }
+

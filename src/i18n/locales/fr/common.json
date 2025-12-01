@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Roo Code",
+		"name": "RooWriter",
 		"description": "Une équipe complète de développeurs IA dans votre éditeur."
 	},
 	"number_format": {
@@ -118,7 +118,7 @@
 			"completionError": "Erreur d'achèvement de Cerebras : {{error}}"
 		},
 		"roo": {
-			"authenticationRequired": "Le fournisseur Roo nécessite une authentification cloud. Veuillez vous connecter à Roo Code Cloud."
+			"authenticationRequired": "Le fournisseur Roo nécessite une authentification cloud. Veuillez vous connecter à RooWriter Cloud."
 		},
 		"api": {
 			"invalidKeyInvalidChars": "La clé API contient des caractères invalides."
@@ -194,7 +194,7 @@
 	},
 	"customModes": {
 		"errors": {
-			"yamlParseError": "YAML invalide dans le fichier .roomodes à la ligne {{line}}. Vérifie :\n• L'indentation correcte (utilise des espaces, pas de tabulations)\n• Les guillemets et crochets correspondants\n• La syntaxe YAML valide",
+			"yamlParseError": "YAML invalide dans le fichier .roomodes à la ligne {{line}}. Vérifie :\n�?L'indentation correcte (utilise des espaces, pas de tabulations)\n�?Les guillemets et crochets correspondants\n�?La syntaxe YAML valide",
 			"schemaValidationError": "Format invalide des modes personnalisés dans .roomodes :\n{{issues}}",
 			"invalidFormat": "Format invalide des modes personnalisés. Assure-toi que tes paramètres suivent le format YAML correct.",
 			"updateFailed": "Échec de la mise à jour du mode personnalisé : {{error}}",
@@ -216,8 +216,8 @@
 	},
 	"mdm": {
 		"errors": {
-			"cloud_auth_required": "Votre organisation nécessite une authentification Roo Code Cloud. Veuillez vous connecter pour continuer.",
-			"organization_mismatch": "Vous devez être authentifié avec le compte Roo Code Cloud de votre organisation.",
+			"cloud_auth_required": "Votre organisation nécessite une authentification RooWriter Cloud. Veuillez vous connecter pour continuer.",
+			"organization_mismatch": "Vous devez être authentifié avec le compte RooWriter Cloud de votre organisation.",
 			"manual_url_empty": "Veuillez entrer une URL de callback valide",
 			"manual_url_no_query": "URL de callback invalide : paramètres de requête manquants",
 			"manual_url_missing_params": "URL de callback invalide : paramètres requis manquants (code et state)",
@@ -247,3 +247,4 @@
 		"url": "https://docs.roocode.com"
 	}
 }
+

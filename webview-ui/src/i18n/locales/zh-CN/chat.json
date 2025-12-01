@@ -1,57 +1,57 @@
 {
-	"greeting": "欢迎使用 Roo Code",
+	"greeting": "欢迎使用 RooWriter！",
 	"task": {
 		"title": "任务",
 		"expand": "展开任务",
-		"collapse": "收起任务",
-		"seeMore": "展开",
+		"collapse": "折叠任务",
+		"seeMore": "查看更多",
 		"seeLess": "收起",
-		"tokens": "Token 用量",
+		"tokens": "Token",
 		"cache": "缓存",
-		"apiCost": "API 费用",
+		"apiCost": "API 成本",
 		"size": "大小",
+		"condenseContext": "智能压缩上下文",
 		"contextWindow": "上下文长度",
 		"closeAndStart": "关闭任务并开始新任务",
 		"export": "导出任务历史",
-		"delete": "删除任务（Shift + 点击跳过确认）",
 		"share": "分享任务",
-		"condenseContext": "智能压缩上下文",
+		"delete": "删除任务 (Shift + 点击跳过确认)",
 		"shareWithOrganization": "与组织分享",
 		"shareWithOrganizationDescription": "仅组织成员可访问",
 		"sharePublicly": "公开分享",
 		"sharePubliclyDescription": "任何拥有链接的人都可访问",
-		"connectToCloud": "连接到云端",
-		"connectToCloudDescription": "登录 Roo Code Cloud 以分享任务",
-		"sharingDisabledByOrganization": "组织已禁用分享功能",
+		"connectToCloud": "连接到 Cloud",
+		"connectToCloudDescription": "登录 RooWriter Cloud 以分享任务",
+		"sharingDisabledByOrganization": "组织已禁用分享",
 		"shareSuccessOrganization": "组织链接已复制到剪贴板",
 		"shareSuccessPublic": "公开链接已复制到剪贴板",
-		"openInCloud": "在 Roo Code Cloud 中打开任务",
-		"openInCloudIntro": "从任何地方继续监控或与 Roo 交互。扫描、点击或复制以打开。",
-		"openApiHistory": "打开 API 历史",
-		"openUiHistory": "打开 UI 历史"
+		"openInCloud": "在 RooWriter Cloud 中打开任务",
+		"openInCloudIntro": "随时随地监控或与 RooWriter 互动。扫描、点击或复制以打开。",
+		"openApiHistory": "打开 API 历史记录",
+		"openUiHistory": "打开 UI 历史记录"
 	},
-	"unpin": "取消置顶",
-	"pin": "置顶",
-	"tokenProgress": {
-		"availableSpace": "可用: {{amount}}",
-		"tokensUsed": "已使用: {{used}} / {{total}}",
-		"reservedForResponse": "已保留: {{amount}}"
-	},
+	"unpin": "取消固定",
+	"pin": "固定",
 	"retry": {
 		"title": "重试",
-		"tooltip": "再次尝试操作"
+		"tooltip": "重试操作"
 	},
 	"startNewTask": {
 		"title": "开始新任务",
 		"tooltip": "开始一个新任务"
 	},
 	"proceedAnyways": {
-		"title": "仍然继续",
-		"tooltip": "在命令执行时继续"
+		"title": "继续执行",
+		"tooltip": "继续执行命令"
 	},
 	"save": {
 		"title": "保存",
 		"tooltip": "保存消息更改"
+	},
+	"tokenProgress": {
+		"availableSpace": "可用空间：{{amount}} tokens",
+		"tokensUsed": "已用 Token：{{used}} / {{total}}",
+		"reservedForResponse": "为模型响应预留：{{amount}} tokens"
 	},
 	"reject": {
 		"title": "拒绝",
@@ -62,13 +62,21 @@
 		"title": "批准",
 		"tooltip": "批准此操作"
 	},
+	"read-batch": {
+		"approve": {
+			"title": "全部批准"
+		},
+		"deny": {
+			"title": "全部拒绝"
+		}
+	},
 	"runCommand": {
-		"title": "命令",
+		"title": "运行",
 		"tooltip": "执行此命令"
 	},
 	"proceedWhileRunning": {
-		"title": "强制继续",
-		"tooltip": "忽略运行中的命令并继续"
+		"title": "运行时继续",
+		"tooltip": "忽略警告继续"
 	},
 	"killCommand": {
 		"title": "终止命令",
@@ -79,138 +87,146 @@
 		"tooltip": "继续当前任务"
 	},
 	"terminate": {
-		"title": "结束",
+		"title": "终止",
 		"tooltip": "结束当前任务"
 	},
 	"cancel": {
 		"title": "取消",
 		"tooltip": "取消当前操作"
 	},
-	"scrollToBottom": "滚动到聊天底部",
-	"about": "Roo Code 是您编辑器中的整个 AI 开发团队。",
-	"docs": "查看我们的 <DocsLink>文档</DocsLink> 了解更多信息。",
-	"onboarding": "此工作区中的任务列表为空。",
+	"editMessage": {
+		"placeholder": "编辑消息..."
+	},
+	"scrollToBottom": "滚动到底部",
+	"about": "RooWriter 是您编辑器中的 AI 写作团队",
+	"docs": "查看我们的 <DocsLink>文档</DocsLink> 以开始使用",
+	"onboarding": "您想做什么？",
 	"rooTips": {
 		"customizableModes": {
-			"title": "可自定义模式",
-			"description": "专注任务并交付成果的专业角色。"
+			"title": "可定制的专注模式",
+			"description": "专注于任务并交付成果的专用角色。"
 		},
 		"modelAgnostic": {
-			"title": "自带模型",
-			"description": "使用您自己的提供商密钥，甚至可以在本地运行推理 — 无加价，无锁定，无限制"
+			"title": "自带模型，无锁定",
+			"description": "使用您自己的提供商密钥，甚至运行本地推理 — RooWriter 不收费"
 		}
 	},
 	"selectMode": "选择交互模式",
 	"selectApiConfig": "选择 API 配置",
-	"enhancePrompt": "增强提示词",
-	"addImages": "添加图片到消息",
-	"sendMessage": "发送消息",
-	"stopTts": "停止文本转语音",
-	"typeMessage": "输入消息...",
-	"typeTask": "在此处输入您的任务...",
-	"addContext": "@添加上下文，/输入命令",
-	"dragFiles": "Shift+拖拽文件",
-	"dragFilesImages": "Shift+拖拽文件/图片",
-	"enhancePromptDescription": "'增强提示'按钮通过提供额外上下文、澄清或重新表述来帮助改进您的请求。尝试在此处输入请求，然后再次点击按钮查看其工作原理。",
+	"enhancePrompt": "使用附加上下文增强提示",
 	"modeSelector": {
 		"title": "模式",
 		"marketplace": "模式市场",
 		"settings": "模式设置",
-		"description": "专门定制Roo行为的角色。",
+		"description": "定制 RooWriter 行为的专用角色。",
 		"searchPlaceholder": "搜索模式...",
 		"noResults": "未找到结果"
 	},
-	"errorReadingFile": "读取文件时出错",
-	"noValidImages": "没有处理有效图片",
+	"enhancePromptDescription": "“增强提示”按钮通过提供额外的上下文、澄清或重新表述来帮助改进您的提示。尝试在这里输入提示，然后再次点击该按钮查看效果。",
+	"addImages": "添加图片到消息",
+	"sendMessage": "发送消息",
+	"stopTts": "停止朗读",
+	"typeMessage": "输入消息...",
+	"typeTask": "在此输入您的任务...",
+	"addContext": "@ 添加上下文，/ 输入命令",
+	"dragFiles": "按住 Shift 拖入文件",
+	"dragFilesImages": "按住 Shift 拖入文件/图片",
+	"errorReadingFile": "读取文件错误",
+	"noValidImages": "未处理任何有效图片",
 	"separator": "分隔符",
 	"edit": "编辑...",
 	"forNextMode": "用于下一个模式",
 	"forPreviousMode": "用于上一个模式",
-	"error": "错误",
-	"diffError": {
-		"title": "编辑失败"
-	},
-	"troubleMessage": "Roo遇到问题...",
 	"apiRequest": {
-		"title": "API请求",
-		"failed": "API请求失败",
-		"streaming": "API请求...",
-		"cancelled": "API请求已取消",
-		"streamingFailed": "API流式传输失败"
+		"title": "API 请求",
+		"failed": "API 请求失败",
+		"streaming": "API 请求中...",
+		"cancelled": "API 请求已取消",
+		"streamingFailed": "API 流式传输失败"
 	},
 	"checkpoint": {
 		"regular": "检查点",
-		"initializingWarning": "正在初始化检查点...如果耗时过长，你可以在<settingsLink>设置</settingsLink>中禁用检查点并重新启动任务。",
+		"initializingWarning": "正在初始化检查点... 如果时间过长，您可以在<settingsLink>设置</settingsLink>中禁用检查点并重启任务。",
 		"menu": {
 			"viewDiff": "查看差异",
-			"more": "更多选项",
 			"viewDiffFromInit": "查看所有更改",
 			"viewDiffWithCurrent": "查看自此检查点以来的更改",
 			"restore": "恢复检查点",
 			"restoreFiles": "恢复文件",
-			"restoreFilesDescription": "将项目文件恢复到此检查点状态",
+			"restoreFilesDescription": "将项目文件恢复到此点的快照。",
 			"restoreFilesAndTask": "恢复文件和任务",
 			"confirm": "确认",
 			"cancel": "取消",
-			"cannotUndo": "此操作无法撤消。",
-			"restoreFilesAndTaskDescription": "恢复文件至此时状态，并清除后续对话记录"
+			"cannotUndo": "此操作无法撤销。",
+			"restoreFilesAndTaskDescription": "将项目文件恢复到此点的快照，并删除此点之后的所有消息。",
+			"more": "更多选项"
 		},
 		"current": "当前"
 	},
+	"contextCondense": {
+		"title": "上下文已压缩",
+		"condensing": "正在压缩上下文...",
+		"errorHeader": "压缩上下文失败",
+		"tokens": "tokens"
+	},
 	"instructions": {
-		"wantsToFetch": "Roo 想要获取详细指示以协助当前任务"
+		"wantsToFetch": "RooWriter 想要获取详细指令以协助当前任务"
 	},
 	"fileOperations": {
-		"wantsToRead": "需要读取文件",
-		"wantsToReadOutsideWorkspace": "请求访问外部文件",
-		"didRead": "已读取文件",
-		"wantsToEdit": "需要编辑文件",
-		"wantsToEditOutsideWorkspace": "需要编辑外部文件",
-		"wantsToEditProtected": "需要编辑受保护的配置文件",
-		"wantsToCreate": "需要新建文件",
-		"wantsToSearchReplace": "需要在此文件中搜索和替换",
-		"didSearchReplace": "已完成搜索和替换",
-		"wantsToInsert": "需要在此文件中插入内容",
-		"wantsToInsertWithLineNumber": "需要在第 {{lineNumber}} 行插入内容",
-		"wantsToInsertAtEnd": "需要在文件末尾添加内容",
-		"wantsToReadAndXMore": "Roo 想读取此文件以及另外 {{count}} 个文件",
-		"wantsToReadMultiple": "Roo 想要读取多个文件",
-		"wantsToApplyBatchChanges": "Roo 想要对多个文件应用更改",
-		"wantsToGenerateImage": "需要生成图片",
-		"wantsToGenerateImageOutsideWorkspace": "需要在工作区外生成图片",
-		"wantsToGenerateImageProtected": "需要在受保护位置生成图片",
-		"didGenerateImage": "已生成图片"
+		"wantsToRead": "RooWriter 想要读取此文件",
+		"wantsToReadMultiple": "RooWriter 想要读取多个文件",
+		"wantsToReadAndXMore": "RooWriter 想要读取此文件及另外 {{count}} 个",
+		"wantsToReadOutsideWorkspace": "RooWriter 想要读取工作区外的此文件",
+		"didRead": "RooWriter 读取了此文件",
+		"wantsToEdit": "RooWriter 想要编辑此文件",
+		"wantsToEditOutsideWorkspace": "RooWriter 想要编辑工作区外的此文件",
+		"wantsToEditProtected": "RooWriter 想要编辑受保护的配置文件",
+		"wantsToApplyBatchChanges": "RooWriter 想要对多个文件应用更改",
+		"wantsToGenerateImage": "RooWriter 想要生成图片",
+		"wantsToGenerateImageOutsideWorkspace": "RooWriter 想要在工作区外生成图片",
+		"wantsToGenerateImageProtected": "RooWriter 想要在受保护位置生成图片",
+		"didGenerateImage": "RooWriter 生成了图片",
+		"wantsToCreate": "RooWriter 想要创建新文件",
+		"wantsToInsert": "RooWriter 想要在此文件中插入内容",
+		"wantsToInsertWithLineNumber": "RooWriter 想要在此文件的第 {{lineNumber}} 行插入内容",
+		"wantsToInsertAtEnd": "RooWriter 想要在此文件末尾追加内容"
 	},
 	"directoryOperations": {
-		"wantsToViewTopLevel": "需要查看目录文件列表",
-		"didViewTopLevel": "已查看目录文件列表",
-		"wantsToViewRecursive": "需要查看目录所有文件",
-		"didViewRecursive": "已查看目录所有文件",
-		"wantsToViewDefinitions": "Roo想查看此目录中使用的源代码定义名称",
-		"didViewDefinitions": "Roo已查看此目录中使用的源代码定义名称",
-		"wantsToSearch": "需要搜索内容: {{regex}}",
-		"didSearch": "已完成内容搜索: {{regex}}",
-		"wantsToSearchOutsideWorkspace": "需要搜索内容（工作区外）: {{regex}}",
-		"didSearchOutsideWorkspace": "已完成内容搜索（工作区外）: {{regex}}",
-		"wantsToViewTopLevelOutsideWorkspace": "需要查看目录文件列表（工作区外）",
-		"didViewTopLevelOutsideWorkspace": "已查看目录文件列表（工作区外）",
-		"wantsToViewRecursiveOutsideWorkspace": "需要查看目录所有文件（工作区外）",
-		"didViewRecursiveOutsideWorkspace": "已查看目录所有文件（工作区外）",
-		"wantsToViewDefinitionsOutsideWorkspace": "Roo想查看此目录中使用的源代码定义名称（工作区外）",
-		"didViewDefinitionsOutsideWorkspace": "Roo已查看此目录中使用的源代码定义名称（工作区外）"
+		"wantsToViewTopLevel": "RooWriter 想要查看此目录的顶级文件",
+		"didViewTopLevel": "RooWriter 查看了此目录的顶级文件",
+		"wantsToViewTopLevelOutsideWorkspace": "RooWriter 想要查看此目录（工作区外）的顶级文件",
+		"didViewTopLevelOutsideWorkspace": "RooWriter 查看了此目录（工作区外）的顶级文件",
+		"wantsToViewRecursive": "RooWriter 想要递归查看此目录下的所有文件",
+		"didViewRecursive": "RooWriter 递归查看了此目录下的所有文件",
+		"wantsToViewRecursiveOutsideWorkspace": "RooWriter 想要递归查看此目录（工作区外）下的所有文件",
+		"didViewRecursiveOutsideWorkspace": "RooWriter 递归查看了此目录（工作区外）下的所有文件",
+		"wantsToViewDefinitions": "RooWriter 想要查看此目录中使用的源代码定义名称",
+		"didViewDefinitions": "RooWriter 查看了此目录中使用的源代码定义名称",
+		"wantsToViewDefinitionsOutsideWorkspace": "RooWriter 想要查看此目录（工作区外）中使用的源代码定义名称",
+		"didViewDefinitionsOutsideWorkspace": "RooWriter 查看了此目录（工作区外）中使用的源代码定义名称",
+		"wantsToSearch": "RooWriter 想要在此目录搜索 <code>{{regex}}</code>",
+		"didSearch": "RooWriter 在此目录搜索了 <code>{{regex}}</code>",
+		"wantsToSearchOutsideWorkspace": "RooWriter 想要在此目录（工作区外）搜索 <code>{{regex}}</code>",
+		"didSearchOutsideWorkspace": "RooWriter 在此目录（工作区外）搜索了 <code>{{regex}}</code>"
+	},
+	"codebaseSearch": {
+		"wantsToSearch": "RooWriter 想要在代码库中搜索 <code>{{query}}</code>",
+		"wantsToSearchWithPath": "RooWriter 想要在 <code>{{path}}</code> 中搜索代码库 <code>{{query}}</code>",
+		"didSearch_one": "找到 1 个结果",
+		"didSearch_other": "找到 {{count}} 个结果",
+		"resultTooltip": "相似度：{{score}} (点击打开文件)"
 	},
 	"commandOutput": "命令输出",
 	"commandExecution": {
-		"running": "正在运行",
 		"abort": "中止",
+		"running": "运行中",
 		"pid": "PID: {{pid}}",
-		"exitStatus": "已退出，状态码 {{exitCode}}",
-		"manageCommands": "管理命令权限",
-		"commandManagementDescription": "管理命令权限：点击 ✓ 允许自动执行，点击 ✗ 拒绝执行。可以打开/关闭模式或从列表中删除。<settingsLink>查看所有设置</settingsLink>",
+		"exitStatus": "以状态 {{exitCode}} 退出",
+		"manageCommands": "自动批准的命令",
 		"addToAllowed": "添加到允许列表",
-		"removeFromAllowed": "从允许列表中删除",
+		"removeFromAllowed": "从允许列表中移除",
 		"addToDenied": "添加到拒绝列表",
-		"removeFromDenied": "从拒绝列表中删除",
+		"removeFromDenied": "从拒绝列表中移除",
 		"abortCommand": "中止命令执行",
 		"expandOutput": "展开输出",
 		"collapseOutput": "折叠输出",
@@ -220,112 +236,110 @@
 	"response": "响应",
 	"arguments": "参数",
 	"text": {
-		"rooSaid": "Roo 说"
+		"rooSaid": "RooWriter 说"
 	},
 	"feedback": {
 		"youSaid": "你说"
 	},
 	"mcp": {
-		"wantsToUseTool": "Roo想在{{serverName}} MCP上使用工具",
-		"wantsToAccessResource": "Roo想访问{{serverName}} MCP服务上的资源"
+		"wantsToUseTool": "RooWriter 想要使用 {{serverName}} MCP 服务器上的工具",
+		"wantsToAccessResource": "RooWriter 想要访问 {{serverName}} MCP 服务器上的资源"
 	},
 	"modes": {
-		"wantsToSwitch": "即将切换至{{mode}}模式",
-		"wantsToSwitchWithReason": "即将切换至{{mode}}模式（原因：{{reason}}）",
-		"didSwitch": "已切换至{{mode}}模式",
-		"didSwitchWithReason": "已切换至{{mode}}模式（原因：{{reason}}）"
+		"wantsToSwitch": "RooWriter 想要切换到 {{mode}} 模式",
+		"wantsToSwitchWithReason": "RooWriter 想要切换到 {{mode}} 模式，因为：{{reason}}",
+		"didSwitch": "RooWriter 切换到了 {{mode}} 模式",
+		"didSwitchWithReason": "RooWriter 切换到了 {{mode}} 模式，因为：{{reason}}"
 	},
 	"subtasks": {
-		"wantsToCreate": "Roo想在<code>{{mode}}</code>模式下创建新子任务",
-		"wantsToFinish": "Roo想完成此子任务",
-		"newTaskContent": "子任务说明",
+		"wantsToCreate": "RooWriter 想要在 {{mode}} 模式下创建新子任务",
+		"wantsToFinish": "RooWriter 想要完成此子任务",
+		"newTaskContent": "子任务指令",
 		"completionContent": "子任务已完成",
 		"resultContent": "子任务结果",
 		"defaultResult": "请继续下一个任务。",
-		"completionInstructions": "子任务已完成！您可以查看结果并提出修改或下一步建议。如果一切正常，请确认以将结果返回给主任务。"
+		"completionInstructions": "子任务已完成！您可以查看结果并建议任何更正或下一步。如果一切看起来不错，请确认将结果返回给父任务。"
 	},
 	"questions": {
-		"hasQuestion": "Roo有一个问题"
+		"hasQuestion": "RooWriter 有一个问题"
 	},
-	"taskCompleted": "任务完成",
+	"taskCompleted": "任务已完成",
+	"error": "错误",
+	"diffError": {
+		"title": "编辑失败"
+	},
+	"troubleMessage": "RooWriter 遇到了问题...",
 	"powershell": {
-		"issues": "看起来您遇到了Windows PowerShell问题，请参阅此"
+		"issues": "看来您遇到了 Windows PowerShell 问题，请查看此"
 	},
 	"autoApprove": {
 		"tooltipManage": "管理自动批准设置",
-		"tooltipStatus": "自动批准已启用：{{toggles}}",
+		"tooltipStatus": "已启用自动批准：{{toggles}}",
 		"title": "自动批准",
-		"toggle": "切换自动批准",
 		"all": "全部",
 		"none": "无",
-		"description": "无需请求权限即可执行这些操作。仅对您完全信任的操作启用此功能。",
-		"selectOptionsFirst": "请至少选择以下一个选项以启用自动批准",
+		"description": "无需请求许可即可运行这些操作。仅对您完全信任的操作启用。",
+		"selectOptionsFirst": "首先在下方选择至少一个选项以启用自动批准",
 		"toggleAriaLabel": "切换自动批准",
 		"disabledAriaLabel": "自动批准已禁用 - 请先选择选项",
-		"triggerLabelOff": "自动批准已关闭",
+		"triggerLabelOff": "自动批准关闭",
 		"triggerLabelOffShort": "关闭",
 		"triggerLabel_zero": "0 个自动批准",
 		"triggerLabel_one": "1 个自动批准",
 		"triggerLabel_other": "{{count}} 个自动批准",
 		"triggerLabelAll": "YOLO"
 	},
+	"announcement": {
+		"title": "🎉 RooWriter {{version}} 发布",
+		"stealthModel": {
+			"feature": "<bold>限时免费隐形模型</bold> - Code Supernova：现已升级为 <bold>100万 token 上下文窗口</bold>！一个多功能的代理编码模型，支持图像输入，可通过 RooWriter Cloud 访问。",
+			"note": "（注：提示和补全由模型创建者记录并用于改进模型）",
+			"connectButton": "连接到 RooWriter Cloud",
+			"selectModel": "在设置中从 RooWriter Cloud 提供商选择 <code>roo/code-supernova</code> 以开始使用。",
+			"goToSettingsButton": "前往设置"
+		},
+		"release": {
+			"heading": "新功能：",
+			"browserUse": "Browser Use 2.0 升级了聊天中的浏览体验，具有持久会话、更清晰的反馈、专用的浏览器面板以及更自然的操作描述",
+			"cloudPaid": "RooWriter Cloud 提供商现在提供付费模型：购买积分并用于云代理和推理"
+		},
+		"cloudAgents": {
+			"heading": "云端新功能：",
+			"specialized": "介绍 <bold>Explainer</bold>、<bold>Planner</bold> 和 <bold>Coder</bold> - 三个专门的云代理，以增强您的工作流程。",
+			"description": "这些代理在云端协同工作，可以通过网页或 Slack 触发。",
+			"tryButton": "尝试云代理"
+		},
+		"careers": "此外，<careersLink>我们正在招聘！</careersLink>",
+		"socialLinks": "加入我们的 <xLink>X</xLink>、<discordLink>Discord</discordLink> 或 <redditLink>r/RooCode</redditLink> 🚀"
+	},
 	"reasoning": {
 		"thinking": "思考中",
 		"seconds": "{{count}}秒"
 	},
-	"contextCondense": {
-		"title": "上下文已压缩",
-		"condensing": "正在压缩上下文...",
-		"errorHeader": "上下文压缩失败",
-		"tokens": "tokens"
-	},
 	"followUpSuggest": {
-		"copyToInput": "复制到输入框（或按住Shift点击）",
+		"copyToInput": "复制到输入框 (同 Shift + 点击)",
 		"autoSelectCountdown": "{{count}}秒后自动选择",
 		"countdownDisplay": "{{count}}秒"
 	},
-	"announcement": {
-		"title": "🎉 Roo Code {{version}} 已发布",
-		"stealthModel": {
-			"feature": "<bold>限时免费隐形模型</bold> - Code Supernova：现已升级为 <bold>1M Token 上下文窗口</bold>！一个支持图像输入的多功能代理编程模型，通过 Roo Code Cloud 提供。",
-			"note": "(注意：提示词和补全内容会被模型创建者记录并用于改进模型)",
-			"connectButton": "连接到 Roo Code Cloud",
-			"selectModel": "在设置中从 Roo Code Cloud 提供商选择 <code>roo/code-supernova</code> 开始使用。",
-			"goToSettingsButton": "前往设置"
-		},
-		"release": {
-			"heading": "最新功能：",
-			"browserUse": "Browser Use 2.0 升级了聊天内浏览体验，支持持久会话、更清晰的反馈、专用浏览器面板以及更自然的操作描述",
-			"cloudPaid": "Roo Code Cloud 现已提供付费模型：购买积分即可同时用于云端智能体和推理服务"
-		},
-		"cloudAgents": {
-			"heading": "云端新功能：",
-			"specialized": "推出 <bold>Explainer</bold>、<bold>Planner</bold> 和 <bold>Coder</bold> - 三个专业云代理来增强你的工作流程。",
-			"description": "代理在云端协同工作，可从网页或通过 Slack 触发。",
-			"tryButton": "试用云代理"
-		},
-		"careers": "此外，<careersLink>我们正在招聘！</careersLink>",
-		"socialLinks": "在 <xLink>X</xLink>、<discordLink>Discord</discordLink> 或 <redditLink>r/RooCode</redditLink> 上关注我们 🚀"
-	},
 	"browser": {
 		"session": "浏览器会话",
-		"rooWantsToUse": "Roo想使用浏览器",
+		"rooWantsToUse": "RooWriter 想要使用浏览器",
 		"consoleLogs": "控制台日志",
-		"noNewLogs": "(没有新日志)",
+		"noNewLogs": "（无新日志）",
 		"screenshot": "浏览器截图",
 		"cursor": "光标",
 		"navigation": {
-			"step": "步骤 {{current}} / {{total}}",
+			"step": "第 {{current}} 步 / 共 {{total}} 步",
 			"previous": "上一步",
 			"next": "下一步"
 		},
-		"sessionStarted": "浏览器会话已启动",
+		"sessionStarted": "浏览器会话已开始",
 		"actions": {
-			"title": "浏览器操作: ",
-			"launch": "访问 {{url}}",
+			"title": "浏览器操作：",
+			"launch": "启动浏览器访问 {{url}}",
 			"click": "点击 ({{coordinate}})",
 			"type": "输入 \"{{text}}\"",
-			"press": "按 {{key}}",
+			"press": "按键 {{key}}",
 			"scrollDown": "向下滚动",
 			"scrollUp": "向上滚动",
 			"hover": "悬停 ({{coordinate}})",
@@ -335,47 +349,32 @@
 	"codeblock": {
 		"tooltips": {
 			"expand": "展开代码块",
-			"collapse": "收起代码块",
+			"collapse": "折叠代码块",
 			"copy_code": "复制代码"
 		}
 	},
-	"systemPromptWarning": "警告：自定义系统提示词覆盖已激活。这可能严重破坏功能并导致不可预测的行为。",
-	"profileViolationWarning": "当前配置文件与您的组织设置不兼容",
+	"systemPromptWarning": "警告：自定义系统提示已激活。这可能会严重破坏功能并导致不可预测的行为。",
+	"profileViolationWarning": "当前配置文件与您组织的设置不兼容",
 	"shellIntegration": {
 		"title": "命令执行警告",
-		"description": "您的命令正在没有 VSCode 终端 shell 集成的情况下执行。要隐藏此警告，您可以在 <settingsLink>Roo Code 设置</settingsLink>的 <strong>Terminal</strong> 部分禁用 shell 集成，或使用下方链接排查 VSCode 终端集成问题。",
-		"troubleshooting": "点击此处查看 shell 集成文档。"
+		"description": "您的命令正在没有 VSCode 终端 Shell 集成的情况下执行。要抑制此警告，您可以在 <settingsLink>RooWriter 设置</settingsLink> 的 <strong>终端</strong> 部分禁用 Shell 集成，或使用下面的链接排查 VSCode 终端集成问题。",
+		"troubleshooting": "点击此处查看 Shell 集成文档。"
 	},
 	"ask": {
 		"autoApprovedRequestLimitReached": {
-			"title": "已达自动批准请求限制",
-			"description": "Roo 已达到 {{count}} 次 API 请求的自动批准限制。您想重置计数并继续任务吗？",
+			"title": "达到自动批准请求限制",
+			"description": "RooWriter 已达到 {{count}} 个 API 请求的自动批准限制。您想要重置计数并继续任务吗？",
 			"button": "重置并继续"
 		},
 		"autoApprovedCostLimitReached": {
-			"title": "已达到自动批准的费用限额",
-			"description": "Roo已经达到了${{count}}的自动批准成本限制。您想重置成本并继续任务吗？",
+			"title": "达到自动批准成本限制",
+			"description": "RooWriter 已达到 ${{count}} 的自动批准成本限制。您想要重置成本并继续任务吗？",
 			"button": "重置并继续"
-		}
-	},
-	"codebaseSearch": {
-		"wantsToSearch": "Roo 需要搜索代码库: <code>{{query}}</code>",
-		"wantsToSearchWithPath": "Roo 需要在 <code>{{path}}</code> 中搜索: <code>{{query}}</code>",
-		"didSearch_one": "找到 1 个结果",
-		"didSearch_other": "找到 {{count}} 个结果",
-		"resultTooltip": "相似度评分: {{score}} (点击打开文件)"
-	},
-	"read-batch": {
-		"approve": {
-			"title": "全部批准"
-		},
-		"deny": {
-			"title": "全部拒绝"
 		}
 	},
 	"indexingStatus": {
 		"ready": "索引就绪",
-		"indexing": "索引中 {{percentage}}%",
+		"indexing": "正在索引 {{percentage}}%",
 		"indexed": "已索引",
 		"error": "索引错误",
 		"status": "索引状态"
@@ -383,21 +382,13 @@
 	"versionIndicator": {
 		"ariaLabel": "版本 {{version}} - 点击查看发布说明"
 	},
-	"rooCloudCTA": {
-		"title": "Roo Code Cloud 正在进化！",
-		"description": "在云端运行远程代理，随时随地访问任务，与他人协作等更多功能。",
-		"joinWaitlist": "注册获取最新更新。"
-	},
 	"command": {
 		"triggerDescription": "触发 {{name}} 命令"
-	},
-	"editMessage": {
-		"placeholder": "编辑消息..."
 	},
 	"slashCommands": {
 		"tooltip": "管理斜杠命令",
 		"title": "斜杠命令",
-		"description": "使用内置斜杠命令或创建自定义命令，快速访问常用提示词和工作流程。<DocsLink>文档</DocsLink>",
+		"description": "使用内置斜杠命令或创建自定义命令，以快速访问常用提示和工作流。<DocsLink>文档</DocsLink>",
 		"manageCommands": "在设置中管理斜杠命令",
 		"builtInCommands": "内置命令",
 		"globalCommands": "全局命令",
@@ -409,29 +400,29 @@
 		"newWorkspaceCommandPlaceholder": "新建工作区命令...",
 		"deleteDialog": {
 			"title": "删除命令",
-			"description": "确定要删除命令 \"{{name}}\" 吗？此操作无法撤销。",
+			"description": "您确定要删除命令 \"{{name}}\" 吗？此操作无法撤销。",
 			"cancel": "取消",
 			"confirm": "删除"
 		}
+	},
+	"slashCommand": {
+		"wantsToRun": "RooWriter 想要运行斜杠命令",
+		"didRun": "RooWriter 运行了斜杠命令"
+	},
+	"queuedMessages": {
+		"title": "排队的消息",
+		"clickToEdit": "点击编辑消息"
 	},
 	"contextMenu": {
 		"noResults": "无结果",
 		"problems": "问题",
 		"terminal": "终端",
-		"url": "粘贴URL以获取内容"
-	},
-	"queuedMessages": {
-		"title": "队列消息",
-		"clickToEdit": "点击编辑消息"
-	},
-	"slashCommand": {
-		"wantsToRun": "Roo 想要运行斜杠命令",
-		"didRun": "Roo 运行了斜杠命令"
+		"url": "粘贴 URL 以获取内容"
 	},
 	"todo": {
 		"partial": "已完成 {{completed}} / {{total}} 个待办事项",
 		"complete": "已完成 {{total}} 个待办事项",
-		"updated": "已更新待办事项列表",
+		"updated": "更新了待办事项列表",
 		"completed": "已完成",
 		"started": "已开始"
 	}

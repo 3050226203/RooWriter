@@ -1,5 +1,5 @@
 {
-	"greeting": "Welcome to Roo Code!",
+	"greeting": "Welcome to RooWriter!",
 	"task": {
 		"title": "Task",
 		"expand": "Expand task",
@@ -21,11 +21,11 @@
 		"sharePublicly": "Share Publicly",
 		"sharePubliclyDescription": "Anyone with the link can access",
 		"connectToCloud": "Connect to Cloud",
-		"connectToCloudDescription": "Sign in to Roo Code Cloud to share tasks",
+		"connectToCloudDescription": "Sign in to RooWriter Cloud to share tasks",
 		"sharingDisabledByOrganization": "Sharing disabled by organization",
 		"shareSuccessOrganization": "Organization link copied to clipboard",
 		"shareSuccessPublic": "Public link copied to clipboard",
-		"openInCloud": "Open task in Roo Code Cloud",
+		"openInCloud": "Open task in RooWriter Cloud",
 		"openInCloudIntro": "Keep monitoring or interacting with Roo from anywhere. Scan, click or copy to open.",
 		"openApiHistory": "Open API History",
 		"openUiHistory": "Open UI History"
@@ -108,7 +108,7 @@
 		},
 		"modelAgnostic": {
 			"title": "Bring your own model, no markup or lock-in",
-			"description": "Use your own provider key or even run local inference — Roo doesn't charge for it"
+			"description": "Use your own provider key or even run local inference �?Roo doesn't charge for it"
 		}
 	},
 	"selectMode": "Select mode for interaction",
@@ -290,18 +290,18 @@
 		"triggerLabelAll": "YOLO"
 	},
 	"announcement": {
-		"title": "🎉 Roo Code {{version}} Released",
+		"title": "🎉 RooWriter {{version}} Released",
 		"stealthModel": {
-			"feature": "<bold>Limited-time FREE stealth model</bold> - Code Supernova: Now upgraded with a <bold>1M token context window</bold>! A versatile agentic coding model that supports image inputs, accessible through Roo Code Cloud.",
+			"feature": "<bold>Limited-time FREE stealth model</bold> - Code Supernova: Now upgraded with a <bold>1M token context window</bold>! A versatile agentic coding model that supports image inputs, accessible through RooWriter Cloud.",
 			"note": "(Note: prompts and completions are logged by the model creator and used to improve the model)",
-			"connectButton": "Connect to Roo Code Cloud",
-			"selectModel": "Select <code>roo/code-supernova</code> from the Roo Code Cloud provider in Settings to get started.",
+			"connectButton": "Connect to RooWriter Cloud",
+			"selectModel": "Select <code>roo/code-supernova</code> from the RooWriter Cloud provider in Settings to get started.",
 			"goToSettingsButton": "Go to Settings"
 		},
 		"release": {
 			"heading": "What's New:",
 			"browserUse": "Browser Use 2.0 upgrades the in-chat browsing experience with persistent sessions, clearer feedback, a dedicated browser panel, and more natural action descriptions",
-			"cloudPaid": "The Roo Code Cloud provider now offers paid models: buy credits and use them for both cloud agents and inference"
+			"cloudPaid": "The RooWriter Cloud provider now offers paid models: buy credits and use them for both cloud agents and inference"
 		},
 		"cloudAgents": {
 			"heading": "New in the Cloud:",
@@ -357,7 +357,7 @@
 	"profileViolationWarning": "The current profile isn't compatible with your organization's settings",
 	"shellIntegration": {
 		"title": "Command Execution Warning",
-		"description": "Your command is being executed without VSCode terminal shell integration. To suppress this warning you can disable shell integration in the <strong>Terminal</strong> section of the <settingsLink>Roo Code settings</settingsLink> or troubleshoot VSCode terminal integration using the link below.",
+		"description": "Your command is being executed without VSCode terminal shell integration. To suppress this warning you can disable shell integration in the <strong>Terminal</strong> section of the <settingsLink>RooWriter settings</settingsLink> or troubleshoot VSCode terminal integration using the link below.",
 		"troubleshooting": "Click here for shell integration documentation."
 	},
 	"ask": {
@@ -427,3 +427,4 @@
 		"started": "Started"
 	}
 }
+

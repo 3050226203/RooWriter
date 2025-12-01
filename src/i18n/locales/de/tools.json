@@ -24,7 +24,8 @@
 		"invalidImageFormat": "Ungültiges Bildformat erhalten",
 		"unknownError": "Unbekannter Fehler aufgetreten",
 		"roo": {
-			"authRequired": "Roo Code Cloud-Authentifizierung ist für die Bildgenerierung erforderlich. Bitte melde dich bei Roo Code Cloud an."
+			"authRequired": "RooWriter Cloud-Authentifizierung ist für die Bildgenerierung erforderlich. Bitte melde dich bei RooWriter Cloud an."
 		}
 	}
 }
+

@@ -28,7 +28,7 @@ vitest.mock("../../../utils/text-normalization", () => ({
 }))
 vitest.mock("../../../shared/package", () => ({
 	Package: {
-		name: "roo-cline",
+		name: "roo-writer",
 	},
 }))
 
@@ -405,3 +405,4 @@ describe("Command Execution Timeout Integration", () => {
 		}, 5000)
 	})
 })
+

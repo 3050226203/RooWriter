@@ -225,7 +225,7 @@ describe("getRooModels", () => {
 		})
 
 		await expect(getRooModels(baseUrl, apiKey)).rejects.toThrow(
-			"Failed to fetch Roo Code Cloud models: HTTP 401: Unauthorized",
+			"Failed to fetch RooWriter Cloud models: HTTP 401: Unauthorized",
 		)
 	})
 
@@ -236,7 +236,7 @@ describe("getRooModels", () => {
 		mockFetch.mockRejectedValueOnce(abortError)
 
 		await expect(getRooModels(baseUrl, apiKey)).rejects.toThrow(
-			"Failed to fetch Roo Code Cloud models: Request timed out",
+			"Failed to fetch RooWriter Cloud models: Request timed out",
 		)
 	})
 
@@ -251,7 +251,7 @@ describe("getRooModels", () => {
 		})
 
 		await expect(getRooModels(baseUrl, apiKey)).rejects.toThrow(
-			"Failed to fetch Roo Code Cloud models: Unexpected response format",
+			"Failed to fetch RooWriter Cloud models: Unexpected response format",
 		)
 	})
 
@@ -474,7 +474,8 @@ describe("getRooModels", () => {
 		mockFetch.mockRejectedValueOnce(new TypeError("Network error"))
 
 		await expect(getRooModels(baseUrl, apiKey)).rejects.toThrow(
-			"Failed to fetch Roo Code Cloud models: No response from server",
+			"Failed to fetch RooWriter Cloud models: No response from server",
 		)
 	})
 })
+

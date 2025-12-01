@@ -1,6 +1,6 @@
 {
 	"extension": {
-		"name": "Roo Code",
+		"name": "RooWriter",
 		"description": "Un equipo completo de desarrolladores con IA en tu editor."
 	},
 	"number_format": {
@@ -118,7 +118,7 @@
 			"completionError": "Error de finalización de Cerebras: {{error}}"
 		},
 		"roo": {
-			"authenticationRequired": "El proveedor Roo requiere autenticación en la nube. Por favor, inicia sesión en Roo Code Cloud."
+			"authenticationRequired": "El proveedor Roo requiere autenticación en la nube. Por favor, inicia sesión en RooWriter Cloud."
 		},
 		"api": {
 			"invalidKeyInvalidChars": "La clave API contiene caracteres inválidos."
@@ -194,7 +194,7 @@
 	},
 	"customModes": {
 		"errors": {
-			"yamlParseError": "YAML inválido en archivo .roomodes en línea {{line}}. Verifica:\n• Indentación correcta (usa espacios, no tabs)\n• Comillas y corchetes coincidentes\n• Sintaxis YAML válida",
+			"yamlParseError": "YAML inválido en archivo .roomodes en línea {{line}}. Verifica:\n�?Indentación correcta (usa espacios, no tabs)\n�?Comillas y corchetes coincidentes\n�?Sintaxis YAML válida",
 			"schemaValidationError": "Formato inválido de modos personalizados en .roomodes:\n{{issues}}",
 			"invalidFormat": "Formato inválido de modos personalizados. Asegúrate de que tu configuración siga el formato YAML correcto.",
 			"updateFailed": "Error al actualizar modo personalizado: {{error}}",
@@ -216,8 +216,8 @@
 	},
 	"mdm": {
 		"errors": {
-			"cloud_auth_required": "Tu organización requiere autenticación de Roo Code Cloud. Por favor, inicia sesión para continuar.",
-			"organization_mismatch": "Debes estar autenticado con la cuenta de Roo Code Cloud de tu organización.",
+			"cloud_auth_required": "Tu organización requiere autenticación de RooWriter Cloud. Por favor, inicia sesión para continuar.",
+			"organization_mismatch": "Debes estar autenticado con la cuenta de RooWriter Cloud de tu organización.",
 			"verification_failed": "No se pudo verificar la autenticación de la organización."
 		},
 		"info": {
@@ -242,3 +242,4 @@
 		"url": "https://docs.roocode.com"
 	}
 }
+

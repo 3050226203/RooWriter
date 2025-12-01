@@ -25,7 +25,7 @@ describe("ExtensionChannel", () => {
 		appVersion: "1.0.0",
 		vscodeVersion: "1.0.0",
 		platform: "darwin",
-		editorName: "Roo Code",
+		editorName: "RooWriter",
 		hostname: "test-host",
 	}
 
@@ -352,7 +352,7 @@ describe("ExtensionChannel", () => {
 			expect(emittedEvents).toContain(ExtensionBridgeEventName.TaskDelegationCompleted)
 			expect(emittedEvents).toContain(ExtensionBridgeEventName.TaskDelegationResumed)
 
-			// Verify correct order: Delegated â†’ Completed â†’ Resumed
+			// Verify correct order: Delegated â†?Completed â†?Resumed
 			const delegatedIdx = emittedEvents.indexOf(ExtensionBridgeEventName.TaskDelegated)
 			const completedIdx = emittedEvents.indexOf(ExtensionBridgeEventName.TaskDelegationCompleted)
 			const resumedIdx = emittedEvents.indexOf(ExtensionBridgeEventName.TaskDelegationResumed)
@@ -400,3 +400,4 @@ describe("ExtensionChannel", () => {
 		})
 	})
 })
+

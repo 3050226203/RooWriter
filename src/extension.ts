@@ -99,10 +99,10 @@ export async function activate(context: vscode.ExtensionContext) {
 
 	const contextProxy = await ContextProxy.getInstance(context)
 
-	// Initialize the provider *before* the Roo Code Cloud service.
+	// Initialize the provider *before* the RooWriter Cloud service.
 	const provider = new ClineProvider(context, outputChannel, "sidebar", contextProxy, mdmService)
 
-	// Initialize Roo Code Cloud service.
+	// Initialize RooWriter Cloud service.
 	const postStateListener = () => ClineProvider.getVisibleInstance()?.postStateToWebview()
 
 	authStateChangedHandler = async (data: { state: AuthState; previousState: AuthState }) => {
@@ -390,3 +390,4 @@ export async function deactivate() {
 	TelemetryService.instance.shutdown()
 	TerminalRegistry.cleanup()
 }
+

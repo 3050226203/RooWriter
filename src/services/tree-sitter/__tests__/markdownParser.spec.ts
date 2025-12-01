@@ -469,11 +469,11 @@ Some content here.
 
 ## License
 
-[Apache 2.0 © 2025 Roo Code, Inc.](./LICENSE)
+[Apache 2.0 © 2025 RooWriter, Inc.](./LICENSE)
 
 ---
 
-**Enjoy Roo Code!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build.`
+**Enjoy RooWriter!** Whether you keep it on a short leash or let it roam autonomously, we can't wait to see what you build.`
 
 		const captures = parseMarkdown(content)
 		expect(captures).toBeDefined()
@@ -540,3 +540,4 @@ function processCaptures(captures: any[], lines: string[], minComponentLines: nu
 
 	return formattedOutput.length > 0 ? formattedOutput : null
 }
+

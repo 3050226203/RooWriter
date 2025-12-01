@@ -1,6 +1,6 @@
 {
-	"greeting": "Bienvenue sur Roo Code !",
-	"introduction": "Avec une gamme de Modes intégrés et extensibles, Roo Code te permet de planifier, architecturer, coder, déboguer et augmenter ta productivité comme jamais auparavant.",
+	"greeting": "Bienvenue sur RooWriter !",
+	"introduction": "Avec une gamme de Modes intégrés et extensibles, RooWriter te permet de planifier, architecturer, coder, déboguer et augmenter ta productivité comme jamais auparavant.",
 	"notice": "Pour commencer, cette extension a besoin d'un fournisseur d'API.",
 	"start": "C'est parti !",
 	"routers": {
@@ -18,7 +18,7 @@
 	},
 	"chooseProvider": "Pour commencer, tu as besoin d'un fournisseur LLM :",
 	"providerSignup": {
-		"rooCloudProvider": "Fournisseur Roo Code Cloud",
+		"rooCloudProvider": "Fournisseur RooWriter Cloud",
 		"rooCloudDescription": "La façon la plus simple d'utiliser Roo. Un mélange sélectionné de modèles gratuits et payants à faible coût",
 		"learnMore": "en savoir plus",
 		"useAnotherProvider": "Utiliser un autre fournisseur",
@@ -26,7 +26,7 @@
 		"getStarted": "Commencer"
 	},
 	"waitingForCloud": {
-		"heading": "Nous te menons à Roo Code Cloud...",
+		"heading": "Nous te menons à RooWriter Cloud...",
 		"description": "Termine l'inscription dans ton navigateur et tu reviendras ici automatiquement.",
 		"noPrompt": "Si tu n'es pas invité à ouvrir une URL, <clickHere>clique ici</clickHere>.",
 		"havingTrouble": "Si tu as terminé l'inscription mais que tu rencontres des problèmes, <clickHere>clique ici</clickHere>.",
@@ -36,8 +36,9 @@
 	"startRouter": "Nous recommandons d'utiliser un routeur LLM :",
 	"startCustom": "Ou tu peux apporter ta propre clé API :",
 	"telemetry": {
-		"helpImprove": "Aide à améliorer Roo Code",
-		"helpImproveMessage": "Roo Code collecte des données d'erreurs et d'utilisation pour nous aider à corriger les bugs et améliorer l'extension. Cette télémétrie ne collecte pas de code, de prompts ou d'informations personnelles. Tu peux désactiver ceci dans les <settingsLink>paramètres</settingsLink>."
+		"helpImprove": "Aide à améliorer RooWriter",
+		"helpImproveMessage": "RooWriter collecte des données d'erreurs et d'utilisation pour nous aider à corriger les bugs et améliorer l'extension. Cette télémétrie ne collecte pas de code, de prompts ou d'informations personnelles. Tu peux désactiver ceci dans les <settingsLink>paramètres</settingsLink>."
 	},
 	"importSettings": "Importer les paramètres"
 }
+

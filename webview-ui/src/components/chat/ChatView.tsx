@@ -1442,8 +1442,10 @@ const ChatViewComponent: React.ForwardRefRenderFunction<ChatViewRef, ChatViewPro
 						<div className="flex flex-col gap-4 w-full">
 							<RooHero />
 
-							{/* [RooWriter] Writing Template Selector - Removed per user request */}
-							{/* <TemplateSelector onSelect={handleTemplateSelect} /> */}
+							<div className="flex flex-col gap-2 text-vscode-foreground p-4 border border-[var(--vscode-widget-border)] rounded-md bg-[var(--vscode-editor-background)]">
+								<h3 className="text-sm font-bold uppercase opacity-70">RooWriter</h3>
+								<p className="text-sm opacity-80">Your AI Writing Assistant.</p>
+							</div>
 
 							{/* Show RooTips when authenticated or when user is new */}
 							{taskHistory.length < 6 && <RooTips />}
