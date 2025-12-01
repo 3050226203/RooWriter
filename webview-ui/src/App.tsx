@@ -5,6 +5,8 @@ import posthog from "posthog-js"
 
 import { ExtensionMessage } from "@roo/ExtensionMessage"
 import TranslationProvider from "./i18n/TranslationContext"
+import { ProjectMetadataView } from "./components/writer/ProjectMetadataView"
+import { SimpleFileTree } from "./components/writer/SimpleFileTree"
 import { MarketplaceViewStateManager } from "./components/marketplace/MarketplaceViewStateManager"
 
 import { vscode } from "./utils/vscode"
@@ -29,7 +31,7 @@ import { useAddNonInteractiveClickListener } from "./components/ui/hooks/useNonI
 import { TooltipProvider } from "./components/ui/tooltip"
 import { STANDARD_TOOLTIP_DELAY } from "./components/ui/standard-tooltip"
 
-type Tab = "settings" | "history" | "mcp" | "modes" | "chat" | "marketplace" | "cloud"
+type Tab = "settings" | "history" | "mcp" | "modes" | "chat" | "marketplace" | "cloud" | "project"
 
 interface HumanRelayDialogState {
 	isOpen: boolean
@@ -60,7 +62,7 @@ const MemoizedHumanRelayDialog = React.memo(HumanRelayDialog)
 const tabsByMessageAction: Partial<Record<NonNullable<ExtensionMessage["action"]>, Tab>> = {
 	chatButtonClicked: "chat",
 	settingsButtonClicked: "settings",
-	promptsButtonClicked: "modes",
+	promptsButtonClicked: "project",
 	mcpButtonClicked: "mcp",
 	historyButtonClicked: "history",
 	marketplaceButtonClicked: "marketplace",
@@ -271,6 +273,16 @@ const App = () => {
 		)
 	) : (
 		<>
+			{tab === "project" && (
+				<div className="flex flex-col h-full">
+					<div className="flex-grow overflow-hidden">
+						<ProjectMetadataView onDone={() => switchTab("chat")} />
+					</div>
+					<div className="h-1/3 min-h-[150px] flex-shrink-0">
+						<SimpleFileTree />
+					</div>
+				</div>
+			)}
 			{tab === "modes" && <ModesView onDone={() => switchTab("chat")} />}
 			{tab === "mcp" && <McpView onDone={() => switchTab("chat")} />}
 			{tab === "history" && <HistoryView onDone={() => switchTab("chat")} />}
