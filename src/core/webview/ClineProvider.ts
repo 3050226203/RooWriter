@@ -1996,7 +1996,9 @@ export class ClineProvider
 		const machineId = vscode.env.machineId
 		const mergedAllowedCommands = this.mergeAllowedCommands(allowedCommands)
 		const mergedDeniedCommands = this.mergeDeniedCommands(deniedCommands)
-		const cwd = this.cwd
+
+		// [RooWriter] Ensure cwd is populated properly
+		const cwd = this.cwd || vscode.workspace.workspaceFolders?.[0]?.uri.fsPath || ""
 
 		// Check if there's a system prompt override for the current mode
 		const currentMode = mode ?? defaultModeSlug
