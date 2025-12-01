@@ -1,5 +1,4 @@
 import { DiffStrategy } from "../../../shared/tools"
-import { CodeIndexManager } from "../../../services/code-index/manager"
 import type { SystemPromptSettings } from "../types"
 import { getEffectiveProtocol, isNativeProtocol } from "@roo-code/types"
 import type { ModeConfig, ToolName } from "@roo-code/types"
@@ -12,26 +11,11 @@ export function getRulesSection(
 	customModes: ModeConfig[] | undefined,
 	experiments: Record<string, boolean> | undefined,
 	diffStrategy?: DiffStrategy,
-	codeIndexManager?: CodeIndexManager,
 	settings?: SystemPromptSettings,
 ): string {
 	// Get available tools from relevant groups
-	const availableEditTools = getAvailableToolsInGroup(
-		"edit",
-		mode,
-		customModes,
-		experiments,
-		codeIndexManager,
-		settings,
-	)
-	const availableBrowserTools = getAvailableToolsInGroup(
-		"browser",
-		mode,
-		customModes,
-		experiments,
-		codeIndexManager,
-		settings,
-	)
+	const availableEditTools = getAvailableToolsInGroup("edit", mode, customModes, experiments, settings)
+	const availableBrowserTools = getAvailableToolsInGroup("browser", mode, customModes, experiments, settings)
 
 	const hasWriteToFile = availableEditTools.includes("write_to_file" as ToolName)
 	const hasBrowserAction = supportsComputerUse && availableBrowserTools.includes("browser_action" as ToolName)

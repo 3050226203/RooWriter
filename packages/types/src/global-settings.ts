@@ -8,7 +8,6 @@ import {
 	providerSettingsSchema,
 } from "./provider-settings.js"
 import { historyItemSchema } from "./history.js"
-import { codebaseIndexModelsSchema, codebaseIndexConfigSchema } from "./codebase-index.js"
 import { experimentsSchema } from "./experiment.js"
 import { telemetrySettingsSchema } from "./telemetry.js"
 import { modeConfigSchema } from "./mode.js"
@@ -168,9 +167,6 @@ export const globalSettingsSchema = z.object({
 	fuzzyMatchThreshold: z.number().optional(),
 	experiments: experimentsSchema.optional(),
 
-	codebaseIndexModels: codebaseIndexModelsSchema.optional(),
-	codebaseIndexConfig: codebaseIndexConfigSchema.optional(),
-
 	language: languagesSchema.optional(),
 
 	telemetrySetting: telemetrySettingsSchema.optional(),
@@ -233,13 +229,6 @@ export const SECRET_STATE_KEYS = [
 	"chutesApiKey",
 	"litellmApiKey",
 	"deepInfraApiKey",
-	"codeIndexOpenAiKey",
-	"codeIndexQdrantApiKey",
-	"codebaseIndexOpenAiCompatibleApiKey",
-	"codebaseIndexGeminiApiKey",
-	"codebaseIndexMistralApiKey",
-	"codebaseIndexVercelAiGatewayApiKey",
-	"codebaseIndexOpenRouterApiKey",
 	"huggingFaceApiKey",
 	"sambaNovaApiKey",
 	"zaiApiKey",
