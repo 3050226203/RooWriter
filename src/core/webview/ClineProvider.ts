@@ -220,6 +220,7 @@ export class ClineProvider
 						mode: await instance.getTaskMode(),
 					})
 					await this.updateTaskHistory(historyItem)
+					await this.postStateToWebview()
 				} catch (error) {
 					console.error("Failed to update task history on completion:", error)
 				}
@@ -278,6 +279,7 @@ export class ClineProvider
 						mode: await instance.getTaskMode(),
 					})
 					await this.updateTaskHistory(historyItem)
+					// await this.postStateToWebview() // Intentionally omitted to prevent excessive re-renders
 				} catch (error) {
 					console.error("Failed to update task history on token usage update:", error)
 				}
@@ -2781,6 +2783,7 @@ export class ClineProvider
 				mode: await task.getTaskMode(),
 			})
 			await this.updateTaskHistory(historyItem)
+			await this.postStateToWebview()
 		} catch (error) {
 			console.error("Failed to persist new task to history:", error)
 		}
