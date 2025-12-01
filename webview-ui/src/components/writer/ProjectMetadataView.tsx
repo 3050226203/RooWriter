@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { VSCodeButton, VSCodeTextField, VSCodeTextArea } from "@vscode/webview-ui-toolkit/react"
-import { vscode } from "../../utils/vscode"
-import { useExtensionState } from "../../context/ExtensionStateContext"
+// import { vscode } from "../../utils/vscode"
+// import { useExtensionState } from "../../context/ExtensionStateContext"
 
 interface ProjectMetadata {
 	title: string

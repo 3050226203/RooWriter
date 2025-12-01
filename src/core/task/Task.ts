@@ -1,4 +1,15 @@
-	private buildCleanConversationHistory(
+import { Anthropic } from "@anthropic-ai/sdk"
+import { ApiHandler } from "../../api"
+import { ApiMessage } from "../../api/transform/transform-stream"
+import { Logger } from "../../services/logging/Logger"
+
+export class Task {
+	constructor(
+		private readonly api: ApiHandler,
+		private readonly logger: Logger,
+	) {}
+
+	protected buildCleanConversationHistory(
 		messages: ApiMessage[],
 	): Array<
 		Anthropic.Messages.MessageParam | { type: "reasoning"; encrypted_content: string; id?: string; summary?: any[] }
@@ -156,3 +167,4 @@
 
 		return cleanConversationHistory
 	}
+}
