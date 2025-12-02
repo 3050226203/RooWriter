@@ -117,7 +117,7 @@ export function getToolDescriptionsForMode(
 	// [RooWriter] CRITICAL OPTIMIZATION: Force removal of heavy tools in writing modes
 	// This ensures they are not just hidden from the group config but PHYSICALLY REMOVED
 	// from the system prompt, saving massive amounts of tokens.
-	const isWritingMode = ["writer", "editor", "researcher", "publisher"].includes(mode)
+	const isWritingMode = mode && ["writer", "editor", "researcher", "publisher"].includes(mode)
 	if (isWritingMode) {
 		tools.delete("execute_command")
 		tools.delete("apply_diff")
@@ -125,6 +125,11 @@ export function getToolDescriptionsForMode(
 		tools.delete("codebase_search")
 		tools.delete("list_code_definition_names")
 		tools.delete("run_slash_command") // Writers don't need slash commands typically
+	} else {
+		// [RooWriter] Even for custom modes, we want to enforce a lighter toolset unless explicitly needed
+		// But for safety, we only remove the most code-centric ones
+		tools.delete("list_code_definition_names")
+		tools.delete("codebase_search")
 	}
 
 	// Always exclude codebase_search as CodeIndexManager is removed
