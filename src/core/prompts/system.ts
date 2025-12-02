@@ -83,7 +83,7 @@ async function generatePrompt(
 	const effectiveProtocol = getEffectiveProtocol(settings?.toolProtocol)
 
 	const [modesSection, mcpServersSection] = await Promise.all([
-		getModesSection(context),
+		getModesSection(customModeConfigs || []),
 		shouldIncludeMcp
 			? getMcpServersSection(
 					mcpHub,
@@ -128,7 +128,7 @@ ${modesSection}
 
 ${getRulesSection(cwd, supportsComputerUse, mode, customModeConfigs, experiments, effectiveDiffStrategy, settings)}
 
-${getSystemInfoSection(cwd, mode)}
+${getSystemInfoSection(cwd)}
 
 ${getObjectiveSection(experiments)}
 
